@@ -15,6 +15,9 @@
 @import url('./subscribe.css');
 @import url('./search.css');
 @import url('./menu-resturents.css');
+@import url('./chicken-king.css');
+@import url('./faqs.css');
+@import url('./popular.css');
 
 :root {
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
