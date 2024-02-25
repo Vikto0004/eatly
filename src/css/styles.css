@@ -27,6 +27,10 @@
 @import url('./plans.css');
 @import url('./latest-articles.css');
 @import url('./order-food.css');
+@import url('./send-now.css');
+@import url('./create-account.css');
+@import url('./log-account.css');
+@import url('./verify.css');
 
 :root {
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
