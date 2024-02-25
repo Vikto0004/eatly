@@ -9,7 +9,6 @@
   border: 1px solid #f4f4f6;
   border-radius: 24px;
   max-width: 315px;
-  height: 236px;
   box-shadow: 5px 57px 28px 0 rgba(229, 229, 229, 0.7);
   background: #fff;
 }
@@ -28,7 +27,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: 'Poppins', sans-serif;
   font-weight: 400;
   font-size: 10px;
   color: #fb471d;
@@ -44,7 +42,6 @@
 }
 
 .menu-list-title {
-  font-family: 'Poppins', sans-serif;
   font-weight: 600;
   font-size: 20px;
   line-height: 33px;
@@ -86,4 +83,19 @@
 .menu-list-btn:active,
 .menu-list-btn:focus {
   fill: #6c5fbc;
+}
+
+@media screen and (min-width: 1024px) {
+  .menu-list {
+    flex-direction: row;
+    gap: 22px;
+    margin-bottom: 47px;
+  }
+
+  .menu-list-title {
+    font-size: 18px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
 }

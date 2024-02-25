@@ -35,10 +35,27 @@
   color: #acadb9;
   width: 117px;
   margin-left: auto;
-  margin-bottom: 90px;
+  margin-bottom: 85px;
 }
 
 .resturents-list-link svg {
   fill: #acadb9;
   margin: auto 0 auto 15px;
+}
+
+@media screen and (min-width: 1024px) {
+  .resturents-list-title {
+    margin-bottom: 50px;
+  }
+
+  .resturents-list-title span {
+    display: inline;
+  }
+
+  .curent::after {
+    bottom: 70px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
 }
