@@ -18,7 +18,12 @@
   color: #6c5fbc;
 }
 
+.customer-swiper {
+  padding: 10px;
+}
+
 .customer-swiper-wrapper {
+  position: relative;
   margin-bottom: 45px;
 }
 
@@ -27,7 +32,7 @@
   background-color: #fff;
   border-radius: 12px;
   padding: 22px 25px;
-  /* box-shadow: 0px 0px 10px 0px #030314; */
+  box-shadow: 0px 0px 15px 0px #03031421;
 }
 
 .customer-swiper-top {
@@ -71,6 +76,11 @@
   color: #636363;
 }
 
+.customer-swiper-rate {
+  width: 82px;
+  height: 13px;
+}
+
 .customer .swiper-scrollbar {
   border-radius: 22px;
   height: 4px;
@@ -82,24 +92,100 @@
   background-color: #6c5fbc;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1024px) {
+  .customer-container {
+    padding-right: 0;
+  }
+
+  .customer-title {
+    max-width: none;
+    font-size: 31px;
+    line-height: 0.5;
+  }
+
+  .customer-swiper-title {
+    font-size: 14px;
+  }
+
+  .customer-swiper-subtitle {
+    font-size: 11px;
+  }
+
+  .customer-swiper-descr {
+    font-size: 12px;
+    line-height: 1.4;
+  }
+
+  .customer-swiper-wrapper {
+    margin: 0;
+  }
+
+  .customer .swiper {
+    position: relative;
+  }
   .customer-swiper-slide {
     max-width: 375px;
+    padding: 27px 30px;
+  }
+
+  .customer-swiper-rate {
+    width: 98px;
+    height: 16px;
   }
 
   .customer .swiper-scrollbar {
+    position: absolute;
+    bottom: 8px;
+    left: 100%;
+    transform: translateX(-100%);
+    max-width: 434px;
+    height: 8px;
+  }
+
+  .customer-swiper-slide .customer-swiper-top {
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    transition: max-height 0.7s ease, opacity 0.5s ease;
+  }
+
+  .customer-swiper-slide.active-slide .customer-swiper-top {
+    max-height: 300px;
+    opacity: 1;
+    /* transition: max-height 0.8s ease, opacity 0.8s ease; */
   }
 }
 
-.customer-swiper-slide .customer-swiper-top {
-  overflow: hidden;
-  max-height: 0;
-  opacity: 0;
-  transition: max-height 0.8s ease, opacity 0.8s ease;
-}
+@media screen and (min-width: 1440px) {
+  .customer-title {
+    font-size: 45px;
+    line-height: 0.56;
+  }
 
-.customer-swiper-slide.active-slide .customer-swiper-top {
-  max-height: 100px;
-  opacity: 1;
-  transition: max-height 0.8s ease, opacity 0.8s ease;
+  .customer-swiper-slide {
+    max-width: 528px;
+  }
+
+  .customer .swiper-scrollbar {
+    max-width: 557px;
+  }
+
+  .customer-swiper-slide {
+    padding: 38px 43px;
+  }
+
+  .customer-swiper-title {
+    font-size: 20px;
+    line-height: 1.5;
+  }
+
+  .customer-swiper-subtitle {
+    font-size: 16px;
+    line-height: 1.56;
+  }
+
+  .customer-swiper-descr {
+    font-size: 18px;
+    line-height: 1.45;
+  }
 }

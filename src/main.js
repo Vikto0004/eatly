@@ -12,8 +12,21 @@ const swiper = new Swiper('.swiper', {
     el: '.swiper-scrollbar',
     dragSize: 135,
   },
-  slidesPerView: 3,
+  slidesPerView: 1,
   spaceBetween: 30,
+
+  breakpoints: {
+    // Додаткові налаштування для планшетів та десктопів
+    1024: {
+      slidesPerView: 'auto',
+    },
+
+    1440: {
+      slidesPerView: 'auto',
+      spaceBetween: 46,
+    },
+  },
+
   on: {
     slideChange: function () {
       // Знаходимо активний слайд
