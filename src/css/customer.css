@@ -23,7 +23,7 @@
 }
 
 .customer-swiper-slide {
-  width: 100%;
+  max-width: 100%;
   background-color: #fff;
   border-radius: 12px;
   padding: 22px 25px;
@@ -80,4 +80,26 @@
 .customer .swiper-scrollbar-drag {
   height: 100%;
   background-color: #6c5fbc;
+}
+
+@media screen and (min-width: 768px) {
+  .customer-swiper-slide {
+    max-width: 375px;
+  }
+
+  .customer .swiper-scrollbar {
+  }
+}
+
+.customer-swiper-slide .customer-swiper-top {
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 0.8s ease, opacity 0.8s ease;
+}
+
+.customer-swiper-slide.active-slide .customer-swiper-top {
+  max-height: 100px;
+  opacity: 1;
+  transition: max-height 0.8s ease, opacity 0.8s ease;
 }
