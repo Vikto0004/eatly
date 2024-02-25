@@ -23,6 +23,8 @@
 @import url('./popular.css');
 @import url('./map.css');
 @import url('./review-payment.css');
+@import url('./our-pricing.css');
+@import url('./plans.css');
 
 :root {
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
