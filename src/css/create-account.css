@@ -1,0 +1,132 @@
+.section-sign-up {
+  padding: 100px 0;
+}
+
+.title-sign-up {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 1.25;
+  letter-spacing: -0.04em;
+  color: #323142;
+  text-align: center;
+  margin-bottom: 38px;
+}
+
+.title-highlighted {
+  color: #6c5fbc;
+}
+
+.login-options {
+  display: flex;
+  justify-content: space-between;
+}
+
+.login-options > button {
+  background: #eee;
+  border-radius: 11px;
+  width: 147px;
+  height: 51px;
+  border: none;
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  transition-duration: 0.3s;
+}
+
+.login-options > button:active {
+  box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.5);
+  transform: scale(1.1);
+}
+
+.text-or {
+  margin: 28px 0 28px;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 0.03em;
+  color: rgba(0, 90, 100, 0.35);
+}
+
+.input-wrap {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.input-wrap:nth-last-child(3n) {
+  margin-bottom: 32px;
+}
+
+.input-sign-up {
+  background-color: #eee;
+  border-radius: 12px;
+  width: 100%;
+  height: 60px;
+  border: none;
+  padding-left: 64px;
+  /* Typography */
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 13px;
+  letter-spacing: 0.02em;
+  text-transform: capitalize;
+  color: #6c5fbc;
+}
+
+.input-sign-up::placeholder {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.07em;
+  color: #a2a3a6;
+}
+
+.form-icon {
+  position: absolute;
+  left: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  fill: #a2a3a6;
+}
+
+.icon-lock {
+  stroke: #a2a3a6;
+}
+
+.icon-password {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  fill: #a2a3a6;
+}
+
+.btn-sign-up {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  color: #f3f5f6;
+  background: #6c5fbc;
+  border-radius: 12px;
+  border: none;
+  width: 100%;
+  height: 60px;
+  margin-bottom: 18px;
+}
+
+.btn-sign-up:hover,
+.btn-sign-up:focus,
+.btn-sign-up:active {
+  border: 2px solid black;
+}
+
+.form-text {
+  text-align: center;
+  font-size: 15px;
+  letter-spacing: 0.01em;
+  color: #3e3e3e;
+}
+
+.form-text > a {
+  font-weight: 700;
+  color: #6c5fbc;
+}
