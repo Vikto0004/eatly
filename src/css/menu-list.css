@@ -96,6 +96,16 @@
   .menu-list-title {
     font-size: 18px;
   }
+
+  .menu-list-btn {
+    transition: fill 500ms, border 500ms, background-color 500ms;
+  }
+
+  .menu-list-btn:hover {
+    fill: #6c5fbc;
+    border: 1px #6c5fbc solid;
+    background-color: transparent;
+  }
 }
 
 @media screen and (min-width: 1440px) {
@@ -106,6 +116,32 @@
   }
 
   .menu-list-item {
-    width: 356px;
+    max-width: 396px;
+    border-radius: 30px;
+  }
+
+  .menu-list-item img {
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    height: 176px;
+  }
+
+  .menu-list-text {
+    font-size: 12px;
+  }
+
+  .menu-list-title {
+    font-weight: 600;
+    font-size: 25px;
+    line-height: 1.62;
+  }
+
+  .menu-list-prg {
+    font-size: 19px;
+  }
+
+  .menu-list-btn {
+    width: 40px;
+    height: 40px;
   }
 }
