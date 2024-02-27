@@ -22,13 +22,17 @@
 }
 
 .dishes-list-item img {
-  height: 124px;
+  width: 100%;
 }
 
 .dishes-list-icon {
   position: absolute;
   top: 16px;
   right: 14px;
+}
+
+.dishes-list-wrap {
+  margin-top: 4px;
 }
 
 .dishes-wrap-text {
@@ -115,8 +119,8 @@
     max-width: 160px;
   }
 
-  .dishes-list-item img {
-    height: 146px;
+  .dishes-list-wrap {
+    margin-top: 11px;
   }
 }
 

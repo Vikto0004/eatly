@@ -90,6 +90,7 @@
     flex-direction: row;
     gap: 22px;
     margin-bottom: 47px;
+    height: 212px;
   }
 
   .menu-list-title {
@@ -98,4 +99,13 @@
 }
 
 @media screen and (min-width: 1440px) {
+  .menu-list {
+    gap: 30px;
+    margin-bottom: 66px;
+    height: 297px;
+  }
+
+  .menu-list-item {
+    width: 356px;
+  }
 }

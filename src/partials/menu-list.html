@@ -1,6 +1,35 @@
 <ul class="menu-list">
   <li class="menu-list-item">
-    <img src="./img/menu-list/menu-list-1-1x.jpg" alt="" />
+    <picture>
+      <source
+        srcset="
+          ./img/menu-list/Image-deskt-1-1x.jpg 1x,
+          ./img/menu-list/Image-deskt-1-2x.jpg 2x
+        "
+        media="(min-width: 1158px)"
+      />
+      <source
+        srcset="
+          ./img/menu-list/Image-tabl-1-1x.jpg 1x,
+          ./img/menu-list/Image-tabl-1-2x.jpg 2x
+        "
+        media="(min-width: 1024px)"
+      />
+      <source
+        srcset="
+          ./img/menu-list/menu-list-1-1x.jpg 1x,
+          ./img/menu-list/menu-list-1-2x.jpg 2x
+        "
+        media="(max-width: 1023px)"
+      />
+      <img
+        src="./images/portfolio-1-min.jpg"
+        alt="Bank App"
+        class="portfolio-item__img"
+        width="360"
+      />
+    </picture>
+    <img src="../img/menu-list/Image-deskt-1-1x.jpg" alt="" />
     <div class="menu-list-wrap">
       <div>
         <p class="menu-list-text">Healthy</p>
