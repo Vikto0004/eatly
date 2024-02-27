@@ -58,4 +58,16 @@
 }
 
 @media screen and (min-width: 1440px) {
+  .resturents-list-title {
+    margin-bottom: 86px;
+    font-size: 45px;
+  }
+
+  .resturents-list-link {
+    margin-bottom: 120px;
+  }
+
+  .curent::after {
+    bottom: 100px;
+  }
 }
