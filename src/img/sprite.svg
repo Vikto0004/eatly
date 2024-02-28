@@ -1,5 +1,13 @@
 <svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <defs>
+<symbol id="icon-menu" viewBox="0 0 44 32">
+<path fill="#918f8f" style="fill: var(--color1, #918f8f)" d="M1.6 1.28v0z"></path>
+<path fill="none" stroke="#282828" style="stroke: var(--color2, #282828)" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.56" d="M1.6 1.28h40.32"></path>
+<path fill="#918f8f" style="fill: var(--color1, #918f8f)" d="M1.6 15.569v0z"></path>
+<path fill="none" stroke="#282828" style="stroke: var(--color2, #282828)" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.56" d="M1.6 15.569h40.32"></path>
+<path fill="#918f8f" style="fill: var(--color1, #918f8f)" d="M1.6 29.857v0z"></path>
+<path fill="none" stroke="#282828" style="stroke: var(--color2, #282828)" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.56" d="M1.6 29.857h40.32"></path>
+</symbol>
 <symbol id="icon-hero-top" viewBox="0 0 72 32">
 <path fill="none" opacity="0.2" stroke="#a596ff" style="stroke: var(--color1, #a596ff)" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="4" stroke-width="0.7744" d="M141.471-32.585c-5.659-2.415-10.858-5.209-17.309-6.351-4.608-0.816-9.348-0.758-14.131 0.387-8.918 2.135-17.761 5.597-25.3 10.424-7.704 4.931-15.923 9.616-22.392 15.717-6.014 5.673-11.368 11.976-17.724 17.389-10.65 9.069-25.315 13.787-39.185 17.452-7.338 1.939-14.713 3.839-22.092 5.61-4.631 1.112-9.48 1.817-13.933 3.48"></path>
 <path fill="none" opacity="0.2" stroke="#a596ff" style="stroke: var(--color1, #a596ff)" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="4" stroke-width="0.7744" d="M141.311-41.276c-6.115-2.608-11.731-5.624-18.702-6.857-4.978-0.88-10.1-0.817-15.268 0.42-9.636 2.307-19.191 6.048-27.337 11.261-8.324 5.327-17.206 10.388-24.196 16.978-6.498 6.127-12.285 12.936-19.153 18.783-11.508 9.797-27.354 14.894-42.34 18.854-7.928 2.095-15.897 4.148-23.87 6.062-5.003 1.201-10.243 1.963-15.055 3.76"></path>
