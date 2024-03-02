@@ -1,0 +1,148 @@
+.banner {
+  padding-bottom: 200px;
+}
+
+.banner-container {
+  border-radius: 15px;
+  background: #6c5fbc;
+  min-height: 256px;
+}
+
+.banner-tittle {
+  padding: 50px 0 32px 0;
+  font-weight: 800;
+  font-size: 41px;
+  text-align: center;
+  color: #fff;
+}
+
+.banner-form {
+  text-align: center;
+  position: relative;
+  margin-bottom: 28px;
+}
+
+.banner-input {
+  border-radius: 9px;
+  min-width: 260px;
+  min-height: 48px;
+  box-shadow: 0 5px 29px 0 rgba(0, 0, 0, 0.1);
+  background: #fff;
+  border: none;
+}
+.banner-input::placeholder {
+  padding-left: 15px;
+  font-weight: 400;
+  font-size: 10px;
+  letter-spacing: 0.03em;
+  text-transform: capitalize;
+  color: #878787;
+}
+
+.banner-button {
+  display: flex;
+  width: 86px;
+  height: 34px;
+  background: #6c5fbc;
+  border-radius: 7px;
+  position: absolute;
+  right: 35px;
+  bottom: 7px;
+  border: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.banner-link {
+  font-weight: 500;
+  font-size: 9px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: #f7f8fa;
+}
+.banner-img {
+  width: 170px;
+  height: 170px;
+  position: absolute;
+  left: 50%;
+  transform: translatex(-50%);
+}
+@media screen and (min-width: 1024px) {
+  .banner {
+    padding-bottom: 150px;
+  }
+  .banner-container {
+    min-height: 200px;
+    border-radius: 21px;
+    min-width: 860px;
+    background-image: url(../img/banner-background.png);
+    position: relative;
+  }
+  .banner-tittle {
+    padding: 0 0 25px 0;
+    font-size: 49px;
+  }
+  .banner-form {
+    margin-bottom: 0px;
+  }
+  .banner-input::placeholder {
+    font-size: 11px;
+  }
+  .banner-link {
+    font-size: 10px;
+  }
+  .banner-subtittle-form {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    padding: 26px 50px 45px 45px;
+    height: 200px;
+  }
+  .banner-button {
+    right: 5px;
+  }
+  .banner-img {
+    width: 195px;
+    height: 195px;
+    top: 100%;
+    position: absolute;
+    left: 75%;
+    transform: translateY(-75%);
+  }
+}
+@media screen and (min-width: 1440px) {
+  .banner-container {
+    border-radius: 30px;
+    min-width: 1214px;
+    min-height: 280px;
+  }
+  .banner-subtittle-form {
+    padding: 60px 0 60px 66px;
+    height: 100%;
+  }
+
+  .banner-tittle {
+    font-size: 70px;
+    margin-bottom: 37px;
+  }
+  .banner-input {
+    min-width: 440px;
+    min-height: 68px;
+  }
+  .banner-input::placeholder {
+    font-size: 16px;
+  }
+  .banner-button {
+    border-radius: 11px;
+    width: 132px;
+    height: 53px;
+  }
+  .banner-link {
+    font-size: 14px;
+  }
+  .banner-img {
+    width: 275px;
+    height: 275px;
+  }
+}
