@@ -31,6 +31,7 @@
 @import url('./create-account.css');
 @import url('./log-account.css');
 @import url('./verify.css');
+@import url('./model.order.css');
 
 :root {
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;

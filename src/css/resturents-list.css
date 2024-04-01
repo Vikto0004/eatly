@@ -29,6 +29,7 @@
 }
 .resturents-list-link {
   display: flex;
+  position: relative;
   font-weight: 500;
   font-size: 20px;
   letter-spacing: -0.01em;
@@ -36,6 +37,23 @@
   width: 117px;
   margin-left: auto;
   margin-bottom: 85px;
+}
+
+.resturents-list-link::after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 0;
+  bottom: 0;
+  height: 2px;
+  margin: -5px 0;
+  left: 0;
+  background-color: #acadb9;
+  transition: all 0.4s ease-in 0s;
+}
+
+.resturents-list-link:hover:after {
+  width: 100%;
 }
 
 .resturents-list-link svg {
