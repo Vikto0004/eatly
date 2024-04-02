@@ -1,66 +1,90 @@
 .header-box {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 0.50px solid #cbcbcb;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 0.5px solid #cbcbcb;
 }
 
 .header-logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-family: "Poppins", sans-serif;
-    font-weight: 600;
-    font-size: 21px;
-    line-height: 1.3;
-    color: #6c5fbc;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 21px;
+  line-height: 1.3;
+  color: #6c5fbc;
 }
 
 .header-menu {
-    display: block;
-    padding: 33px 0;
+  display: block;
+  padding: 33px 0;
 }
 
-.header-nav-list, .header-login {
-    display: none;
+.header-nav-list,
+.header-login {
+  display: none;
+}
+
+.header-basket-btn {
+  position: relative;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+}
+
+.header-basket-btn p {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  bottom: 15px;
+  left: 28px;
+  width: 18px;
+  height: 18px;
+  font-size: 12px;
+  background-color: #6c5fbc;
+  color: #f9f9f9;
+  border-radius: 50%;
 }
 
 @media screen and (min-width: 1024px) {
-    .header-menu {
-        display: none;
-    }
+  .header-menu {
+    display: none;
+  }
 
-    .header-nav-list, .header-login {
-        display: flex;
-    }
+  .header-nav-list,
+  .header-login {
+    display: flex;
+    gap: 5px;
+  }
 
-    .header-nav-list {
-        gap: 53px;
-    }
+  .header-nav-list {
+    gap: 53px;
+  }
 
-    .header-nav-item {
-        font-family: "Inter", sans-serif;
-        font-weight: 500;
-        font-size: 17px;
-        line-height: 1.5;
-        color: #606060;
-        padding: 43px 0;
-        display: block;
-    }
+  .header-nav-item {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 1.5;
+    color: #606060;
+    padding: 43px 0;
+    display: block;
+  }
 
-    .header-login-item {
-        font-family: "Inter", sans-serif;
-        font-weight: 700;
-        font-size: 17px;
-        line-height: 1.5;
-        color: #606060;
-        padding: 17px 26px;
-    }
+  .header-login-item {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 17px;
+    line-height: 1.5;
+    color: #606060;
+    padding: 17px 26px;
+  }
 
-    .signup {
-        background: #6c5fbc;
-        border-radius: 18px;
-        color: #f9f9f9;
-    }
-
+  .signup {
+    background: #6c5fbc;
+    border-radius: 18px;
+    color: #f9f9f9;
+  }
 }

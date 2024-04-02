@@ -1,0 +1,60 @@
+.basket-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 999;
+  display: none;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.basket {
+  position: absolute;
+  height: 100vh;
+  width: 470px;
+  background-color: #f9f9f9;
+  top: 0;
+  right: 0;
+  padding: 40px 20px 10px 20px;
+}
+
+.basket-close-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  border: #e7e9fc 1px solid;
+  background-color: #e7e9fc;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  transition: all 0.7s ease;
+}
+
+.basket-close-btn svg {
+  fill: #6c5fbc;
+  transition: transform 0.3s;
+}
+
+.basket-close-btn:hover svg {
+  transform: rotate(90deg);
+}
+
+.basket-close-btn:focus,
+.basket-close-btn:hover {
+  background-color: transparent;
+  border: #6c5fbc 1px solid;
+}
+
+.basket-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 30px;
+}
