@@ -20,7 +20,7 @@
 
 .menu-list-wrap {
   display: flex;
-  padding: 9px 21px 14px 26px;
+  padding: 7px 21px 10px 26px;
 }
 
 .menu-list-text {
@@ -90,7 +90,6 @@
     flex-direction: row;
     gap: 22px;
     margin-bottom: 47px;
-    height: 212px;
   }
 
   .menu-list-title {
@@ -112,7 +111,7 @@
   .menu-list {
     gap: 30px;
     margin-bottom: 66px;
-    height: 297px;
+    height: 325px;
   }
 
   .menu-list-item {
@@ -123,7 +122,6 @@
   .menu-list-item img {
     border-top-left-radius: 30px;
     border-top-right-radius: 30px;
-    height: 176px;
   }
 
   .menu-list-text {
