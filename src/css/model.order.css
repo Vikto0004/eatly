@@ -21,7 +21,7 @@
   background-color: #f9f9f9;
   width: 315px;
   height: 100vh;
-  max-height: 600px;
+  max-height: 630px;
   padding: 60px 33px 40px;
   justify-content: space-between;
   border-radius: 20px;
@@ -70,6 +70,7 @@
 .model-order-container {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   position: relative;
 }
 
@@ -88,6 +89,7 @@
   flex-direction: column;
   justify-content: center;
   gap: 15px;
+  width: 250px;
 }
 
 .order-wrap-name {
@@ -191,6 +193,61 @@
   display: none;
 }
 
+.model-delete {
+  display: none;
+  position: relative;
+}
+
+.delete-wrap {
+  display: none;
+  background-color: #f9f9f9;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+    rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+  padding: 5px 10px;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.button-open-delete {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  transition: all 0.5s ease;
+}
+
+.button-open-delete svg {
+  fill: #706e8c;
+  transition: all 0.5s ease;
+}
+
+.delete-wrap button {
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  color: #6c5fbc;
+  font-size: 12px;
+  transition: all 0.3s ease;
+}
+
+.delete-wrap button:focus,
+.delete-wrap button:active {
+  color: #c61212;
+}
+
+.delete-wrap button svg {
+  fill: #6c5fbc;
+  transition: all 0.3s ease;
+}
+.delete-wrap button:focus svg,
+.delete-wrap button:active svg {
+  fill: #c61212;
+}
+
 @media screen and (min-width: 1024px) {
   .model-order {
     width: 515px;
@@ -235,7 +292,20 @@
   }
 
   .model-img {
-    max-width: 200px;
+    max-width: 180px;
     display: block;
+  }
+
+  .delete-wrap button:hover {
+    color: #c61212;
+  }
+
+  .delete-wrap button:hover svg {
+    fill: #c61212;
+  }
+
+  .button-open-delete:hover svg {
+    fill: #6c5fbc;
+    transform: scale(1.3);
   }
 }
