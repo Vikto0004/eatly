@@ -84,11 +84,13 @@ const btnPushOnBasket = document.querySelector('.target-btn');
 const modelOrder = document.querySelector('.model-order-container');
 const quantity = document.querySelector('#quantity');
 const totalPrice = document.querySelector('.basket-wrap-price');
+const emptyBasket = document.querySelector('.empty-basket');
 
 // --- пуш вибраного продукта в кошик --- //
 const plusNewArr = []; //* масиви з кнопками
 const minusNewArr = [];
 const openDelete = [];
+const array = [];
 const clonePush = () => {
   const modelOrderClone = modelOrder.cloneNode(true);
   basket.appendChild(modelOrderClone);
@@ -103,13 +105,21 @@ const clonePush = () => {
     backrop.style.display = 'none';
     document.body.style.overflow = 'auto';
   }, 500);
+
+  if (array.length > 0) array.push(modelOrderClone.outerHTML);
+  else {
+    for (const iterator of basket.children) {
+      array.push(iterator.outerHTML);
+    }
+  }
+
+  localStorage.setItem('bascketChild', JSON.stringify(array)); //* зберігаємо клони пушів в браузері
   plusNewArr.push(basket.querySelectorAll('#plusProduct'));
   minusNewArr.push(basket.querySelectorAll('#minusProduct'));
   openDelete.push(basket.querySelectorAll('#buttonOpenDelete'));
   quantity.textContent = basket.children.length; //* показник кількості в кошику
 };
 btnPushOnBasket.addEventListener('click', clonePush);
-console.log(openDelete);
 
 // ---- додаємо кількість продуктів ---//
 const addProduct = event => {
@@ -153,14 +163,35 @@ const openModelDelete = event => {
   event.currentTarget.nextElementSibling.style.display = 'block';
   const modelOrderContainer = event.currentTarget.parentNode.parentNode;
   const buttonDelete = event.currentTarget.nextElementSibling.firstElementChild;
+
+  const arrayBesket = basket.children;
+  const reversedObject = Object.fromEntries(
+    Object.entries(arrayBesket).reverse()
+  );
+
+  //* отримання індексу елемента/продукта якого ми видаляємо
+  const searchValue = event.currentTarget.parentNode.parentNode;
+  const keys = Object.keys(reversedObject);
+
   buttonDelete.addEventListener('click', () => {
     modelOrderContainer.remove();
     totalPriceCalculator();
+    emptyBasketNone();
+
+    const foundKey = keys.find(key => reversedObject[key] === searchValue);
+    const index = parseFloat(foundKey);
+    console.log(index);
+    //* перезапис історії збереженнь в кошику
+    const arrayFromStorage = JSON.parse(localStorage.getItem('bascketChild'));
+    arrayFromStorage.splice(index, 1);
+    localStorage.setItem('bascketChild', JSON.stringify(arrayFromStorage));
+    console.log(arrayFromStorage);
   });
   const closeDelete = event.currentTarget.firstElementChild;
+  const closeDeleteBtn = event.currentTarget;
   const deleteWrap = event.currentTarget.nextElementSibling;
   window.onclick = event => {
-    if (event.target !== closeDelete) {
+    if (event.target !== closeDelete && event.target !== closeDeleteBtn) {
       deleteWrap.style.display = 'none';
     }
   };
@@ -185,6 +216,7 @@ const clickOpenBasket = event => {
     }
   }
   totalPriceCalculator();
+  emptyBasketNone();
 };
 openBasket.addEventListener('click', clickOpenBasket);
 
@@ -221,3 +253,23 @@ const swiper2 = new Swiper('.mySwiper2', {
     clickable: true,
   },
 });
+
+const emptyBasketNone = () => {
+  if (basket.children.length > 0) {
+    emptyBasket.style.display = 'none';
+  } else emptyBasket.style.display = 'block';
+};
+
+const receivingBasket = () => {
+  const arrayFromStorage = JSON.parse(localStorage.getItem('bascketChild'));
+  console.log(arrayFromStorage);
+  for (let i = 0; i < arrayFromStorage.length; i++) {
+    const element = arrayFromStorage[i];
+    basket.insertAdjacentHTML('afterbegin', element);
+  }
+  plusNewArr.push(basket.querySelectorAll('#plusProduct'));
+  minusNewArr.push(basket.querySelectorAll('#minusProduct'));
+  openDelete.push(basket.querySelectorAll('#buttonOpenDelete'));
+  quantity.textContent = basket.children.length; //* показник кількості в кошику
+};
+receivingBasket();
