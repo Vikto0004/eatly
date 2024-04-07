@@ -46,7 +46,6 @@
 }
 
 .dishes-list-icon {
-  fill: transparent;
   stroke: #323142;
   stroke-width: 1.5px;
   transition: all 0.3s ease;
