@@ -16,7 +16,7 @@ const handleClickEvent = event => {
   const photoProduct =
     event.currentTarget.parentElement.parentElement.firstElementChild
       .lastElementChild.src;
-  const price = event.currentTarget.previousSibling.previousSibling;
+  const price = event.currentTarget.previousSibling.previousSibling; //+48539986208
   const nameProducts =
     event.currentTarget.parentNode.previousSibling.previousElementSibling.querySelector(
       '.dishes-wrap-title'

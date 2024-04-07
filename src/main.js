@@ -48,4 +48,4 @@ const swiper = new Swiper('.swiper', {
     },
   },
 });
-import './js/model.order';
+import './js/model-order';

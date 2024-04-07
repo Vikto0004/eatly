@@ -120,9 +120,6 @@
   height: 80%;
 }
 
-/* .swiper-slide {
-  height: 180px;
-} */
 @media screen and (max-width: 768px) {
   .basket {
     width: 315px;
