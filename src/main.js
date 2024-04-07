@@ -48,4 +48,6 @@ const swiper = new Swiper('.swiper', {
     },
   },
 });
+
 import './js/model-order';
+import './js/header-click-color';

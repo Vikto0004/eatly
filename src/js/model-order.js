@@ -95,8 +95,6 @@ const clonePush = () => {
   const modelOrderClone = modelOrder.cloneNode(true);
   basket.appendChild(modelOrderClone);
   modelOrderClone.querySelector('.model-delete').style.display = 'block';
-  modelOrderClone.classList.add('swiper-slide');
-  modelOrderClone.style.height = '180px';
   backrop.style.opacity = '0';
   minusNewArr.splice(0);
   plusNewArr.splice(0);
@@ -244,16 +242,6 @@ const totalPriceCalculator = () => {
   totalPrice.textContent = '$' + sum.toFixed(2);
 };
 
-// --- слайдер --- //
-const swiper2 = new Swiper('.mySwiper2', {
-  direction: 'vertical',
-  slidesPerView: 'auto',
-  pagination: {
-    el: '.swiper-pagination',
-    clickable: true,
-  },
-});
-
 const emptyBasketNone = () => {
   if (basket.children.length > 0) {
     emptyBasket.style.display = 'none';
@@ -262,7 +250,6 @@ const emptyBasketNone = () => {
 
 const receivingBasket = () => {
   const arrayFromStorage = JSON.parse(localStorage.getItem('bascketChild'));
-  console.log(arrayFromStorage);
   for (let i = 0; i < arrayFromStorage.length; i++) {
     const element = arrayFromStorage[i];
     basket.insertAdjacentHTML('afterbegin', element);
@@ -273,3 +260,57 @@ const receivingBasket = () => {
   quantity.textContent = basket.children.length; //* показник кількості в кошику
 };
 receivingBasket();
+
+//! --- збереження сердечка --- //
+
+const dishesListHeartLink = document.querySelectorAll(
+  '.dishes-list-heart-link'
+);
+
+const savingTheHeartArray = [];
+console.log(savingTheHeartArray);
+const savingTheHeart = event => {
+  const heartIcon = event.currentTarget.querySelector('.dishes-list-icon');
+  if (heartIcon.style.fill === 'rgb(255, 255, 255)') {
+    heartIcon.style.fill = '#6c5fbc';
+    console.log(heartIcon.id);
+    savingTheHeartArray.push(heartIcon.id);
+    localStorage.setItem('heartIcon', JSON.stringify(savingTheHeartArray)); // даємо в сховище
+    console.log(savingTheHeartArray);
+  } else {
+    heartIcon.style.fill = 'rgb(255, 255, 255)';
+    for (const element of savingTheHeartArray) {
+      if (element === heartIcon.id) {
+        savingTheHeartArray.splice(savingTheHeartArray.indexOf(element), 1);
+      }
+    }
+    localStorage.setItem('heartIcon', JSON.stringify(savingTheHeartArray)); // стираємо з сховища
+  }
+};
+
+for (const element of dishesListHeartLink) {
+  element.addEventListener('click', savingTheHeart);
+}
+
+const receivingTheHeart = () => {
+  const arrayFromStorage = JSON.parse(localStorage.getItem('heartIcon'));
+  for (const element of arrayFromStorage) {
+    savingTheHeartArray.push(element);
+    const heartIcon = document.querySelector(`#${element}`);
+    heartIcon.style.fill = '#6c5fbc';
+  }
+};
+receivingTheHeart();
+
+// -- перефарбування Trending і Supreme
+const dishesWrapText = document.querySelectorAll('.dishes-wrap-text');
+for (const element of dishesWrapText) {
+  if (element.textContent === 'Trending') {
+    element.style.background = '#F7C5BA';
+    element.style.color = '#FB471D';
+  } else if (element.textContent === 'Supreme') {
+    element.style.background = '#40e683';
+    element.style.opacity = '0.5';
+    element.style.color = '#198042';
+  }
+}

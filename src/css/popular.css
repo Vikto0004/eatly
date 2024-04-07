@@ -1,0 +1,21 @@
+.popular-list {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 21px;
+  row-gap: 42px;
+  margin-bottom: 50px;
+}
+
+.pizza-title {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 73%;
+  color: #323142;
+  margin-bottom: 30px;
+}
+
+@media screen and (min-width: 1440px) {
+  .popular-list {
+    column-gap: 31px;
+  }
+}
