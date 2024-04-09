@@ -1,45 +1,54 @@
 <section class="section hero">
-  <div class="container">
-    <p class="hero-text">OVER 1000 USERS</p>
-    <h1 class="hero-title">Enjoy Foods Over <span>World</span></h1>
-    <p class="hero-prg">
-      Eatly help you set saving goals, earn cash back offers, Go to disclaimer
-      for more details and get paychecks up to two days early. Get a
-      <span>$20 bonus.</span>
-    </p>
-    <div class="hero-btn-container">
-      <button type="button" class="hero-btn-started">Get Started</button>
-      <button type="button" class="hero-btn-pro">Go Pro</button>
-    </div>
-    <div class="hero-reviews-wrap">
-      <svg width="24px" height="22px">
-        <use href="./img/sprite.svg#icon-star-green"></use>
-      </svg>
-      <p>Transpilot</p>
-      <svg width="77px" height="12px">
-        <use href="./img/sprite.svg#icon-stars"></use>
-      </svg>
-      <p class="hero-reviews-prg">4900+</p>
+  <div class="container hero-container">
+    <div>
+      <p class="hero-text">OVER 1000 USERS</p>
+      <h1 class="hero-title">Enjoy Foods All Over The <span>World</span></h1>
+      <p class="hero-prg">
+        Eatly help you set saving goals, earn cash back offers, Go to disclaimer
+        for more details and get paychecks up to two days early. Get a
+        <span>$20 bonus.</span>
+      </p>
+      <div class="hero-btn-container">
+        <button type="button" class="hero-btn-started">Get Started</button>
+        <button type="button" class="hero-btn-pro">Go Pro</button>
+      </div>
+      <div class="hero-reviews-wrap">
+        <svg width="24px" height="22px">
+          <use href="./img/sprite.svg#icon-star-green"></use>
+        </svg>
+        <p>Transpilot</p>
+        <svg width="77px" height="12px">
+          <use href="./img/sprite.svg#icon-stars"></use>
+        </svg>
+        <p class="hero-reviews-prg">4900+</p>
+      </div>
     </div>
     <div class="hero-images-container">
-      <div class="hero-images-center">
-        <img
-          srcset="
-            ./img/hero/img-mob-1-1x.png 1x,
-            ./img/hero/img-mob-1-2x.png 2x
-          "
-          alt=""
-        />
-      </div>
-      <img
-        class="hero-images-top"
-        srcset="./img/hero/img-mob-2-1x.png 1x, ./img/hero/img-mob-2-2x.png 2x"
-        alt="hero"
-      />
       <svg class="hero-images-icon-top" width="24px" height="22px">
         <use href="./img/sprite.svg#icon-Illustration-1"></use>
       </svg>
-      <svg lass="hero-images-icon-bottom" width="24px" height="22px">
+      <picture>
+        <source
+          srcset="
+            ./img/hero/food-deskt-1x.png 1x,
+            ./img/hero/food-deskt-2x.png 2x
+          "
+          media="(min-width: 1440px)"
+        />
+        <source
+          srcset="
+            ./img/hero/food-tabl-1x.png 1x,
+            ./img/hero/food-tabl-2x.png 2x
+          "
+          media="(min-width: 1024px)"
+        />
+        <source
+          srcset="./img/hero/food-mob-1x.png 1x, ./img/hero/food-mob-2x.png 2x"
+          media="(max-width: 1023px)"
+        />
+        <img src="./img/hero/food-mob-1x.png" alt="chicken" />
+      </picture>
+      <svg class="hero-images-icon-bottom" width="24px" height="22px">
         <use href="./img/sprite.svg#icon-Illustration-2"></use>
       </svg>
     </div>
