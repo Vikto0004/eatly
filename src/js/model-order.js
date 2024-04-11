@@ -297,7 +297,9 @@ const receivingTheHeart = () => {
   for (const element of arrayFromStorage) {
     savingTheHeartArray.push(element);
     const heartIcon = document.querySelector(`#${element}`);
-    heartIcon.style.fill = '#6c5fbc';
+    if (heartIcon) {
+      heartIcon.style.fill = '#6c5fbc';
+    }
   }
 };
 receivingTheHeart();

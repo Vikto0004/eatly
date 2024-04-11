@@ -57,8 +57,23 @@
 
 .quality-spiral-icon {
   position: absolute;
-  bottom: -80px;
-  left: 50px;
+  bottom: -100px;
+  left: 25px;
+  transform: rotate(125deg);
+  stroke-width: 2;
+}
+.quality-spiral-icon use {
+  stroke: #6c5fbc;
+  stroke-dashoffset: 330; /* Значення, що протилежне до значення, встановленого в 0 */
+  stroke-dasharray: 330;
+  animation: drawTwo 3s backwards infinite;
+  fill: none;
+}
+
+@keyframes drawTwo {
+  0% {
+    stroke-dashoffset: -320;
+  }
 }
 
 .quality-img {
@@ -72,7 +87,19 @@
   position: absolute;
   top: -15px;
   right: 40px;
+  stroke: rgb(0, 0, 0);
+  stroke-width: 2px;
+  stroke-dashoffset: -63;
+  stroke-dasharray: 63;
+  animation: draw 1.5s linear infinite;
 }
+
+@keyframes draw {
+  100% {
+    stroke-dashoffset: 63;
+  }
+}
+
 @media screen and (min-width: 1024px) {
   .quality-container {
     display: flex;
@@ -101,17 +128,78 @@
 
   .quality-btn {
     margin: 0;
-    font-family: var(--font-family);
     font-size: 12px;
     width: 132px;
     height: 44px;
+    gap: 3px;
+    transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+  }
+
+  .quality-btn:hover {
+    opacity: 0.9;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+  }
+
+  .quality-btn svg {
+    transition: all 0.3s cubic-bezier(0.22, 0.68, 0, 1.71);
+  }
+
+  .quality-btn:hover svg {
+    transform: translateX(6px);
   }
 
   .quality-spiral-icon {
-    transform: rotate(270deg);
+    transform: rotate(45deg);
     left: 140px;
-    bottom: -50px;
+    bottom: 25px;
+  }
+
+  .quality-img {
+    margin-left: 80px;
+  }
+
+  .quality-illustration-icon {
+    right: -30px;
   }
 }
 @media screen and (min-width: 1440px) {
+  .quality-content {
+    max-width: 550px;
+  }
+
+  .quality-name {
+    font-size: 50px;
+    margin-bottom: 63px;
+  }
+
+  .quality-list {
+    gap: 28px;
+    margin-bottom: 60px;
+  }
+
+  .quality-item p {
+    font-size: 20px;
+  }
+
+  .quality-btn {
+    width: 186px;
+    height: 63px;
+    font-size: 18px;
+    gap: 5px;
+  }
+
+  .quality-spiral-icon {
+    left: 190px;
+    bottom: 70px;
+    stroke-width: 3;
+    width: 120px;
+    height: 120px;
+  }
+
+  .quality-illustration-icon {
+    width: 50px;
+    height: 54px;
+    right: -45px;
+    top: -20px;
+  }
 }
