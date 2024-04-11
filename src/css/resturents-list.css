@@ -6,7 +6,7 @@
   content: '';
   position: absolute;
   left: 0;
-  bottom: 85px;
+  bottom: 0;
   width: 100%;
   height: 1px;
   background-color: #cbcbcb;
@@ -36,7 +36,6 @@
   color: #acadb9;
   width: 117px;
   margin-left: auto;
-  margin-bottom: 85px;
 }
 
 .resturents-list-link::after {
@@ -69,23 +68,11 @@
   .resturents-list-title span {
     display: inline;
   }
-
-  .curent::after {
-    bottom: 70px;
-  }
 }
 
 @media screen and (min-width: 1440px) {
   .resturents-list-title {
     margin-bottom: 86px;
     font-size: 45px;
-  }
-
-  .resturents-list-link {
-    margin-bottom: 120px;
-  }
-
-  .curent::after {
-    bottom: 100px;
   }
 }

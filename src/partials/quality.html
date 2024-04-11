@@ -1,4 +1,4 @@
-<section class="section quality-section">
+<section class="section curent quality-section">
   <div class="container quality-container">
     <div class="quality-content">
       <h2 class="quality-name">
@@ -24,18 +24,34 @@
           <use href="./img/sprite.svg#icon-arrow-right"></use>
         </svg>
       </button>
-      <svg class="quality-spiral-icon" width="57px" height="100px">
-        <use href="./img/sprite.svg#icon-arrow-up"></use>
+      <svg class="quality-spiral-icon" width="100px" height="100px">
+        <use href="./img/sprite.svg#icon-spiral-arrow"></use>
       </svg>
     </div>
     <div class="quality-img">
-      <img
-        srcset="/img/quality/mob1x.png 1x, /img/quality/mob2x.png 2x"
-        alt="quality"
-        src="../img/quality/mob1x.png"
-      />
+      <picture>
+        <source
+          srcset="
+            ./img/quality/img-deskt-1x.png 1x,
+            ./img/quality/img-deskt-2x.png 2x
+          "
+          media="(min-width: 1440px)"
+        />
+        <source
+          srcset="
+            ./img/quality/img-tabl-1x.png 1x,
+            ./img/quality/img-tabl-2x.png 2x
+          "
+          media="(min-width: 1024px)"
+        />
+        <source
+          srcset="/img/quality/mob1x.png 1x, /img/quality/mob2x.png 2x"
+          media="(max-width: 1023px)"
+        />
+        <img src="./img/quality/img-deskt-2x.png " alt="quality" />
+      </picture>
       <svg class="quality-illustration-icon" width="30px" height="34px">
-        <use href="../img/sprite.svg#icon-Illustration-3"></use>
+        <use href="./img/sprite.svg#icon-Illustration-3"></use>
       </svg>
     </div>
   </div>

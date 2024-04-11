@@ -118,12 +118,20 @@
   position: absolute;
   top: -15px;
   right: -5px;
+  stroke-width: 2px;
+  stroke-dashoffset: -63;
+  stroke-dasharray: 63;
+  animation: draw 1.5s linear infinite;
 }
 
 .hero-images-icon-bottom {
   position: absolute;
   bottom: 5px;
   left: 0;
+  stroke-width: 2px;
+  stroke-dashoffset: -63;
+  stroke-dasharray: 63;
+  animation: draw 1.5s linear infinite;
 }
 
 .hero-list {

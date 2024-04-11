@@ -1,0 +1,384 @@
+.purchases-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.purchases-container-child {
+  position: relative;
+  margin-bottom: 100px;
+}
+
+.purchases-title {
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 109%;
+  text-transform: capitalize;
+  color: #18181b;
+  margin-bottom: 26px;
+}
+
+.purchases-title span {
+  color: #6c5fbc;
+}
+
+.purchases-list li:nth-child(2) {
+  margin-bottom: 15px;
+}
+
+.purchases-spiral-arrow {
+  fill: none;
+  stroke-width: 2px;
+  stroke: #6c5fbc;
+  position: absolute;
+  bottom: -70px;
+  right: 0;
+  transform: rotate(-80deg);
+  stroke-dashoffset: 330;
+  stroke-dasharray: 330;
+  animation: drawTwo 3s backwards infinite;
+}
+
+.purchases-wrap {
+  border: 0.93px solid #edf2f7;
+  border-radius: 15px;
+  max-width: 316px;
+  height: 276px;
+  background: #fff;
+  box-shadow: 4px 54px 27px 0 rgba(229, 229, 229, 0.7);
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  row-gap: 10%;
+  padding: 22px 22px 27px;
+}
+
+.purchases-wrap-title {
+  font-weight: 800;
+  font-size: 16px;
+  line-height: 135%;
+  letter-spacing: 0.01em;
+  color: #1a202c;
+}
+
+.purchases-wrap-btn {
+  border-radius: 7px;
+  padding: 0;
+  border: none;
+  width: 104px;
+  height: 31px;
+  background: #fafafa;
+  font-weight: 600;
+  font-size: 11px;
+  line-height: 150%;
+  letter-spacing: 0.03em;
+  text-align: right;
+  color: #1a202c;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  margin-left: auto;
+}
+
+.purchases-wrap-btn svg {
+  fill: none;
+  stroke: #18181b;
+}
+
+.purchases-wrap-list {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+  width: 100%;
+}
+
+.purchases-wrap-list li {
+  display: flex;
+  flex-wrap: wrap;
+  border: 0.93px solid #edf2f7;
+  border-radius: 11px;
+  padding: 14px;
+  width: 100%;
+  height: 80px;
+  align-items: center;
+}
+
+.purchases-wrap-wallet {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 930px;
+  width: 29px;
+  height: 29px;
+  background: #f4f0ff;
+  margin-right: 11px;
+}
+
+.purchases-wrap-text {
+  font-weight: 800;
+  font-size: 11px;
+  line-height: 150%;
+  letter-spacing: 0.03em;
+  color: #1a202c;
+}
+
+.purchases-wrap-number {
+  font-weight: 600;
+  font-size: 11px;
+  line-height: 150%;
+  letter-spacing: 0.03em;
+  color: #1a202c;
+  margin-left: auto;
+}
+
+.purchases-wrap-prg {
+  font-weight: 500;
+  font-size: 9px;
+  line-height: 150%;
+  letter-spacing: 0.04em;
+  color: #a0aec0;
+}
+
+.purchases-wrap-divider-wallet {
+  flex-grow: 1;
+  width: 100%;
+  height: 5px;
+  border-radius: 47px;
+  background: #c4bbff;
+  margin-top: auto;
+  position: relative;
+}
+
+.divider-wallet {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 47px;
+  width: 0;
+  height: 5px;
+  background: #6c5fbc;
+}
+
+@keyframes dividerWallet {
+  100% {
+    width: 75%;
+  }
+}
+
+.purchases-wrap-money {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 930px;
+  width: 29px;
+  height: 29px;
+  background: #f2fdf6;
+  margin-right: 11px;
+}
+
+.purchases-wrap-divider-money {
+  border-radius: 47px;
+  width: 100%;
+  height: 5px;
+  background: #fedb99;
+  position: relative;
+  margin-top: auto;
+}
+
+.divider-money {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 47px;
+  width: 0;
+  height: 5px;
+  background: #fbad18;
+}
+
+@keyframes dividerMoney {
+  100% {
+    width: 60%;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .purchases-container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .purchases-container-child {
+    margin: 0;
+    max-width: 400px;
+  }
+
+  .purchases-title {
+    font-size: 36px;
+    margin-bottom: 34px;
+  }
+
+  .purchases-spiral-arrow {
+    display: none;
+  }
+
+  .purchases-wrap {
+    max-width: 379px;
+    height: 331px;
+  }
+
+  .purchases-wrap-title {
+    font-size: 20px;
+  }
+
+  .purchases-wrap-btn {
+    width: 125px;
+    height: 37px;
+    font-size: 13px;
+  }
+
+  .purchases-wrap-list {
+    gap: 15px;
+  }
+
+  .purchases-wrap-list li {
+    height: 96px;
+  }
+
+  .purchases-wrap-wallet {
+    width: 35px;
+    height: 35px;
+    margin-right: 13px;
+  }
+
+  .purchases-wrap-wallet svg {
+    width: 17px;
+    height: 17px;
+  }
+
+  .purchases-wrap-text {
+    font-size: 13px;
+  }
+
+  .purchases-wrap-prg {
+    font-size: 11px;
+  }
+
+  .purchases-wrap-number {
+    font-size: 15px;
+  }
+
+  .purchases-wrap-divider-wallet {
+    height: 6px;
+  }
+  .divider-wallet {
+    height: 6px;
+  }
+
+  .purchases-wrap-money {
+    width: 35px;
+    height: 35px;
+    margin-right: 13px;
+  }
+
+  .purchases-wrap-money svg {
+    width: 17px;
+    height: 17px;
+  }
+
+  .purchases-wrap-divider-money {
+    height: 6px;
+  }
+  .divider-money {
+    height: 6px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .purchases-container-child {
+    max-width: 570px;
+  }
+
+  .purchases-title {
+    font-size: 50px;
+    line-height: 114%;
+    margin-bottom: 48px;
+  }
+
+  .purchases-wrap {
+    max-width: 534px;
+    height: 466px;
+    padding: 37px 37px 45px;
+  }
+
+  .purchases-wrap-title {
+    font-size: 28px;
+  }
+
+  .purchases-wrap-btn {
+    width: 175px;
+    height: 53px;
+    font-size: 18px;
+  }
+
+  .purchases-wrap-btn svg {
+    width: 17px;
+    height: 17px;
+  }
+
+  .purchases-wrap-list {
+    gap: 22px;
+  }
+
+  .purchases-wrap-list li {
+    height: 135px;
+  }
+
+  .purchases-wrap-wallet {
+    width: 50px;
+    height: 50px;
+    margin-right: 19px;
+  }
+
+  .purchases-wrap-wallet svg {
+    width: 25px;
+    height: 25px;
+  }
+
+  .purchases-wrap-text {
+    font-size: 18px;
+  }
+
+  .purchases-wrap-prg {
+    font-size: 15px;
+  }
+
+  .purchases-wrap-number {
+    font-size: 21px;
+  }
+
+  .purchases-wrap-divider-wallet {
+    height: 9px;
+  }
+
+  .divider-wallet {
+    height: 9px;
+  }
+
+  .purchases-wrap-money {
+    width: 50px;
+    height: 50px;
+    margin-right: 19px;
+  }
+
+  .purchases-wrap-money svg {
+    width: 25px;
+    height: 25px;
+  }
+
+  .purchases-wrap-divider-money {
+    height: 9px;
+  }
+  .divider-money {
+    height: 9px;
+  }
+}

@@ -1,3 +1,133 @@
-<section class="section">
-  <div class="container"></div>
+<section class="section curent your-section-js">
+  <div class="container purchases-container">
+    <div class="purchases-container-child">
+      <h2 class="purchases-title">
+        Control <span>Purchases</span> Via Dashboard
+      </h2>
+      <ul class="purchases-list">
+        <li>
+          <picture>
+            <source
+              srcset="
+                ./img/purchases/img-deskt-1-1x.png 1x,
+                ./img/purchases/img-deskt-1-2x.png 2x
+              "
+              media="(min-width: 1440px)"
+            />
+            <source
+              srcset="
+                ./img/purchases/img-tabl-1-1x.png 1x,
+                ./img/purchases/img-tabl-1-2x.png 2x
+              "
+              media="(min-width: 1024px)"
+            />
+            <source
+              srcset="
+                ./img/purchases/img-mob-1-1x.png 1x,
+                ./img/purchases/img-mob-1-2x.png 2x
+              "
+              media="(max-width: 1023px)"
+            />
+            <img src="./img/purchases/img-deskt-1-2x.png" alt="Purchases" />
+          </picture>
+        </li>
+        <li>
+          <picture>
+            <source
+              srcset="
+                ./img/purchases/img-deskt-2-1x.png 1x,
+                ./img/purchases/img-deskt-2-2x.png 2x
+              "
+              media="(min-width: 1440px)"
+            />
+            <source
+              srcset="
+                ./img/purchases/img-tabl-2-1x.png 1x,
+                ./img/purchases/img-tabl-2-2x.png 2x
+              "
+              media="(min-width: 1024px)"
+            />
+            <source
+              srcset="
+                ./img/purchases/img-mob-2-1x.png 1x,
+                ./img/purchases/img-mob-2-2x.png 2x
+              "
+              media="(max-width: 1023px)"
+            />
+            <img src="./img/purchases/img-deskt-2-2x.png" alt="Purchases" />
+          </picture>
+        </li>
+        <li>
+          <picture>
+            <source
+              srcset="
+                ./img/purchases/img-deskt-3-1x.png 1x,
+                ./img/purchases/img-deskt-3-2x.png 2x
+              "
+              media="(min-width: 1440px)"
+            />
+            <source
+              srcset="
+                ./img/purchases/img-tabl-3-1x.png 1x,
+                ./img/purchases/img-tabl-3-2x.png 2x
+              "
+              media="(min-width: 1024px)"
+            />
+            <source
+              srcset="
+                ./img/purchases/img-mob-3-1x.png 1x,
+                ./img/purchases/img-mob-3-2x.png 2x
+              "
+              media="(max-width: 1023px)"
+            />
+            <img src="./img/purchases/img-deskt-3-2x.png" alt="Purchases" />
+          </picture>
+        </li>
+      </ul>
+      <svg class="purchases-spiral-arrow" width="130px" height="100px">
+        <use href="./img/sprite.svg#icon-spiral-arrow"></use>
+      </svg>
+    </div>
+    <div class="purchases-wrap">
+      <h3 class="purchases-wrap-title">Purchases</h3>
+      <button class="purchases-wrap-btn" type="button">
+        This month
+        <svg width="12px" height="12px">
+          <use href="./img/sprite.svg#icon-arrow-down"></use>
+        </svg>
+      </button>
+      <ul class="purchases-wrap-list">
+        <li>
+          <div class="purchases-wrap-wallet">
+            <svg width="15px" height="15px">
+              <use href="./img/sprite.svg#icon-wallet"></use>
+            </svg>
+          </div>
+          <div>
+            <h4 class="purchases-wrap-text">Expense</h4>
+            <p class="purchases-wrap-prg">Increased By 10%</p>
+          </div>
+          <h4 class="purchases-wrap-number js-purchases-one-number">$0</h4>
+          <div class="purchases-wrap-divider-wallet">
+            <div class="divider-wallet"></div>
+          </div>
+        </li>
+        <li>
+          <div class="purchases-wrap-money">
+            <svg width="15px" height="15px">
+              <use href="./img/sprite.svg#icon-money"></use>
+            </svg>
+          </div>
+          <div>
+            <h4 class="purchases-wrap-text">Vocher Usage</h4>
+            <p class="purchases-wrap-prg">Increased By 5%</p>
+          </div>
+          <h4 class="purchases-wrap-number js-purchases-two-number">$0</h4>
+          <div class="purchases-wrap-divider-money">
+            <div class="divider-money"></div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
 </section>
