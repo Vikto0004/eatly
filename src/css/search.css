@@ -1,0 +1,237 @@
+.search-baner {
+  width: 100%;
+  border-radius: 15px;
+  background: #6c5fbc;
+  height: 100px;
+  background-image: url(/img/banner-background-mob.png);
+  position: relative;
+  padding: 12px 23px;
+}
+
+.search-baner-title {
+  font-weight: 800;
+  font-size: 30px;
+  color: #f7f8fa;
+}
+
+.search-baner-title span {
+  display: block;
+  font-weight: 800;
+  font-size: 35px;
+  color: #7c6fcd;
+  margin-top: 5px;
+}
+.search-baner-img {
+  position: absolute;
+  right: 14px;
+  top: 20px;
+}
+.search-baner-icon {
+  position: absolute;
+  right: -30px;
+  top: -15px;
+  stroke-dashoffset: -63;
+  stroke-dasharray: 63;
+  animation: draw 1.5s linear infinite;
+}
+
+.result-search {
+  display: none;
+}
+
+.search-container {
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+  max-width: 316px;
+  height: 495px;
+  box-shadow: 5px 8px 24px 1px rgba(108, 95, 188, 0.12);
+  background: #fff;
+  padding: 27px 27px 32px;
+}
+
+.search-category-wrap {
+  margin-bottom: 30px;
+}
+
+.search-category-title {
+  font-weight: 600;
+  font-size: 17px;
+  line-height: 135%;
+  color: #323142;
+  margin-bottom: 14px;
+}
+
+/* === category-list === */
+
+.search-category-list {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  height: 70px;
+}
+
+.search-category-list li {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 20%;
+  border-radius: 12px;
+  box-shadow: 0 12px 18px 0 rgba(135, 125, 200, 0.25);
+  cursor: pointer;
+  transition: all 0.8s ease;
+}
+
+.search-category-list li:nth-child(1) {
+  background-color: #ffde8a;
+}
+
+.search-category-input:checked + label {
+  border: #eda469 3px solid;
+  border-radius: 12px;
+
+  transform: scale(1.1);
+}
+
+.search-category-label-pizza {
+  color: #d69900;
+  font-weight: 500;
+  font-size: 9px;
+  text-align: center;
+}
+
+.search-category-list li:nth-child(2) {
+  background-color: #f7c5ba;
+}
+
+.search-category-label-dishes {
+  color: #cb4e32;
+  font-weight: 500;
+  font-size: 9px;
+  text-align: center;
+}
+
+.search-category-list li:nth-child(3) {
+  background-color: #edb66b;
+}
+
+.search-category-label-donut {
+  color: #d38311;
+  font-weight: 500;
+  font-size: 9px;
+  text-align: center;
+}
+
+/* === search-sort === */
+
+.search-sort-wrap {
+  margin-bottom: 30px;
+}
+
+.search-sort-title {
+  font-weight: 600;
+  font-size: 17px;
+  line-height: 135%;
+  color: #323142;
+  margin-bottom: 10px;
+}
+
+.search-sort-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 8px;
+}
+
+.search-sort-checkbox-label {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 187%;
+  color: #acadb9;
+  display: flex;
+  align-items: center;
+}
+
+.search-sort-checkbox-label span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  border: 1px solid #6c5fbc;
+  fill: transparent;
+  margin-right: 8px;
+}
+
+.search-sort-item input:checked + .search-sort-checkbox-label span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #6c5fbc;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  border: 1px solid transparent;
+  fill: #f4f4fd;
+}
+
+/* === earch-price === */
+
+.search-price-wrap {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: auto;
+  position: relative;
+}
+.search-price-title {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 135%;
+  color: #323142;
+  margin-bottom: 15px;
+}
+.search-price-liner {
+  border: 0.74px solid #6c5fbc;
+  border-radius: 7px;
+  width: 253px;
+  height: 4px;
+  background: #6c5fbc;
+  position: relative;
+  margin-bottom: 10px;
+}
+.search-price-circle {
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  background-color: #6c5fbc;
+  border: #bbb6d7 3.69px solid;
+  position: absolute;
+  top: 30px;
+  left: 0;
+}
+.search-price-list {
+  display: flex;
+  justify-content: space-around;
+}
+
+.search-price-list li p {
+  font-weight: 500;
+  font-size: 8px;
+  line-height: 281%;
+  color: #c2c3cb;
+}
+
+.search-btn {
+  height: 50px;
+  width: 100%;
+  background: #6c5fbc;
+  border-radius: 11px;
+  border: none;
+  font-weight: 600;
+  font-size: 11px;
+  letter-spacing: -0.01em;
+  color: #fff3eb;
+}

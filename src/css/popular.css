@@ -12,6 +12,9 @@
   line-height: 73%;
   color: #323142;
   margin-bottom: 30px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
 }
 
 @media screen and (min-width: 1440px) {

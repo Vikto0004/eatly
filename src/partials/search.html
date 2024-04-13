@@ -1,3 +1,178 @@
 <section class="section">
-  <div class="container"></div>
+  <div class="container">
+    <div class="search-baner">
+      <h2 class="search-baner-title">50% OFF<span>WEEKENDS</span></h2>
+      <picture>
+        <source
+          srcset="
+            ./img/dishes-list/food-deskt-2-1x.png 1x,
+            ./img/dishes-list/food-deskt-2-2x.png 2x
+          "
+          media="(min-width: 1440px)"
+        />
+        <source
+          srcset="
+            ./img/dishes-list/food-tabl-2-1x.png 1x,
+            ./img/dishes-list/food-tabl-2-2x.png 2x
+          "
+          media="(min-width: 1024px)"
+        />
+        <source
+          srcset="
+            ./img/dishes-list/dishes-list-2-1x.png 1x,
+            ./img/dishes-list/dishes-list-2-2x.png 2x
+          "
+          media="(max-width: 1023px)"
+        />
+        <img
+          class="search-baner-img"
+          src="./img/dishes-list/food-deskt-2-2x.png"
+          alt="menu"
+        />
+      </picture>
+      <svg class="search-baner-icon" width="30px" height="34px">
+        <use href="./img/sprite.svg#icon-Illustration-3"></use>
+      </svg>
+    </div>
+    <div class="search-container">
+      <div class="search-category-wrap">
+        <h3 class="search-category-title">Category</h3>
+        <ul class="search-category-list">
+          <li>
+            <input
+              type="radio"
+              name="sort-group"
+              id="pizza"
+              checked
+              class="search-category-input visually-hidden"
+            />
+            <label class="search-category-label-pizza" for="pizza">
+              <span>
+                <svg width="30px" height="30px">
+                  <use href="./img/sprite.svg#icon-pizza"></use>
+                </svg>
+              </span>
+              Pizza
+            </label>
+          </li>
+          <li>
+            <input
+              type="radio"
+              name="sort-group"
+              id="dishes"
+              class="search-category-input visually-hidden"
+            />
+            <label class="search-category-label-dishes" for="dishes">
+              <span>
+                <svg width="30px" height="30px">
+                  <use href="./img/sprite.svg#icon-salad"></use>
+                </svg>
+              </span>
+              Dishes
+            </label>
+          </li>
+          <li>
+            <input
+              type="radio"
+              name="sort-group"
+              id="donut"
+              class="search-category-input visually-hidden"
+            />
+            <label class="search-category-label-donut" for="donut">
+              <span>
+                <svg width="30px" height="30px">
+                  <use href="./img/sprite.svg#icon-donat"></use>
+                </svg>
+              </span>
+              Donut
+            </label>
+          </li>
+        </ul>
+      </div>
+      <div class="search-sort-wrap">
+        <h3 class="search-sort-title">Sort By</h3>
+        <ul class="search-sort-list">
+          <li class="search-sort-item">
+            <input
+              type="radio"
+              name="sort"
+              id="recomended"
+              checked
+              class="visually-hidden"
+            />
+            <label class="search-sort-checkbox-label" for="recomended">
+              <span>
+                <svg width="8px" height="8px">
+                  <use href="./img/sprite.svg#icon-checkmark"></use>
+                </svg>
+              </span>
+              Recomended
+            </label>
+          </li>
+          <li class="search-sort-item">
+            <input
+              type="radio"
+              name="sort"
+              id="popular"
+              class="visually-hidden"
+            />
+            <label class="search-sort-checkbox-label" for="popular">
+              <span>
+                <svg width="8px" height="8px">
+                  <use href="./img/sprite.svg#icon-checkmark"></use>
+                </svg>
+              </span>
+              Most Popular
+            </label>
+          </li>
+          <li class="search-sort-item">
+            <input
+              type="radio"
+              name="sort"
+              id="lowest-price"
+              class="visually-hidden"
+            />
+            <label class="search-sort-checkbox-label" for="lowest-price">
+              <span>
+                <svg width="8px" height="8px">
+                  <use href="./img/sprite.svg#icon-checkmark"></use>
+                </svg>
+              </span>
+              The lowest price
+            </label>
+          </li>
+          <li class="search-sort-item">
+            <input
+              type="radio"
+              name="sort"
+              id="highest-price"
+              class="visually-hidden"
+            />
+            <label class="search-sort-checkbox-label" for="highest-price">
+              <span>
+                <svg width="8px" height="8px">
+                  <use href="./img/sprite.svg#icon-checkmark"></use>
+                </svg>
+              </span>
+              The highest price
+            </label>
+          </li>
+        </ul>
+      </div>
+      <div class="search-price-wrap">
+        <h3 class="search-price-title">Price</h3>
+        <div class="search-price-liner"></div>
+        <div class="search-price-circle"></div>
+        <ul class="search-price-list">
+          <li><p>$0</p></li>
+          <li><p>$25</p></li>
+          <li><p>$50</p></li>
+          <li><p>$100</p></li>
+          <li><p>$500</p></li>
+          <li><p>$1000</p></li>
+        </ul>
+      </div>
+      <button class="search-btn" type="button">Aplly</button>
+    </div>
+  </div>
 </section>

@@ -1,9 +1,290 @@
 <section class="section">
   <div class="container">
     <load src="partials/menu-list.html" />
-    <h2 class="pizza-title">Popular 🔥</h2>
-    <load src="partials/dishes-list.html" />
+    <h2 class="pizza-title js-dishes">Dishes <svg width="30px" height="30px">
+              <use href="./img/sprite.svg#icon-salad"></use>
+            </svg></h2>
     <ul class="popular-list">
+      <li class="dishes-list-item">
+    <picture>
+      <source
+        srcset="
+          ./img/dishes-list/food-deskt-1-1x.png 1x,
+          ./img/dishes-list/food-deskt-1-2x.png 2x
+        "
+        media="(min-width: 1440px)"
+      />
+      <source
+        srcset="
+          ./img/dishes-list/food-tabl-1-1x.png 1x,
+          ./img/dishes-list/food-tabl-1-2x.png 2x
+        "
+        media="(min-width: 1024px)"
+      />
+      <source
+        srcset="
+          ./img/dishes-list/dishes-list-1-1x.png 1x,
+          ./img/dishes-list/dishes-list-1-2x.png 2x
+        "
+        media="(max-width: 1023px)"
+      />
+      <img src="./img/dishes-list/food-deskt-1-2x.png" alt="menu" />
+    </picture>
+    <a class="dishes-list-heart-link">
+      <svg
+        class="dishes-list-icon"
+        width="18px"
+        height="18px"
+        style="fill: #ffffff"
+        id="heardIconID1"
+      >
+        <use href="./img/sprite.svg#icon-heart"></use>
+      </svg>
+    </a>
+    <div class="dishes-list-wrap">
+      <p class="dishes-wrap-text">Healthy</p>
+      <h3 class="dishes-wrap-title">Chicken Hell</h3>
+      <p class="dishes-wrap-prg">
+        24min •
+        <svg class="dishes-wrap-star" width="10px" height="10px">
+          <use href="./img/sprite.svg#icon-star"></use>
+        </svg>
+        4.8
+      </p>
+    </div>
+    <div class="dishes-list-container">
+      <p class="dishes-container-text">$12.<span>99</span></p>
+      <button class="dishes-container-btn" id="openBackrop">
+        <svg width="10px" height="10px">
+          <use href="./img/sprite.svg#icon-plus"></use>
+        </svg>
+      </button>
+    </div>
+  </li>
+  <li class="dishes-list-item">
+    <picture>
+      <source
+        srcset="
+          ./img/dishes-list/food-deskt-2-1x.png 1x,
+          ./img/dishes-list/food-deskt-2-2x.png 2x
+        "
+        media="(min-width: 1440px)"
+      />
+      <source
+        srcset="
+          ./img/dishes-list/food-tabl-2-1x.png 1x,
+          ./img/dishes-list/food-tabl-2-2x.png 2x
+        "
+        media="(min-width: 1024px)"
+      />
+      <source
+        srcset="
+          ./img/dishes-list/dishes-list-2-1x.png 1x,
+          ./img/dishes-list/dishes-list-2-2x.png 2x
+        "
+        media="(max-width: 1023px)"
+      />
+      <img src="./img/dishes-list/food-deskt-2-2x.png" alt="menu" />
+    </picture>
+    <a class="dishes-list-heart-link">
+      <svg
+        class="dishes-list-icon"
+        width="18px"
+        height="18px"
+        style="fill: #ffffff"
+        id="heardIconID2"
+      >
+        <use href="./img/sprite.svg#icon-heart"></use>
+      </svg>
+    </a>
+    <div class="dishes-list-wrap">
+      <p class="dishes-wrap-text">Trending</p>
+      <h3 class="dishes-wrap-title">Cabbage Rolls</h3>
+      <p class="dishes-wrap-prg">
+        34min •
+        <svg class="dishes-wrap-star" width="10px" height="10px">
+          <use href="./img/sprite.svg#icon-star"></use>
+        </svg>
+        4.9
+      </p>
+    </div>
+    <div class="dishes-list-container">
+      <p class="dishes-container-text">$19.<span>99</span></p>
+      <button class="dishes-container-btn" id="openBackrop">
+        <svg width="10px" height="10px">
+          <use href="./img/sprite.svg#icon-plus"></use>
+        </svg>
+      </button>
+    </div>
+  </li>
+  <li class="dishes-list-item">
+    <picture>
+      <source
+        srcset="
+          ./img/dishes-list/food-deskt-3-1x.png 1x,
+          ./img/dishes-list/food-deskt-3-2x.png 2x
+        "
+        media="(min-width: 1440px)"
+      />
+      <source
+        srcset="
+          ./img/dishes-list/food-tabl-3-1x.png 1x,
+          ./img/dishes-list/food-tabl-3-2x.png 2x
+        "
+        media="(min-width: 1024px)"
+      />
+      <source
+        srcset="
+          ./img/dishes-list/dishes-list-3-1x.png 1x,
+          ./img/dishes-list/dishes-list-3-2x.png 2x
+        "
+        media="(max-width: 1023px)"
+      />
+      <img src="./img/dishes-list/food-deskt-3-2x.png" alt="menu" />
+    </picture>
+    <a class="dishes-list-heart-link">
+      <svg
+        class="dishes-list-icon"
+        width="18px"
+        height="18px"
+        style="fill: #ffffff"
+        id="heardIconID3"
+      >
+        <use href="./img/sprite.svg#icon-heart"></use>
+      </svg>
+    </a>
+    <div class="dishes-list-wrap">
+      <p class="dishes-wrap-text">Supreme</p>
+      <h3 class="dishes-wrap-title">Swe Dish</h3>
+      <p class="dishes-wrap-prg">
+        34min •
+        <svg class="dishes-wrap-star" width="10px" height="10px">
+          <use href="./img/sprite.svg#icon-star"></use>
+        </svg>
+        4.9
+      </p>
+    </div>
+    <div class="dishes-list-container">
+      <p class="dishes-container-text">$19.<span>99</span></p>
+      <button class="dishes-container-btn" id="openBackrop">
+        <svg width="10px" height="10px">
+          <use href="./img/sprite.svg#icon-plus"></use>
+        </svg>
+      </button>
+    </div>
+  </li>
+  <li class="dishes-list-item">
+    <picture>
+      <source
+        srcset="
+          ./img/dishes-list/food-deskt-1-1x.png 1x,
+          ./img/dishes-list/food-deskt-1-2x.png 2x
+        "
+        media="(min-width: 1440px)"
+      />
+      <source
+        srcset="
+          ./img/dishes-list/food-tabl-1-1x.png 1x,
+          ./img/dishes-list/food-tabl-1-2x.png 2x
+        "
+        media="(min-width: 1024px)"
+      />
+      <source
+        srcset="
+          ./img/dishes-list/dishes-list-1-1x.png 1x,
+          ./img/dishes-list/dishes-list-1-2x.png 2x
+        "
+        media="(max-width: 1023px)"
+      />
+      <img src="./img/dishes-list/food-deskt-1-2x.png" alt="menu" />
+    </picture>
+    <a class="dishes-list-heart-link">
+      <svg
+        class="dishes-list-icon"
+        width="18px"
+        height="18px"
+        style="fill: #ffffff"
+        id="heardIconID4"
+      >
+        <use href="./img/sprite.svg#icon-heart"></use>
+      </svg>
+    </a>
+    <div class="dishes-list-wrap">
+      <p class="dishes-wrap-text">Healthy</p>
+      <h3 class="dishes-wrap-title">Chicken Hell</h3>
+      <p class="dishes-wrap-prg">
+        24min •
+        <svg class="dishes-wrap-star" width="10px" height="10px">
+          <use href="./img/sprite.svg#icon-star"></use>
+        </svg>
+        4.8
+      </p>
+    </div>
+    <div class="dishes-list-container">
+      <p class="dishes-container-text">$12.<span>99</span></p>
+      <button class="dishes-container-btn" id="openBackrop">
+        <svg width="10px" height="10px">
+          <use href="./img/sprite.svg#icon-plus"></use>
+        </svg>
+      </button>
+    </div>
+  </li>
+  <li class="dishes-list-item">
+    <picture>
+      <source
+        srcset="
+          ./img/dishes-list/food-deskt-2-1x.png 1x,
+          ./img/dishes-list/food-deskt-2-2x.png 2x
+        "
+        media="(min-width: 1440px)"
+      />
+      <source
+        srcset="
+          ./img/dishes-list/food-tabl-2-1x.png 1x,
+          ./img/dishes-list/food-tabl-2-2x.png 2x
+        "
+        media="(min-width: 1024px)"
+      />
+      <source
+        srcset="
+          ./img/dishes-list/dishes-list-2-1x.png 1x,
+          ./img/dishes-list/dishes-list-2-2x.png 2x
+        "
+        media="(max-width: 1023px)"
+      />
+      <img src="./img/dishes-list/food-deskt-2-2x.png" alt="menu" />
+    </picture>
+    <a class="dishes-list-heart-link">
+      <svg
+        class="dishes-list-icon"
+        width="18px"
+        height="18px"
+        style="fill: #ffffff"
+        id="heardIconID5"
+      >
+        <use href="./img/sprite.svg#icon-heart"></use>
+      </svg>
+    </a>
+    <div class="dishes-list-wrap">
+      <p class="dishes-wrap-text">Trending</p>
+      <h3 class="dishes-wrap-title">Swe Dish</h3>
+      <p class="dishes-wrap-prg">
+        34min •
+        <svg class="dishes-wrap-star" width="10px" height="10px">
+          <use href="./img/sprite.svg#icon-star"></use>
+        </svg>
+        4.9
+      </p>
+    </div>
+    <div class="dishes-list-container">
+      <p class="dishes-container-text">$19.<span>99</span></p>
+      <button class="dishes-container-btn" id="openBackrop">
+        <svg width="10px" height="10px">
+          <use href="./img/sprite.svg#icon-plus"></use>
+        </svg>
+      </button>
+    </div>
+  </li>
   <li class="dishes-list-item">
     <picture>
       <source
@@ -349,7 +630,7 @@
     </div>
   </li>
 </ul>
-<h2 class="pizza-title">Pizza
+<h2 class="pizza-title js-pizza">Pizza
   <svg width="25px" height="25px">
     <use href="./img/sprite.svg#icon-pizza"></use>
   </svg>
@@ -686,7 +967,7 @@
     </div>
   </li>
 </ul>
-<h2 class="pizza-title">Donat
+<h2 class="pizza-title js-donat">Donat
   <svg width="25px" height="25px">
     <use href="./img/sprite.svg#icon-donat"></use>
   </svg>

@@ -6,7 +6,6 @@ const product = document.querySelector('#product');
 const numberProduct = document.querySelector('#numberProduct');
 const priceProduct = document.querySelector('#priceProduct');
 const imgProduct = document.querySelector('#imgProduct');
-
 const plusProduct = document.querySelector('#plusProduct');
 const minusProduct = document.querySelector('#minusProduct');
 
