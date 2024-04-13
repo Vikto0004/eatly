@@ -1,3 +1,41 @@
 <section class="section js-result-search">
-  <div class="container"></div>
+  <div class="container">
+    <div class="search-baner">
+      <h2 class="search-baner-title">50% OFF<span>WEEKENDS</span></h2>
+      <picture>
+        <source
+          srcset="
+            ./img/dishes-list/food-deskt-2-1x.png 1x,
+            ./img/dishes-list/food-deskt-2-2x.png 2x
+          "
+          media="(min-width: 1440px)"
+        />
+        <source
+          srcset="
+            ./img/dishes-list/food-tabl-2-1x.png 1x,
+            ./img/dishes-list/food-tabl-2-2x.png 2x
+          "
+          media="(min-width: 1024px)"
+        />
+        <source
+          srcset="
+            ./img/dishes-list/dishes-list-2-1x.png 1x,
+            ./img/dishes-list/dishes-list-2-2x.png 2x
+          "
+          media="(max-width: 1023px)"
+        />
+        <img
+          class="search-baner-img"
+          src="./img/dishes-list/food-deskt-2-2x.png"
+          alt="menu"
+        />
+      </picture>
+      <svg class="search-baner-icon" width="30px" height="34px">
+        <use href="./img/sprite.svg#icon-Illustration-3"></use>
+      </svg>
+    </div>
+    <h2 class="pizza-title js-result-search-titlte"></h2>
+    <ul class="popular-list js-result-search-list"></ul>
+    <a class="quality-btn" href="./menu.html">Try again</a>
+  </div>
 </section>

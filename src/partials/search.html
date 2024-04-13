@@ -1,5 +1,5 @@
 <section class="section">
-  <div class="container">
+  <div class="container search-wraping">
     <div class="search-baner">
       <h2 class="search-baner-title">50% OFF<span>WEEKENDS</span></h2>
       <picture>
@@ -46,7 +46,10 @@
               checked
               class="search-category-input visually-hidden"
             />
-            <label class="search-category-label-pizza" for="pizza">
+            <label
+              class="search-category-label search-category-label-pizza"
+              for="pizza"
+            >
               <span>
                 <svg width="30px" height="30px">
                   <use href="./img/sprite.svg#icon-pizza"></use>
@@ -62,7 +65,10 @@
               id="dishes"
               class="search-category-input visually-hidden"
             />
-            <label class="search-category-label-dishes" for="dishes">
+            <label
+              class="search-category-label search-category-label-dishes"
+              for="dishes"
+            >
               <span>
                 <svg width="30px" height="30px">
                   <use href="./img/sprite.svg#icon-salad"></use>
@@ -75,10 +81,13 @@
             <input
               type="radio"
               name="sort-group"
-              id="donut"
+              id="donat"
               class="search-category-input visually-hidden"
             />
-            <label class="search-category-label-donut" for="donut">
+            <label
+              class="search-category-label search-category-label-donut"
+              for="donat"
+            >
               <span>
                 <svg width="30px" height="30px">
                   <use href="./img/sprite.svg#icon-donat"></use>
@@ -161,18 +170,68 @@
       </div>
       <div class="search-price-wrap">
         <h3 class="search-price-title">Price</h3>
-        <div class="search-price-liner"></div>
-        <div class="search-price-circle"></div>
+        <div class="search-price-slider">
+          <output class="price-slider-output" for="fader" id="volume">0</output>
+          <input
+            type="range"
+            name="price-slider"
+            id="fader"
+            min="0"
+            max="125"
+            value="0"
+            step="1"
+            class="price-slider-input"
+          />
+        </div>
         <ul class="search-price-list">
           <li><p>$0</p></li>
           <li><p>$25</p></li>
           <li><p>$50</p></li>
+          <li><p>$75</p></li>
           <li><p>$100</p></li>
-          <li><p>$500</p></li>
-          <li><p>$1000</p></li>
+          <li><p>$125</p></li>
         </ul>
       </div>
-      <button class="search-btn" type="button">Aplly</button>
+      <button class="search-aplly-btn" type="button">Aplly</button>
+      <a href="./result-search.html"></a>
+    </div>
+    <div class="search-form-wrap">
+      <form class="search-form">
+        <input
+          class="search-input"
+          type="text"
+          value=""
+          required
+          placeholder="Search"
+        />
+        <button class="search-input-btn" type="submit">
+          <svg width="15px" height="19px">
+            <use href="./img/sprite.svg#icon-search"></use>
+          </svg>
+        </button>
+      </form>
+
+      <input
+        class="visually-hidden"
+        type="radio"
+        name="choice"
+        id="food"
+        checked
+      />
+      <label class="search-choice-label search-choice-label-left" for="food"
+        >Food</label
+      >
+      <input
+        class="visually-hidden"
+        type="radio"
+        name="choice"
+        id="resturent"
+      />
+      <label
+        class="search-choice-label search-choice-label-right"
+        for="resturent"
+        >Resturent</label
+      >
     </div>
   </div>
 </section>
