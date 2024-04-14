@@ -23,11 +23,14 @@
   />
   
   <title>Eatly</title>
+  <script type="module" crossorigin src="/eatly/commonHelpers9.js"></script>
+  <link rel="modulepreload" crossorigin href="/eatly/assets/modulepreload-polyfill-3cfb730f.js">
+  <link rel="modulepreload" crossorigin href="/eatly/assets/model-order-a33e7874.js">
   <link rel="stylesheet" href="/eatly/assets/styles-a4be9d58.css">
 </head>
 
   <body>
-    <!-- sign-up -->
+    <!-- result-search -->
     <header>
   <div class="container">
     <div class="header-box">
@@ -66,87 +69,36 @@
 </header>
 
     <main>
-      <section class="section-sign-up">
+      <section class="section js-result-search">
   <div class="container">
-    <h1 class="title-sign-up">
-      Sign Up To <span class="title-highlighted">eatly</span>
-    </h1>
-    <form class="login-options">
-      <button class="" type="submit">
-        <svg class="" width="20" height="24">
-          <use
-            class="google-icon"
-            href="/eatly/assets/login-sprite-e7cba52d.svg#icon-google"
-          ></use>
-        </svg>
-      </button>
-      <button class="" type="submit">
-        <svg class="" width="20" height="24">
-          <use
-            class="ios-apple-icon"
-            href="/eatly/assets/login-sprite-e7cba52d.svg#icon-ios-apple"
-          ></use>
-        </svg>
-      </button>
-    </form>
-
-    <p class="text-or">OR</p>
-
-    <form class="sign-up-form" autocomplete="on">
-      <!-- full name -->
-      <div class="input-wrap">
-        <label class="" for="user-name-field"></label>
-        <input
-          class="input-sign-up input-name"
-          id="user-name-field"
-          type="text"
-          name="user-name"
-          placeholder="FULL NAME"
+    <div class="search-baner">
+      <h2 class="search-baner-title">50% OFF<span>WEEKENDS</span></h2>
+      <picture>
+        <source
+          srcset="/eatly/assets/food-deskt-2-1x-ac986fb8.png 1x, /eatly/assets/food-deskt-2-2x-1bfe7555.png 2x"
+          media="(min-width: 1440px)"
         />
-        <svg class="form-icon" width="17" height="18">
-          <use href="/eatly/assets/login-sprite-e7cba52d.svg#icon-user"></use>
-        </svg>
-      </div>
-
-      <!-- email -->
-      <div class="input-wrap">
-        <label class="" for="user-email-filed"></label>
-        <input
-          class="input-sign-up input-email"
-          id="user-email-filed"
-          type="email"
-          name="user-email"
-          placeholder="EMAIL"
+        <source
+          srcset="/eatly/assets/food-tabl-2-1x-1e2386f1.png 1x, /eatly/assets/food-tabl-2-2x-ba7cf205.png 2x"
+          media="(min-width: 1024px)"
         />
-        <svg class="form-icon" width="18" height="14">
-          <use href="/eatly/assets/login-sprite-e7cba52d.svg#icon-email"></use>
-        </svg>
-      </div>
-
-      <!-- password -->
-      <div class="input-wrap">
-        <label class="" for="user-password-field"></label>
-        <input
-          class="input-sign-up input-password"
-          id="user-password-field"
-          type="password"
-          name="user-password"
-          placeholder="PASSWORD"
+        <source
+          srcset="/eatly/assets/dishes-list-2-1x-0e1ae36f.png 1x, /eatly/assets/dishes-list-2-2x-a0e4a4fc.png 2x"
+          media="(max-width: 1023px)"
         />
-        <svg class="form-icon icon-lock" width="15" height="19">
-          <use href="/eatly/assets/login-sprite-e7cba52d.svg#icon-lock"></use>
-        </svg>
-        <svg class="icon-password" width="17" height="16">
-          <use href="/eatly/assets/login-sprite-e7cba52d.svg#icon-hide-eye"></use>
-        </svg>
-      </div>
-
-      <button class="btn-sign-up" type="submit">SIGN UP</button>
-
-      <p class="form-text">
-        Already Have An Account? <a href="/" class="link-log-in">Log In</a>
-      </p>
-    </form>
+        <img
+          class="search-baner-img"
+          src="/eatly/assets/food-deskt-2-2x-1bfe7555.png"
+          alt="menu"
+        />
+      </picture>
+      <svg class="search-baner-icon" width="30px" height="34px">
+        <use href="/eatly/assets/sprite-6f261426.svg#icon-Illustration-3"></use>
+      </svg>
+    </div>
+    <h2 class="pizza-title js-result-search-titlte"></h2>
+    <ul class="popular-list js-result-search-list"></ul>
+    <a class="quality-btn" href="./menu.html">Try again</a>
   </div>
 </section>
 
@@ -250,5 +202,129 @@
   </div>
 </footer>
 
+    <div class="backrop">
+  <div class="model-order">
+    <button
+      type="button"
+      class="order-close-wrap close-btn-js"
+      id="closeBackrop"
+    >
+      <svg width="10px" height="10px">
+        <use href="/eatly/assets/sprite-6f261426.svg#icon-close-order"></use>
+      </svg>
+    </button>
+    <form class="order-form" action="">
+      <input
+        class="model-order-input"
+        type="text"
+        placeholder="Enter NAME"
+        required
+      />
+      <input
+        class="model-order-input"
+        type="text"
+        placeholder="Enter EMAIL"
+        required
+      />
+      <input
+        class="model-order-input"
+        type="text"
+        placeholder="Enter ADRESS"
+        required
+      />
+    </form>
+    <div class="model-order-container">
+      <div class="order-wrap">
+        <div class="order-wrap-name">
+          <p class="order-wrap-text">Product name:</p>
+          <p class="order-wrap-variables" id="product">product*</p>
+        </div>
+        <ul class="order-list-price">
+          <li>
+            <p class="order-wrap-text">Number:</p>
+            <p class="order-wrap-variables" id="numberProduct">0</p>
+          </li>
+          <li>
+            <p class="order-wrap-text">Price:</p>
+            <p class="order-wrap-variables" id="priceProduct">0</p>
+          </li>
+        </ul>
+        <div class="order-wrap-button">
+          <button class="order-wrap-btn" type="button" id="minusProduct">
+            <svg width="10px" height="10px">
+              <use href="/eatly/assets/sprite-6f261426.svg#icon-minus"></use>
+            </svg>
+          </button>
+          <button class="order-wrap-btn" type="button" id="plusProduct">
+            <svg width="10px" height="10px">
+              <use href="/eatly/assets/sprite-6f261426.svg#icon-plus"></use>
+            </svg>
+          </button>
+        </div>
+      </div>
+      <picture id="imgProduct" class="model-img">
+        <img src="/eatly/assets/food-deskt-2-1x-ac986fb8.png" alt="menu" />
+      </picture>
+      <div class="model-delete">
+        <button type="button" class="button-open-delete" id="buttonOpenDelete">
+          <!-- <svg width="16px" height="30px">
+            <use href="./img/sprite.svg#icon-three-dots"></use>
+          </svg> -->
+          <svg width="16px" height="20px">
+            <use href="/eatly/assets/sprite-6f261426.svg#icon-menu-bar"></use>
+          </svg>
+        </button>
+        <div class="delete-wrap">
+          <button type="button">
+            <svg width="16px" height="30px">
+              <use href="/eatly/assets/sprite-6f261426.svg#icon-dump"></use>
+            </svg>
+            Delete
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="order-container">
+      <button class="button-basket target-btn" type="button">
+        Continue Shopping
+      </button>
+      <button class="button-order" type="button">Order</button>
+    </div>
+  </div>
+</div>
+
+    <div class="basket-modal">
+  <div class="basket">
+    <ul class="header-login">
+      <li><a href="./sign-in.html" class="header-login-item">Login</a></li>
+      <li>
+        <a href="./sign-up.html" class="header-login-item signup">Sign Up</a>
+      </li>
+    </ul>
+    <button type="button" class="basket-close-btn" id="closeBasket">
+      <svg width="10px" height="10px">
+        <use href="/eatly/assets/sprite-6f261426.svg#icon-close-order"></use>
+      </svg>
+    </button>
+    <div class="empty-basket">
+      <svg>
+        <use href="/eatly/assets/sprite-6f261426.svg#icon-basket"></use>
+      </svg>
+      <p class="basket-modal-heading">The basket is empty</p>
+      <p class="basket-modal-caption">But it's never too late to fix it :)</p>
+    </div>
+    <div class="basket-swiper">
+      <div class="basket-container"></div>
+    </div>
+    <div class="basket-wrap">
+      <p class="basket-wrap-total">Total price</p>
+      <p class="basket-wrap-price">...</p>
+      <button class="basket-wrap-btn" type="button">To Order</button>
+    </div>
+  </div>
+</div>
+
+    
+    
   </body>
 </html>
