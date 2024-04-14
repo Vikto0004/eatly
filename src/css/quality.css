@@ -64,7 +64,7 @@
 }
 .quality-spiral-icon use {
   stroke: #6c5fbc;
-  stroke-dashoffset: 330; /* Значення, що протилежне до значення, встановленого в 0 */
+  stroke-dashoffset: 330;
   stroke-dasharray: 330;
   animation: drawTwo 3s backwards infinite;
   fill: none;
