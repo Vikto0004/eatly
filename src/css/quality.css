@@ -64,7 +64,7 @@
 }
 .quality-spiral-icon use {
   stroke: #6c5fbc;
-  stroke-dashoffset: 330;
+  stroke-dashoffset: 320;
   stroke-dasharray: 330;
   animation: drawTwo 3s backwards infinite;
   fill: none;
@@ -72,7 +72,10 @@
 
 @keyframes drawTwo {
   0% {
-    stroke-dashoffset: -320;
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: 670;
   }
 }
 
@@ -89,14 +92,16 @@
   right: 40px;
   stroke: rgb(0, 0, 0);
   stroke-width: 2px;
-  stroke-dashoffset: -63;
-  stroke-dasharray: 63;
-  animation: draw 1.5s linear infinite;
+  stroke-dasharray: 100%;
+  animation: draw 1.3s ease-in-out infinite;
 }
 
 @keyframes draw {
+  0% {
+    stroke-dashoffset: 0%;
+  }
   100% {
-    stroke-dashoffset: 63;
+    stroke-dashoffset: 200%;
   }
 }
 

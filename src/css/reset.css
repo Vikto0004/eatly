@@ -5,6 +5,7 @@ body {
   font-weight: 600;
   font-style: normal;
   background-color: #f9f9f9;
+  padding-top: 125px;
 }
 
 h1,
@@ -61,6 +62,12 @@ img {
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
   border: 0;
+}
+
+mark {
+  background-color: rgba(108, 95, 188, 0.5);
+  border-radius: 5px;
+  color: #606060;
 }
 
 @media screen and (min-width: 1024px) {
