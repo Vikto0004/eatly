@@ -1,3 +1,7 @@
+.section-result-search {
+  padding: 20px 0 100px;
+}
+
 .popular-list {
   display: flex;
   flex-wrap: wrap;
@@ -7,6 +11,10 @@
   position: relative;
 }
 
+.result-search-baner-wrap {
+  margin-bottom: 50px;
+}
+
 .result-search-list {
   display: flex;
 }
@@ -14,22 +22,41 @@
 .result-search-list li {
   border: 1.59px solid #f4f4f6;
   border-radius: 30px;
-  width: 1237px;
-  height: 497px;
-  box-shadow: 8px 91px 45px 0 rgba(229, 229, 229, 0.7);
   background: #fff;
   display: flex;
   flex-direction: column;
+  max-width: 315px;
+  height: 236px;
 }
 
 .result-search-wrap {
-  display: flex;
+  display: grid;
   margin: auto 0;
+}
+
+.result-search-wrap h2 {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 162%;
+  color: #323142;
+}
+
+.result-search-wrap p {
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 133%;
+  color: #8e97a6;
+  grid-column: 1;
+}
+
+.result-search-wrap button {
+  margin: 0;
+  grid-column: 2;
 }
 
 .result-search-img {
   width: 100%;
-  height: 378px;
+  height: 140px;
   border-top-left-radius: 30px;
   border-top-right-radius: 30px;
   object-fit: cover;
@@ -62,9 +89,73 @@
   border-radius: 5px;
 }
 
+.result-search-titlte {
+  font-weight: 600;
+  font-size: 18px;
+  color: #323142;
+  margin-bottom: 45px;
+  display: flex;
+  gap: 3px;
+  align-items: center;
+  justify-content: center;
+}
+
+.result-search-titlte svg {
+  fill: #6c5fbc;
+}
+
+.result-search-titlte span {
+  color: #6c5fbc;
+}
+
+.result-search-wrap {
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+@media screen and (min-width: 1024px) {
+  .popular-list {
+    margin-bottom: 60px;
+  }
+
+  .result-search-list li {
+    width: 888px;
+    max-width: 888px;
+    height: 353px;
+  }
+
+  .result-search-img {
+    height: 268px;
+  }
+
+  .result-search-wrap {
+    display: flex;
+  }
+
+  .result-search-titlte {
+    font-size: 26px;
+    gap: 8px;
+  }
+}
+
 @media screen and (min-width: 1440px) {
+  .section-result-search {
+    padding: 20px 0 100px;
+  }
+
   .popular-list {
     column-gap: 31px;
+    margin-bottom: 80px;
+  }
+
+  .result-search-list li {
+    max-width: 1237px;
+    width: 1237px;
+    height: 497px;
+  }
+
+  .result-search-baner-wrap {
+    margin-bottom: 80px;
   }
 
   .result-search-img {
@@ -93,5 +184,10 @@
   .result-search-wrap p svg {
     width: 34px;
     height: 34px;
+  }
+
+  .result-search-titlte {
+    font-size: 32px;
+    gap: 10px;
   }
 }

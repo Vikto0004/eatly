@@ -5,6 +5,9 @@ const numberProducts = localStorage.getItem('numberResultSearch');
 
 // -- створення смайлика svg, текст і додавання в потрібний елемент -- //
 
+const spanEl = document.createElement('span');
+spanEl.textContent = 'found';
+
 const svgIcon = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
 svgIcon.setAttribute('width', '24');
 svgIcon.setAttribute('height', '24');
@@ -23,6 +26,7 @@ function createSvgToEl(element, icon, text) {
   svgIcon.appendChild(useElement);
 
   element.textContent = text;
+  element.appendChild(spanEl);
   element.appendChild(svgIcon);
 }
 
@@ -30,10 +34,10 @@ if (parseFloat(numberProducts) > 0) {
   createSvgToEl(
     elResultSearchTitlte,
     'cool',
-    `${numberProducts} products were found`
+    `${numberProducts} products were`
   );
 } else {
-  createSvgToEl(elResultSearchTitlte, 'confused', `Nothing found`);
+  createSvgToEl(elResultSearchTitlte, 'confused', `Nothing`);
 }
 
 // ---- додаємо всі знайдені продуки на сторінку ---- //
