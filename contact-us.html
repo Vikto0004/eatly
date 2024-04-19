@@ -23,16 +23,16 @@
   />
   
   <title>Eatly</title>
-  <script type="module" crossorigin src="/eatly/assets/modulepreload-polyfill-3cfb730f.js"></script>
+  <script type="module" crossorigin src="/eatly/assets/header-03527577.js"></script>
   <script type="module" crossorigin src="/eatly/assets/header-click-color-33c8e684.js"></script>
-  <link rel="stylesheet" href="/eatly/assets/styles-a4be9d58.css">
+  <link rel="stylesheet" href="/eatly/assets/styles-fb36b0ef.css">
 </head>
 
   <body>
     <!-- contact-us -->
-    <header>
+    <header class="header">
   <div class="container">
-    <div class="header-box">
+    <div class="header-box js-header-box">
       <a href="./index.html" class="header-logo">
         <svg width="45" height="45">
           <use href="/eatly/assets/sprite-6f261426.svg#icon-Logo-eatly"></use>
@@ -45,25 +45,75 @@
         <li class="header-nav-item"><a href="./pricing.html">Pricing</a></li>
         <li class="header-nav-item"><a href="./contact-us.html">Contact</a></li>
       </ul>
+      <button type="button" class="header-basket-btn" id="openBasket">
+        <svg width="31" height="22">
+          <use href="/eatly/assets/sprite-6f261426.svg#icon-basket"></use>
+        </svg>
+        <p id="quantity">0</p>
+      </button>
       <ul class="header-login">
-        <li>
-          <button type="button" class="header-basket-btn" id="openBasket">
-            <svg  width="31" height="22">
-               <use href="/eatly/assets/sprite-6f261426.svg#icon-basket"></use>
-            </svg>
-            <p id="quantity">0</p>
-          </button>
-        </li>
         <li><a href="./sign-in.html" class="header-login-item">Login</a></li>
-        <li><a href="./sign-up.html" class="header-login-item signup">Sign Up</a></li>
+        <li>
+          <a href="./sign-up.html" class="header-login-item signup">Sign Up</a>
+        </li>
       </ul>
-      <a href="" class="header-menu">
+      <button class="header-menu js-header-menu-open" type="button">
         <svg width="31" height="22">
           <use href="/eatly/assets/sprite-6f261426.svg#icon-menu"></use>
         </svg>
-      </a>
-      </a>
+      </button>
     </div>
+  </div>
+  <div class="header-menu-wrap js-header-menu-wrap">
+    <button class="header-menu-close js-header-menu-close" type="button">
+      <svg width="10px" height="10px">
+        <use href="/eatly/assets/sprite-6f261426.svg#icon-close-order"></use>
+      </svg>
+    </button>
+    <ul class="header-menu-list js-header-menu-list">
+      <li><a href="./menu.html" class="js-header-guide">Menu</a></li>
+      <li><a href="./blog.html" class="js-header-guide">Blog</a></li>
+      <li><a href="./pricing.html" class="js-header-guide">Pricing</a></li>
+      <li><a href="./contact-us.html" class="js-header-guide">Contact</a></li>
+    </ul>
+    <ul class="header-menu-login">
+      <li><a href="./sign-in.html" class="header-menu-login-item">Login</a></li>
+      <li>
+        <a href="./sign-up.html" class="header-menu-login-item signup"
+          >Sign Up</a
+        >
+      </li>
+    </ul>
+    <ul class="header-social-list">
+      <li class="footer-social-item">
+        <a target="_blank" href="" class="footer-social-links">
+          <svg class="footer-social-links-icon" width="16" height="16">
+            <use href="/eatly/assets/sprite-6f261426.svg#icon-instagram-footer"></use>
+          </svg>
+        </a>
+      </li>
+      <li class="footer-social-item">
+        <a target="_blank" href="" class="footer-social-links">
+          <svg class="footer-social-links-icon" width="16" height="16">
+            <use href="/eatly/assets/sprite-6f261426.svg#icon-linkedin-footer"></use>
+          </svg>
+        </a>
+      </li>
+      <li class="footer-social-item">
+        <a target="_blank" href="" class="footer-social-links">
+          <svg class="footer-social-links-icon" width="16" height="16">
+            <use href="/eatly/assets/sprite-6f261426.svg#icon-facebook-footer"></use>
+          </svg>
+        </a>
+      </li>
+      <li class="footer-social-item">
+        <a target="_blank" href="" class="footer-social-links">
+          <svg class="footer-social-links-icon" width="16" height="16">
+            <use href="/eatly/assets/sprite-6f261426.svg#icon-twitter-footer"></use>
+          </svg>
+        </a>
+      </li>
+    </ul>
   </div>
 </header>
 
@@ -172,6 +222,7 @@
   </div>
 </footer>
 
+    
     
   </body>
 </html>

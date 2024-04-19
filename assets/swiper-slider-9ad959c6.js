@@ -1,2 +1,0 @@
-new Swiper(".swiper",{direction:"horizontal",loop:!0,pagination:{el:".swiper-pagination"},navigation:{nextEl:".swiper-button-next",prevEl:".swiper-button-prev"},scrollbar:{el:".swiper-scrollbar",dragSize:135},slidesPerView:1,spaceBetween:30,breakpoints:{1024:{slidesPerView:"auto"},1440:{slidesPerView:"auto",spaceBetween:46}},on:{slideChange:function(){const i=this.slides[this.activeIndex];this.slides.forEach(e=>{e===i?e.classList.add("active-slide"):e.classList.remove("active-slide")})}}});
-//# sourceMappingURL=swiper-slider-9ad959c6.js.map
