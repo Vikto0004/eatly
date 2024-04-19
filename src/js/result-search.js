@@ -1,8 +1,14 @@
 const elResultSsearchSection = document.querySelector('.js-result-search');
 const elResultSearchList = document.querySelector('.js-result-search-list');
 const elResultSearchTitlte = document.querySelector('.js-result-search-titlte');
-const svgIcon = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+const numberProducts = localStorage.getItem('numberResultSearch');
 
+// -- створення смайлика svg, текст і додавання в потрібний елемент -- //
+
+const spanEl = document.createElement('span');
+spanEl.textContent = 'found';
+
+const svgIcon = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
 svgIcon.setAttribute('width', '24');
 svgIcon.setAttribute('height', '24');
 
@@ -11,31 +17,30 @@ const useElement = document.createElementNS(
   'use'
 );
 
-elResultSearchTitlte.textContent;
+function createSvgToEl(element, icon, text) {
+  useElement.setAttributeNS(
+    'http://www.w3.org/1999/xlink',
+    'href',
+    `./img/sprite.svg#icon-${icon}`
+  );
+  svgIcon.appendChild(useElement);
 
-const numberProducts = localStorage.getItem('numberResultSearch');
+  element.textContent = text;
+  element.appendChild(spanEl);
+  element.appendChild(svgIcon);
+}
 
 if (parseFloat(numberProducts) > 0) {
-  useElement.setAttributeNS(
-    'http://www.w3.org/1999/xlink',
-    'href',
-    'img/sprite.svg#icon-cool'
+  createSvgToEl(
+    elResultSearchTitlte,
+    'cool',
+    `${numberProducts} products were`
   );
-  svgIcon.appendChild(useElement);
-
-  elResultSearchTitlte.textContent = `${numberProducts} products were found`;
-  elResultSearchTitlte.appendChild(svgIcon);
 } else {
-  useElement.setAttributeNS(
-    'http://www.w3.org/1999/xlink',
-    'href',
-    'img/sprite.svg#icon-confused'
-  );
-  svgIcon.appendChild(useElement);
-
-  elResultSearchTitlte.textContent = 'Nothing found';
-  elResultSearchTitlte.appendChild(svgIcon);
+  createSvgToEl(elResultSearchTitlte, 'confused', `Nothing`);
 }
+
+// ---- додаємо всі знайдені продуки на сторінку ---- //
 
 elResultSearchList.insertAdjacentHTML(
   'beforeend',

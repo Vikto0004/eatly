@@ -1,35 +1,104 @@
 <section class="section">
   <div class="container search-wraping">
-    <div class="search-baner">
-      <h2 class="search-baner-title">50% OFF<span>WEEKENDS</span></h2>
-      <picture>
-        <source
-          srcset="
-            ./img/dishes-list/food-deskt-2-1x.png 1x,
-            ./img/dishes-list/food-deskt-2-2x.png 2x
-          "
-          media="(min-width: 1440px)"
-        />
-        <source
-          srcset="
-            ./img/dishes-list/food-tabl-2-1x.png 1x,
-            ./img/dishes-list/food-tabl-2-2x.png 2x
-          "
-          media="(min-width: 1024px)"
-        />
-        <source
-          srcset="
-            ./img/dishes-list/dishes-list-2-1x.png 1x,
-            ./img/dishes-list/dishes-list-2-2x.png 2x
-          "
-          media="(max-width: 1023px)"
-        />
-        <img
-          class="search-baner-img"
-          src="./img/dishes-list/food-deskt-2-2x.png"
-          alt="menu"
-        />
-      </picture>
+    <div class="swiper-container-baner">
+      <div class="swiper secondSwiper">
+        <div class="swiper-wrapper">
+          <div class="search-baner swiper-slide">
+            <h2 class="search-baner-title">50% OFF<span>WEEKENDS</span></h2>
+            <picture>
+              <source
+                srcset="
+                  ./img/dishes-list/food-deskt-2-1x.png 1x,
+                  ./img/dishes-list/food-deskt-2-2x.png 2x
+                "
+                media="(min-width: 1440px)"
+              />
+              <source
+                srcset="
+                  ./img/dishes-list/food-tabl-2-1x.png 1x,
+                  ./img/dishes-list/food-tabl-2-2x.png 2x
+                "
+                media="(min-width: 1024px)"
+              />
+              <source
+                srcset="
+                  ./img/dishes-list/dishes-list-2-1x.png 1x,
+                  ./img/dishes-list/dishes-list-2-2x.png 2x
+                "
+                media="(max-width: 1023px)"
+              />
+              <img
+                class="search-baner-img"
+                src="./img/dishes-list/food-deskt-2-2x.png"
+                alt="menu"
+              />
+            </picture>
+          </div>
+          <div class="search-baner swiper-slide">
+            <h2 class="search-baner-title">20% OFF<span>HEALTHY</span></h2>
+            <picture>
+              <source
+                srcset="
+                  ./img/dishes-list/food-deskt-1-1x.png 1x,
+                  ./img/dishes-list/food-deskt-1-2x.png 2x
+                "
+                media="(min-width: 1440px)"
+              />
+              <source
+                srcset="
+                  ./img/dishes-list/food-tabl-1-1x.png 1x,
+                  ./img/dishes-list/food-tabl-1-2x.png 2x
+                "
+                media="(min-width: 1024px)"
+              />
+              <source
+                srcset="
+                  ./img/dishes-list/dishes-list-1-1x.png 1x,
+                  ./img/dishes-list/dishes-list-1-2x.png 2x
+                "
+                media="(max-width: 1023px)"
+              />
+              <img
+                class="search-baner-img"
+                src="./img/dishes-list/food-deskt-1-2x.png"
+                alt="menu"
+              />
+            </picture>
+          </div>
+          <div class="search-baner swiper-slide">
+            <h2 class="search-baner-title">45% OFF<span>TRENDING</span></h2>
+            <picture>
+              <source
+                srcset="
+                  ./img/dishes-list/food-deskt-3-1x.png 1x,
+                  ./img/dishes-list/food-deskt-3-2x.png 2x
+                "
+                media="(min-width: 1440px)"
+              />
+              <source
+                srcset="
+                  ./img/dishes-list/food-tabl-3-1x.png 1x,
+                  ./img/dishes-list/food-tabl-3-2x.png 2x
+                "
+                media="(min-width: 1024px)"
+              />
+              <source
+                srcset="
+                  ./img/dishes-list/dishes-list-3-1x.png 1x,
+                  ./img/dishes-list/dishes-list-3-2x.png 2x
+                "
+                media="(max-width: 1023px)"
+              />
+              <img
+                class="search-baner-img"
+                src="./img/dishes-list/food-deskt-3-2x.png"
+                alt="menu"
+              />
+            </picture>
+          </div>
+        </div>
+        <div class="swiper-scrollbar"></div>
+      </div>
       <svg class="search-baner-icon" width="30px" height="34px">
         <use href="./img/sprite.svg#icon-Illustration-3"></use>
       </svg>
@@ -198,18 +267,21 @@
     <div class="search-form-wrap">
       <form class="search-form">
         <input
-          class="search-input"
+          class="search-input js-search-input"
           type="text"
           value=""
           required
           placeholder="Search"
         />
-        <button class="search-input-btn" type="submit">
+        <button class="search-input-btn js-search-input-btn" type="submit">
           <svg width="15px" height="19px">
             <use href="./img/sprite.svg#icon-search"></use>
           </svg>
         </button>
       </form>
+      <div class="search-name-container js-search-name-container">
+        <ul class="search-name-list js-search-name-list"></ul>
+      </div>
 
       <input
         class="visually-hidden"

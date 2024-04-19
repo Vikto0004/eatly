@@ -126,6 +126,12 @@
   .basket-swiper {
     height: 70%;
   }
+
+  .basket-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
 }
 
 @media screen and (max-width: 768px) {

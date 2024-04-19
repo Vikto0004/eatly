@@ -128,7 +128,6 @@ const addProduct = event => {
       .lastElementChild;
   if (numberProduct.textContent > 0) {
     const number = (numberProduct.textContent = ++numberProduct.textContent);
-    console.log(number);
     const price = parseFloat(priceProduct.textContent.replace('$', ''));
     if (number !== 1) {
       priceProduct.textContent =
@@ -177,12 +176,10 @@ const openModelDelete = event => {
 
     const foundKey = keys.find(key => reversedObject[key] === searchValue);
     const index = parseFloat(foundKey);
-    console.log(index);
     //* перезапис історії збереженнь в кошику
     const arrayFromStorage = JSON.parse(localStorage.getItem('bascketChild'));
     arrayFromStorage.splice(index, 1);
     localStorage.setItem('bascketChild', JSON.stringify(arrayFromStorage));
-    console.log(arrayFromStorage);
   });
   const closeDelete = event.currentTarget.firstElementChild;
   const closeDeleteBtn = event.currentTarget;
@@ -249,6 +246,7 @@ const emptyBasketNone = () => {
 
 const receivingBasket = () => {
   const arrayFromStorage = JSON.parse(localStorage.getItem('bascketChild'));
+  if (arrayFromStorage.length === 0) return;
   for (let i = 0; i < arrayFromStorage.length; i++) {
     const element = arrayFromStorage[i];
     basket.insertAdjacentHTML('afterbegin', element);
@@ -267,15 +265,12 @@ const dishesListHeartLink = document.querySelectorAll(
 );
 
 const savingTheHeartArray = [];
-console.log(savingTheHeartArray);
 const savingTheHeart = event => {
   const heartIcon = event.currentTarget.querySelector('.dishes-list-icon');
   if (heartIcon.style.fill === 'rgb(255, 255, 255)') {
     heartIcon.style.fill = '#6c5fbc';
-    console.log(heartIcon.id);
     savingTheHeartArray.push(heartIcon.id);
     localStorage.setItem('heartIcon', JSON.stringify(savingTheHeartArray)); // даємо в сховище
-    console.log(savingTheHeartArray);
   } else {
     heartIcon.style.fill = 'rgb(255, 255, 255)';
     for (const element of savingTheHeartArray) {
@@ -293,6 +288,7 @@ for (const element of dishesListHeartLink) {
 
 const receivingTheHeart = () => {
   const arrayFromStorage = JSON.parse(localStorage.getItem('heartIcon'));
+  if (arrayFromStorage.length === 0) return;
   for (const element of arrayFromStorage) {
     savingTheHeartArray.push(element);
     const heartIcon = document.querySelector(`#${element}`);
