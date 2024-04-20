@@ -1,77 +1,77 @@
 const backrop = document.querySelector('.backrop');
 const closeBackrop = document.querySelector('#closeBackrop');
 const openBackrop = document.querySelectorAll('#openBackrop');
+const elDishesList = document.querySelector('.js-dishes-list');
 
+const priceProduct = document.querySelector('#priceProduct');
 const product = document.querySelector('#product');
 const numberProduct = document.querySelector('#numberProduct');
-const priceProduct = document.querySelector('#priceProduct');
-const imgProduct = document.querySelector('#imgProduct');
 const plusProduct = document.querySelector('#plusProduct');
 const minusProduct = document.querySelector('#minusProduct');
 
-const handleClickEvent = event => {
-  let add = 1; //лічильник
-  //знаходження елементів які потрібно буде добавити в модалку
-  const photoProduct =
-    event.currentTarget.parentElement.parentElement.firstElementChild
-      .lastElementChild.src;
-  const price = event.currentTarget.previousSibling.previousSibling; //+48539986208
-  const nameProducts =
-    event.currentTarget.parentNode.previousSibling.previousElementSibling.querySelector(
-      '.dishes-wrap-title'
-    );
+const elImgProdMod = document.querySelector('#imgProduct img');
+const elPriceProdMod = document.querySelector('#priceProduct');
+const elNameProdMod = document.querySelector('#product');
+const elNumberProdMod = document.querySelector('#numberProduct');
+const elPlusProdMod = document.querySelector('#plusProduct');
+const elMinusProdMod = document.querySelector('#minusProduct');
 
-  //присвоєння нових значень для елементів в модалці
-  imgProduct.lastElementChild.src = photoProduct;
-  product.textContent = nameProducts.textContent;
-  numberProduct.textContent = 1;
-  priceProduct.textContent = price.textContent;
-  //відкриття модалки
+// ---------- Oprations on products of modal ------------- //
+const operationsOnProducts = event => {
+  const elName = event.target.nodeName;
+  if (!(elName === 'BUTTON' || elName === 'svg' || elName === 'use')) return;
+
+  const elItem = event.target.closest('.dishes-list-item');
+  const photoProd = elItem.querySelector('.dishes-list-img').src;
+  const costProd = elItem.querySelector('.dishes-container-text').textContent;
+  const nameProd = elItem.querySelector('.dishes-wrap-title').textContent;
+
+  elImgProdMod.src = photoProd;
+  elPriceProdMod.textContent = costProd;
+  elNameProdMod.textContent = nameProd;
+
+  let numberProdMod = parseFloat(elNumberProdMod.textContent);
+  let priceProdMod = parseFloat(costProd.replace('$', ''));
+
+  //* Adding products
+  elPlusProdMod.addEventListener('click', () => {
+    elNumberProdMod.textContent = ++numberProdMod;
+    elPriceProdMod.textContent =
+      '$' + (priceProdMod * numberProdMod).toFixed(2);
+  });
+
+  //* Subtraction products
+  elMinusProdMod.addEventListener('click', () => {
+    if (numberProdMod === 1) return;
+    elNumberProdMod.textContent = --numberProdMod;
+    elPriceProdMod.textContent =
+      '$' + (priceProdMod * numberProdMod).toFixed(2);
+  });
+
+  //* Open mobal
   backrop.style.display = 'block';
   document.body.style.overflow = 'hidden';
   setTimeout(function () {
     backrop.style.opacity = '1';
   }, 50);
 
-  // --- додавання кількості продуктів і загальна ціна --- //
-  const addProduct = () => {
-    if (add <= 0) add = 1;
-    numberProduct.textContent = ++add;
-    priceProduct.textContent =
-      '$' + (parseFloat(price.textContent.replace('$', '')) * add).toFixed(2);
-  };
-  plusProduct.addEventListener('click', addProduct);
-
-  // --- віднімання кількості продуктів і загальна ціна --- //
-  const subtractProduct = () => {
-    --add;
-    if (add > 0) {
-      numberProduct.textContent = add;
-      priceProduct.textContent =
-        '$' + (parseFloat(price.textContent.replace('$', '')) * add).toFixed(2);
-    }
-  };
-  minusProduct.addEventListener('click', subtractProduct);
-
-  // --- закриття модалки --- //
-  const handleClick = () => {
-    add = 1;
+  //* Closing the modal
+  const closingTheModal = () => {
     backrop.style.opacity = '0';
     setTimeout(function () {
       backrop.style.display = 'none';
       document.body.style.overflow = 'auto';
     }, 500);
   };
-  closeBackrop.addEventListener('click', handleClick);
+  closeBackrop.addEventListener('click', closingTheModal);
 
-  // --- закриття модалки поза межами модалки ---//
+  //* closing the modal outside of it
   window.onclick = event => {
-    if (event.target == backrop) handleClick();
+    if (event.target == backrop) closingTheModal();
   };
 };
-for (const element of openBackrop) {
-  element.addEventListener('click', handleClickEvent);
-}
+
+elDishesList.addEventListener('click', operationsOnProducts);
 
 //!-----------------------Модалка для кошика-----------------------//
 
@@ -85,9 +85,9 @@ const quantity = document.querySelector('#quantity');
 const totalPrice = document.querySelector('.basket-wrap-price');
 const emptyBasket = document.querySelector('.empty-basket');
 
+const elBasket = document.querySelector('.basket-container');
+
 // --- пуш вибраного продукта в кошик --- //
-const plusNewArr = []; //* масиви з кнопками
-const minusNewArr = [];
 const openDelete = [];
 const array = [];
 const clonePush = () => {
@@ -95,8 +95,6 @@ const clonePush = () => {
   basket.appendChild(modelOrderClone);
   modelOrderClone.querySelector('.model-delete').style.display = 'block';
   backrop.style.opacity = '0';
-  minusNewArr.splice(0);
-  plusNewArr.splice(0);
   openDelete.splice(0);
   setTimeout(function () {
     backrop.style.display = 'none';
@@ -111,48 +109,44 @@ const clonePush = () => {
   }
 
   localStorage.setItem('bascketChild', JSON.stringify(array)); //* зберігаємо клони пушів в браузері
-  plusNewArr.push(basket.querySelectorAll('#plusProduct'));
-  minusNewArr.push(basket.querySelectorAll('#minusProduct'));
   openDelete.push(basket.querySelectorAll('#buttonOpenDelete'));
   quantity.textContent = basket.children.length; //* показник кількості в кошику
 };
 btnPushOnBasket.addEventListener('click', clonePush);
 
-// ---- додаємо кількість продуктів ---//
-const addProduct = event => {
-  const numberProduct =
-    event.currentTarget.parentElement.previousElementSibling.firstElementChild
-      .lastElementChild;
-  const priceProduct =
-    event.currentTarget.parentElement.previousElementSibling.lastElementChild
-      .lastElementChild;
-  if (numberProduct.textContent > 0) {
-    const number = (numberProduct.textContent = ++numberProduct.textContent);
-    const price = parseFloat(priceProduct.textContent.replace('$', ''));
-    if (number !== 1) {
-      priceProduct.textContent =
-        '$' + ((price / (number - 1)) * number).toFixed(2);
-    } else priceProduct.textContent = '$' + price / number;
-  }
-  totalPriceCalculator();
-};
+// ------------- Operations on basket ------------ //
+const operationsOnProdBask = event => {
+  const elTarget = event.target;
+  const elName = elTarget.nodeName;
+  if (!(elName === 'BUTTON' || elName === 'svg' || elName === 'use')) return;
 
-// --- віднімаємо кількість продуктів --- //
-const subtractProduct = event => {
-  const numberProduct =
-    event.currentTarget.parentElement.previousElementSibling.firstElementChild
-      .lastElementChild;
-  const priceProduct =
-    event.currentTarget.parentElement.previousElementSibling.lastElementChild
-      .lastElementChild;
-  if (numberProduct.textContent > 1) {
-    const number = (numberProduct.textContent = --numberProduct.textContent);
-    const price = parseFloat(priceProduct.textContent.replace('$', ''));
-    priceProduct.textContent =
-      '$' + ((price / (number + 1)) * number).toFixed(2);
+  const elItem = elTarget.closest('.model-order-container');
+  const elNumberProd = elItem.querySelector('#numberProduct');
+  const elPriceProd = elItem.querySelector('#priceProduct');
+
+  let numberProd = parseFloat(elNumberProd.textContent);
+  let priceProd = parseFloat(elPriceProd.textContent.replace('$', ''));
+
+  if (elTarget.closest('#plusProduct')) {
+    const addingProd = () => {
+      elNumberProd.textContent = ++numberProd;
+      elPriceProd.textContent =
+        '$' + ((priceProd / (numberProd - 1)) * numberProd).toFixed(2);
+    };
+    addingProd();
+    totalPriceCalculator();
+  } else if (elTarget.closest('#minusProduct')) {
+    const subtractProd = () => {
+      if (numberProd === 1) return;
+      elNumberProd.textContent = --numberProd;
+      elPriceProd.textContent =
+        '$' + ((priceProd / (numberProd + 1)) * numberProd).toFixed(2);
+    };
+    subtractProd();
+    totalPriceCalculator();
   }
-  totalPriceCalculator();
 };
+elBasket.addEventListener('click', operationsOnProdBask);
 
 // --- Відкриваємо модалку для видалення продуктів, видаляємо і закриваємо --- //
 const openModelDelete = event => {
@@ -198,17 +192,11 @@ const clickOpenBasket = event => {
   setTimeout(function () {
     basketModal.style.opacity = '1';
   }, 50);
-  if (plusNewArr.length > 0) {
-    for (const element of plusNewArr[0]) {
-      element.addEventListener('click', addProduct);
-    }
-    for (const element of minusNewArr[0]) {
-      element.addEventListener('click', subtractProduct);
-    }
-    for (const element of openDelete[0]) {
-      element.addEventListener('click', openModelDelete);
-    }
-  }
+  // if (plusNewArr.length > 0) {
+  //   for (const element of openDelete[0]) {
+  //     element.addEventListener('click', openModelDelete);
+  //   }
+  // }
   totalPriceCalculator();
   emptyBasketNone();
 };
@@ -251,8 +239,6 @@ const receivingBasket = () => {
     const element = arrayFromStorage[i];
     basket.insertAdjacentHTML('afterbegin', element);
   }
-  plusNewArr.push(basket.querySelectorAll('#plusProduct'));
-  minusNewArr.push(basket.querySelectorAll('#minusProduct'));
   openDelete.push(basket.querySelectorAll('#buttonOpenDelete'));
   quantity.textContent = basket.children.length; //* показник кількості в кошику
 };
