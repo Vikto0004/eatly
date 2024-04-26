@@ -1,3 +1,97 @@
-<section class="section">
-  <div class="container"></div>
+<section class="section section-map">
+  <div class="map-wrap">
+    <div class="map" id="map"></div>
+    <div class="map-model-wrap"></div>
+  </div>
+  <div class="container map-container">
+    <div class="map-entry-wrap">
+      <h2 class="map-entry-title">Data <span>entry</span></h2>
+      <form class="map-entry-form">
+        <input
+          class="map-entry-input"
+          type="text"
+          name="userName"
+          placeholder="Enter your name"
+          required
+        />
+        <input
+          class="map-entry-input"
+          type="email"
+          name="userEmail"
+          placeholder="Enter your email or phone"
+          required
+        />
+        <input
+          class="map-entry-input input-user-addr"
+          type="text"
+          name="userAddr"
+          placeholder="Enter your address"
+          required
+        />
+        <p>or</p>
+        <div>
+          <input
+            class="map-entry-input-location visually-hidden"
+            type="checkbox"
+            id="my-location"
+            name="myLocation"
+          />
+          <label class="map-entry-label-location" for="my-location">
+            <span>
+              <svg width="10px" height="10px">
+                <use href="./img/sprite.svg#icon-checkmark"></use>
+              </svg>
+            </span>
+            My location</label
+          >
+        </div>
+        <button type="submit">Save</button>
+      </form>
+    </div>
+    <div class="map-payment-container">
+      <div class="map-products-wrap"></div>
+      <div class="map-payment-wrap">
+        <for class="map-payment-form">
+          <input
+            class="map-payment-input"
+            type="text"
+            name="apply"
+            placeholder="Apply Coupon"
+          />
+          <svg class="map-payment-input-icon" width="16px" height="18px">
+            <use href="./img/sprite.svg#icon-coupon"></use>
+          </svg>
+          <button class="map-payment-form-btn" type="submit">Apply</button>
+        </for>
+        <ul class="map-payment-list">
+          <li>
+            <p>Subtotal</p>
+            <p class="js-map-payment-subtotal">$0.00</p>
+            <div class="map-payment-line"></div>
+          </li>
+          <li>
+            <p>Delivery</p>
+            <p class="js-map-payment-delivery">$0.00</p>
+            <div class="map-payment-line"></div>
+          </li>
+          <li>
+            <p class="map-payment-text-total">Total</p>
+            <p class="map-payment-text-total js-map-payment-text-total">
+              $0.00
+            </p>
+          </li>
+        </ul>
+        <button class="map-payment-btn" type="button">Review Payment</button>
+      </div>
+      <svg class="map-payment-illustration-icon" width="30px" height="35px">
+        <use href="./img/sprite.svg#icon-Illustration-3"></use>
+      </svg>
+      <svg class="map-payment-spiral-left-icon" width="130px" height="100px">
+        <use href="./img/sprite.svg#icon-spiral-arrow"></use>
+      </svg>
+      <svg class="map-payment-spiral-right-icon" width="130px" height="100px">
+        <use href="./img/sprite.svg#icon-spiral-arrow"></use>
+      </svg>
+    </div>
+  </div>
 </section>

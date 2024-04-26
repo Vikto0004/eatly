@@ -51,7 +51,7 @@ const elHeaderBox = document.querySelector('.js-header-box');
 window.addEventListener('scroll', () => {
   if (window.scrollY > 40) {
     elHeader.classList.add('js-header');
-    elHeaderBox.style.padding = '15px 0';
+    elHeaderBox.style.padding = '10px 0';
   } else {
     elHeader.classList.remove('js-header');
     elHeaderBox.style.padding = '40px 0';

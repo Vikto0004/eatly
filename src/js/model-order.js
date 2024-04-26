@@ -1,220 +1,263 @@
 const backrop = document.querySelector('.backrop');
 const closeBackrop = document.querySelector('#closeBackrop');
 const openBackrop = document.querySelectorAll('#openBackrop');
+const elDishesList = document.querySelector('.js-dishes-list');
+const elOrderForm = document.querySelector('.order-form');
 
+const priceProduct = document.querySelector('#priceProduct');
 const product = document.querySelector('#product');
 const numberProduct = document.querySelector('#numberProduct');
-const priceProduct = document.querySelector('#priceProduct');
-const imgProduct = document.querySelector('#imgProduct');
 const plusProduct = document.querySelector('#plusProduct');
 const minusProduct = document.querySelector('#minusProduct');
 
-const handleClickEvent = event => {
-  let add = 1; //лічильник
-  //знаходження елементів які потрібно буде добавити в модалку
-  const photoProduct =
-    event.currentTarget.parentElement.parentElement.firstElementChild
-      .lastElementChild.src;
-  const price = event.currentTarget.previousSibling.previousSibling; //+48539986208
-  const nameProducts =
-    event.currentTarget.parentNode.previousSibling.previousElementSibling.querySelector(
-      '.dishes-wrap-title'
-    );
+const elImgProdMod = document.querySelector('#imgProduct img');
+const elPriceProdMod = document.querySelector('#priceProduct');
+const elNameProdMod = document.querySelector('#product');
+const elNumberProdMod = document.querySelector('#numberProduct');
+const elPlusProdMod = document.querySelector('#plusProduct');
+const elMinusProdMod = document.querySelector('#minusProduct');
+const elWrapProdMod = document.querySelector('.model-order-container');
+const elBtnPushOnBask = document.querySelector('.target-btn');
+const elBtnOrderMod = document.querySelector('.button-order');
+const elPriceForOneProd = document.querySelector('#priceForOneProd');
 
-  //присвоєння нових значень для елементів в модалці
-  imgProduct.lastElementChild.src = photoProduct;
-  product.textContent = nameProducts.textContent;
-  numberProduct.textContent = 1;
-  priceProduct.textContent = price.textContent;
-  //відкриття модалки
+const basketModal = document.querySelector('.basket-modal');
+const openBasket = document.querySelector('#openBasket');
+const closeBasket = document.querySelector('#closeBasket');
+const basket = document.querySelector('.basket-container');
+const quantity = document.querySelector('#quantity');
+const totalPrice = document.querySelector('.basket-wrap-price');
+const emptyBasket = document.querySelector('.empty-basket');
+const elBasket = document.querySelector('.basket-container');
+const elBtnBaskOrder = document.querySelector('.basket-wrap-btn');
+
+// --------------------------- Oprations on products of modal --------------------------- //
+const savingTheHeartArr = [];
+
+const operationsOnProducts = event => {
+  //* Giving of current elements
+  const elTarget = event.target;
+  const elItem = event.target.closest('.dishes-list-item');
+  const elHeardIcon = elItem.querySelector('.dishes-list-icon');
+
+  //* Seving heard
+  if (elHeardIcon === elTarget || elTarget.closest('.dishes-list-heart-link')) {
+    if (elHeardIcon.style.fill === 'rgb(255, 255, 255)') {
+      elHeardIcon.style.fill = 'rgb(108, 95, 188)';
+      savingTheHeartArr.push(elHeardIcon.id);
+      localStorage.setItem('elHeardIcon', JSON.stringify(savingTheHeartArr));
+    } else {
+      elHeardIcon.style.fill = 'rgb(255, 255, 255)';
+      for (const element of savingTheHeartArr) {
+        if (element === elHeardIcon.id) {
+          savingTheHeartArr.splice(savingTheHeartArr.indexOf(element), 1);
+        }
+      }
+      localStorage.setItem('elHeardIcon', JSON.stringify(savingTheHeartArr));
+    }
+  }
+
+  if (!elTarget.closest('.dishes-container-btn')) return;
+
+  //* Giving of current values element
+  const photoProd = elItem.querySelector('.dishes-list-img').src;
+  const costProd = elItem.querySelector('.dishes-container-text').textContent;
+  const nameProd = elItem.querySelector('.dishes-wrap-title').textContent;
+
+  elImgProdMod.src = photoProd;
+  elPriceProdMod.textContent = costProd;
+  elPriceForOneProd.textContent = costProd;
+  elNameProdMod.textContent = nameProd;
+  elNumberProdMod.textContent = 1;
+
+  let numberProdMod = parseFloat(elNumberProdMod.textContent);
+  let priceProdMod = parseFloat(costProd.replace('$', ''));
+
+  //* Adding products
+  elPlusProdMod.addEventListener('click', () => {
+    elNumberProdMod.textContent = ++numberProdMod;
+    elPriceProdMod.textContent =
+      '$' + (priceProdMod * numberProdMod).toFixed(2);
+  });
+
+  //* Subtraction products
+  elMinusProdMod.addEventListener('click', () => {
+    if (numberProdMod === 1) return;
+    elNumberProdMod.textContent = --numberProdMod;
+    elPriceProdMod.textContent =
+      '$' + (priceProdMod * numberProdMod).toFixed(2);
+  });
+
+  //* Open mobal
   backrop.style.display = 'block';
   document.body.style.overflow = 'hidden';
   setTimeout(function () {
     backrop.style.opacity = '1';
   }, 50);
 
-  // --- додавання кількості продуктів і загальна ціна --- //
-  const addProduct = () => {
-    if (add <= 0) add = 1;
-    numberProduct.textContent = ++add;
-    priceProduct.textContent =
-      '$' + (parseFloat(price.textContent.replace('$', '')) * add).toFixed(2);
-  };
-  plusProduct.addEventListener('click', addProduct);
+  closeBackrop.addEventListener('click', closingTheModal);
 
-  // --- віднімання кількості продуктів і загальна ціна --- //
-  const subtractProduct = () => {
-    --add;
-    if (add > 0) {
-      numberProduct.textContent = add;
-      priceProduct.textContent =
-        '$' + (parseFloat(price.textContent.replace('$', '')) * add).toFixed(2);
-    }
-  };
-  minusProduct.addEventListener('click', subtractProduct);
-
-  // --- закриття модалки --- //
-  const handleClick = () => {
-    add = 1;
-    backrop.style.opacity = '0';
-    setTimeout(function () {
-      backrop.style.display = 'none';
-      document.body.style.overflow = 'auto';
-    }, 500);
-  };
-  closeBackrop.addEventListener('click', handleClick);
-
-  // --- закриття модалки поза межами модалки ---//
+  //* Closing the modal outside of it
   window.onclick = event => {
-    if (event.target == backrop) handleClick();
+    if (event.target == backrop) closingTheModal();
   };
 };
-for (const element of openBackrop) {
-  element.addEventListener('click', handleClickEvent);
-}
 
-//!-----------------------Модалка для кошика-----------------------//
+elDishesList.addEventListener('click', operationsOnProducts);
 
-const basketModal = document.querySelector('.basket-modal');
-const openBasket = document.querySelector('#openBasket');
-const closeBasket = document.querySelector('#closeBasket');
-const basket = document.querySelector('.basket-container');
-const btnPushOnBasket = document.querySelector('.target-btn');
-const modelOrder = document.querySelector('.model-order-container');
-const quantity = document.querySelector('#quantity');
-const totalPrice = document.querySelector('.basket-wrap-price');
-const emptyBasket = document.querySelector('.empty-basket');
-
-// --- пуш вибраного продукта в кошик --- //
-const plusNewArr = []; //* масиви з кнопками
-const minusNewArr = [];
-const openDelete = [];
-const array = [];
-const clonePush = () => {
-  const modelOrderClone = modelOrder.cloneNode(true);
-  basket.appendChild(modelOrderClone);
-  modelOrderClone.querySelector('.model-delete').style.display = 'block';
+//* Closing the modal
+function closingTheModal() {
   backrop.style.opacity = '0';
-  minusNewArr.splice(0);
-  plusNewArr.splice(0);
-  openDelete.splice(0);
   setTimeout(function () {
     backrop.style.display = 'none';
     document.body.style.overflow = 'auto';
   }, 500);
+}
 
-  if (array.length > 0) array.push(modelOrderClone.outerHTML);
-  else {
-    for (const iterator of basket.children) {
-      array.push(iterator.outerHTML);
-    }
-  }
+// --------------------------- Push product on basket --------------------------- //
+let saveProdArr = [];
+let counterId = 0;
 
-  localStorage.setItem('bascketChild', JSON.stringify(array)); //* зберігаємо клони пушів в браузері
-  plusNewArr.push(basket.querySelectorAll('#plusProduct'));
-  minusNewArr.push(basket.querySelectorAll('#minusProduct'));
-  openDelete.push(basket.querySelectorAll('#buttonOpenDelete'));
-  quantity.textContent = basket.children.length; //* показник кількості в кошику
-};
-btnPushOnBasket.addEventListener('click', clonePush);
+if (saveProdArr.length === 0 && localStorage.getItem('saveProdBask')) {
+  saveProdArr = [...JSON.parse(localStorage.getItem('saveProdBask'))];
+  counterId = JSON.parse(localStorage.getItem('counterId'));
+  quantity.textContent = saveProdArr.length;
+} else {
+  counterId = 0;
+  localStorage.setItem('counterId', counterId);
+}
 
-// ---- додаємо кількість продуктів ---//
-const addProduct = event => {
-  const numberProduct =
-    event.currentTarget.parentElement.previousElementSibling.firstElementChild
-      .lastElementChild;
-  const priceProduct =
-    event.currentTarget.parentElement.previousElementSibling.lastElementChild
-      .lastElementChild;
-  if (numberProduct.textContent > 0) {
-    const number = (numberProduct.textContent = ++numberProduct.textContent);
-    const price = parseFloat(priceProduct.textContent.replace('$', ''));
-    if (number !== 1) {
-      priceProduct.textContent =
-        '$' + ((price / (number - 1)) * number).toFixed(2);
-    } else priceProduct.textContent = '$' + price / number;
-  }
-  totalPriceCalculator();
-};
-
-// --- віднімаємо кількість продуктів --- //
-const subtractProduct = event => {
-  const numberProduct =
-    event.currentTarget.parentElement.previousElementSibling.firstElementChild
-      .lastElementChild;
-  const priceProduct =
-    event.currentTarget.parentElement.previousElementSibling.lastElementChild
-      .lastElementChild;
-  if (numberProduct.textContent > 1) {
-    const number = (numberProduct.textContent = --numberProduct.textContent);
-    const price = parseFloat(priceProduct.textContent.replace('$', ''));
-    priceProduct.textContent =
-      '$' + ((price / (number + 1)) * number).toFixed(2);
-  }
-  totalPriceCalculator();
-};
-
-// --- Відкриваємо модалку для видалення продуктів, видаляємо і закриваємо --- //
-const openModelDelete = event => {
-  event.currentTarget.nextElementSibling.style.display = 'block';
-  const modelOrderContainer = event.currentTarget.parentNode.parentNode;
-  const buttonDelete = event.currentTarget.nextElementSibling.firstElementChild;
-
-  const arrayBesket = basket.children;
-  const reversedObject = Object.fromEntries(
-    Object.entries(arrayBesket).reverse()
+//* Adding products on localStore
+const addOnLocalStore = () => {
+  saveProdArr.push(
+    `<div class="model-order-container" id="numProdBask${++counterId}">${
+      elWrapProdMod.innerHTML
+    }</div>`
   );
+  localStorage.setItem('saveProdBask', JSON.stringify(saveProdArr));
+  localStorage.setItem('counterId', JSON.stringify(counterId));
+  quantity.textContent = saveProdArr.length;
+  closingTheModal();
+};
 
-  //* отримання індексу елемента/продукта якого ми видаляємо
-  const searchValue = event.currentTarget.parentNode.parentNode;
-  const keys = Object.keys(reversedObject);
+elBtnPushOnBask.addEventListener('click', addOnLocalStore);
 
-  buttonDelete.addEventListener('click', () => {
-    modelOrderContainer.remove();
+//* Save change in basket and transition on order page
+elBtnBaskOrder.addEventListener('click', () => {
+  saveProdArr = [...elBasket.children];
+  const newSaveArr = saveProdArr.reduce((acc, el) => {
+    acc.push(
+      `<div class="model-order-container" id="numProdBask${++counterId}">${
+        el.innerHTML
+      }</div>`
+    );
+    return acc;
+  }, []);
+
+  localStorage.setItem('saveProdBask', JSON.stringify(newSaveArr));
+  window.location.href = 'menu-map.html';
+});
+
+//* Seving info user for order
+elOrderForm.addEventListener('submit', event => {
+  event.preventDefault();
+  const objInfoUser = {
+    nameUser: '',
+    emailUser: '',
+    addressUser: '',
+  };
+
+  objInfoUser.nameUser = elOrderForm.elements.nameUser.value.trim();
+  objInfoUser.emailUser = elOrderForm.elements.mailUser.value.trim();
+  objInfoUser.addressUser = elOrderForm.elements.addrUser.value.trim();
+
+  localStorage.setItem('seveInfoUserForOrder', JSON.stringify(objInfoUser));
+  addOnLocalStore();
+  window.location.href = 'menu-map.html';
+});
+
+// --------------------------- Operations on basket ---------------------------- //
+
+//* Close wrap delete
+let elCloseWrapDel = '';
+document.onclick = e => {
+  if (e.target !== elCloseWrapDel && elCloseWrapDel) {
+    elCloseWrapDel.style.display = 'none';
+    elCloseWrapDel = '';
+  }
+};
+
+const operationsOnProdBask = event => {
+  const elTarget = event.target;
+  const elName = elTarget.nodeName;
+
+  if (!(elName === 'BUTTON' || elName === 'svg' || elName === 'use')) return;
+
+  //* Giving of current elements
+  const elItem = elTarget.closest('.model-order-container');
+  const elNumberProd = elItem.querySelector('#numberProduct');
+  const elPriceProd = elItem.querySelector('#priceProduct');
+
+  let numberProd = parseFloat(elNumberProd.textContent);
+  let priceProd = parseFloat(elPriceProd.textContent.replace('$', ''));
+
+  //* Adding products
+  if (elTarget.closest('#plusProduct')) {
+    elNumberProd.textContent = ++numberProd;
+    elPriceProd.textContent =
+      '$' + ((priceProd / (numberProd - 1)) * numberProd).toFixed(2);
+    totalPriceCalculator();
+    return;
+  }
+
+  //* Subtraction products
+  if (elTarget.closest('#minusProduct')) {
+    if (numberProd === 1) return;
+    elNumberProd.textContent = --numberProd;
+    elPriceProd.textContent =
+      '$' + ((priceProd / (numberProd + 1)) * numberProd).toFixed(2);
+    totalPriceCalculator();
+    return;
+  }
+
+  //* Delete prodoct on basket and localStorage
+  if (elTarget.closest('.button-open-delete')) {
+    elItem.querySelector('.delete-wrap').style.display = 'block';
+    setTimeout(() => {
+      elCloseWrapDel = elItem.querySelector('.delete-wrap');
+    }, 100);
+  } else if (elTarget.closest('.delete-wrap-btn')) {
+    const newArr = saveProdArr.filter(element => {
+      return !element.includes(`id="${elItem.id}"`);
+    });
+
+    saveProdArr = newArr;
+    localStorage.setItem('saveProdBask', JSON.stringify(newArr));
+    elItem.remove();
     totalPriceCalculator();
     emptyBasketNone();
-
-    const foundKey = keys.find(key => reversedObject[key] === searchValue);
-    const index = parseFloat(foundKey);
-    //* перезапис історії збереженнь в кошику
-    const arrayFromStorage = JSON.parse(localStorage.getItem('bascketChild'));
-    arrayFromStorage.splice(index, 1);
-    localStorage.setItem('bascketChild', JSON.stringify(arrayFromStorage));
-  });
-  const closeDelete = event.currentTarget.firstElementChild;
-  const closeDeleteBtn = event.currentTarget;
-  const deleteWrap = event.currentTarget.nextElementSibling;
-  window.onclick = event => {
-    if (event.target !== closeDelete && event.target !== closeDeleteBtn) {
-      deleteWrap.style.display = 'none';
-    }
-  };
+  }
 };
+elBasket.addEventListener('click', operationsOnProdBask);
 
-// --- відкриття модалки --- //
+// ------------------------- Open modal window this basket ------------------------ //
 const clickOpenBasket = event => {
   basketModal.style.display = 'block';
   document.body.style.overflow = 'hidden';
-  setTimeout(function () {
-    basketModal.style.opacity = '1';
-  }, 50);
-  if (plusNewArr.length > 0) {
-    for (const element of plusNewArr[0]) {
-      element.addEventListener('click', addProduct);
-    }
-    for (const element of minusNewArr[0]) {
-      element.addEventListener('click', subtractProduct);
-    }
-    for (const element of openDelete[0]) {
-      element.addEventListener('click', openModelDelete);
-    }
-  }
+
+  //* Update list products on basket
+  basket.innerHTML = '';
+  basket.insertAdjacentHTML('beforeend', saveProdArr.join(''));
+  const elBtnDel = basket.querySelectorAll('.model-delete');
+  elBtnDel.forEach(element => element.classList.add('model-delete-open'));
+
+  setTimeout(() => (basketModal.style.opacity = '1'), 50);
   totalPriceCalculator();
   emptyBasketNone();
 };
 openBasket.addEventListener('click', clickOpenBasket);
 
-// --- закриття модалки --- //
+// ------------------------ Close modal window this basket -------------------------- //
 const clickCloseBasket = () => {
   basketModal.style.opacity = '0';
   setTimeout(function () {
@@ -243,57 +286,16 @@ const emptyBasketNone = () => {
     emptyBasket.style.display = 'none';
   } else emptyBasket.style.display = 'block';
 };
-
-const receivingBasket = () => {
-  const arrayFromStorage = JSON.parse(localStorage.getItem('bascketChild'));
-  if (arrayFromStorage.length === 0) return;
-  for (let i = 0; i < arrayFromStorage.length; i++) {
-    const element = arrayFromStorage[i];
-    basket.insertAdjacentHTML('afterbegin', element);
-  }
-  plusNewArr.push(basket.querySelectorAll('#plusProduct'));
-  minusNewArr.push(basket.querySelectorAll('#minusProduct'));
-  openDelete.push(basket.querySelectorAll('#buttonOpenDelete'));
-  quantity.textContent = basket.children.length; //* показник кількості в кошику
-};
-receivingBasket();
-
-//! --- збереження сердечка --- //
-
-const dishesListHeartLink = document.querySelectorAll(
-  '.dishes-list-heart-link'
-);
-
-const savingTheHeartArray = [];
-const savingTheHeart = event => {
-  const heartIcon = event.currentTarget.querySelector('.dishes-list-icon');
-  if (heartIcon.style.fill === 'rgb(255, 255, 255)') {
-    heartIcon.style.fill = '#6c5fbc';
-    savingTheHeartArray.push(heartIcon.id);
-    localStorage.setItem('heartIcon', JSON.stringify(savingTheHeartArray)); // даємо в сховище
-  } else {
-    heartIcon.style.fill = 'rgb(255, 255, 255)';
-    for (const element of savingTheHeartArray) {
-      if (element === heartIcon.id) {
-        savingTheHeartArray.splice(savingTheHeartArray.indexOf(element), 1);
-      }
-    }
-    localStorage.setItem('heartIcon', JSON.stringify(savingTheHeartArray)); // стираємо з сховища
-  }
-};
-
-for (const element of dishesListHeartLink) {
-  element.addEventListener('click', savingTheHeart);
-}
+emptyBasketNone();
 
 const receivingTheHeart = () => {
-  const arrayFromStorage = JSON.parse(localStorage.getItem('heartIcon'));
-  if (arrayFromStorage.length === 0) return;
+  const arrayFromStorage = JSON.parse(localStorage.getItem('elHeardIcon'));
+  if (!arrayFromStorage) return;
   for (const element of arrayFromStorage) {
-    savingTheHeartArray.push(element);
+    savingTheHeartArr.push(element);
     const heartIcon = document.querySelector(`#${element}`);
     if (heartIcon) {
-      heartIcon.style.fill = '#6c5fbc';
+      heartIcon.style.fill = 'rgb(108, 95, 188)';
     }
   }
 };

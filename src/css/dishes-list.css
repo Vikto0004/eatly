@@ -51,11 +51,6 @@
   transition: all 0.3s ease;
 }
 
-.dishes-list-heart-link:active svg,
-.dishes-list-heart-link:focus svg {
-  fill: #6c5fbc;
-}
-
 .dishes-list-wrap {
   margin-top: 4px;
 }

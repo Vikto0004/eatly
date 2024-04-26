@@ -8,26 +8,12 @@ const numberProducts = localStorage.getItem('numberResultSearch');
 const spanEl = document.createElement('span');
 spanEl.textContent = 'found';
 
-const svgIcon = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-svgIcon.setAttribute('width', '24');
-svgIcon.setAttribute('height', '24');
-
-const useElement = document.createElementNS(
-  'http://www.w3.org/2000/svg',
-  'use'
-);
-
 function createSvgToEl(element, icon, text) {
-  useElement.setAttributeNS(
-    'http://www.w3.org/1999/xlink',
-    'href',
-    `./img/sprite.svg#icon-${icon}`
-  );
-  svgIcon.appendChild(useElement);
+  const elIcon = `<svg width="24px" height="24px"><use href="./img/sprite.svg#icon-${icon}"></use></svg>`;
 
   element.textContent = text;
   element.appendChild(spanEl);
-  element.appendChild(svgIcon);
+  element.insertAdjacentHTML('beforeend', elIcon);
 }
 
 if (parseFloat(numberProducts) > 0) {
