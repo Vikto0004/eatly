@@ -23,13 +23,12 @@
   />
   
   <title>Eatly</title>
-  <script type="module" crossorigin src="/eatly/assets/header-03527577.js"></script>
-  <script type="module" crossorigin src="/eatly/assets/model-order-5eca164f.js"></script>
-  <script type="module" crossorigin src="/eatly/assets/header-click-color-33c8e684.js"></script>
-  <script type="module" crossorigin src="/eatly/assets/main-fa2bfaed.js"></script>
-  <link rel="stylesheet" href="/eatly/assets/styles-fb36b0ef.css">
+  <script type="module" crossorigin src="/eatly/commonHelpers6.js"></script>
+  <link rel="modulepreload" crossorigin href="/eatly/assets/header-5e251f2e.js">
+  <link rel="stylesheet" href="/eatly/assets/styles-c134cd28.css">
 </head>
 
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDG8PaUR5nG4WYeppnmo3sRx1Dn5LnaNLM"></script>
   <body>
     <!-- menu-map -->
     <header class="header">
@@ -37,7 +36,7 @@
     <div class="header-box js-header-box">
       <a href="./index.html" class="header-logo">
         <svg width="45" height="45">
-          <use href="/eatly/assets/sprite-6f261426.svg#icon-Logo-eatly"></use>
+          <use href="/eatly/assets/sprite-6bf4fdbf.svg#icon-Logo-eatly"></use>
         </svg>
         eatly
       </a>
@@ -49,7 +48,7 @@
       </ul>
       <button type="button" class="header-basket-btn" id="openBasket">
         <svg width="31" height="22">
-          <use href="/eatly/assets/sprite-6f261426.svg#icon-basket"></use>
+          <use href="/eatly/assets/sprite-6bf4fdbf.svg#icon-basket"></use>
         </svg>
         <p id="quantity">0</p>
       </button>
@@ -61,7 +60,7 @@
       </ul>
       <button class="header-menu js-header-menu-open" type="button">
         <svg width="31" height="22">
-          <use href="/eatly/assets/sprite-6f261426.svg#icon-menu"></use>
+          <use href="/eatly/assets/sprite-6bf4fdbf.svg#icon-menu"></use>
         </svg>
       </button>
     </div>
@@ -69,7 +68,7 @@
   <div class="header-menu-wrap js-header-menu-wrap">
     <button class="header-menu-close js-header-menu-close" type="button">
       <svg width="10px" height="10px">
-        <use href="/eatly/assets/sprite-6f261426.svg#icon-close-order"></use>
+        <use href="/eatly/assets/sprite-6bf4fdbf.svg#icon-close-order"></use>
       </svg>
     </button>
     <ul class="header-menu-list js-header-menu-list">
@@ -90,28 +89,28 @@
       <li class="footer-social-item">
         <a target="_blank" href="" class="footer-social-links">
           <svg class="footer-social-links-icon" width="16" height="16">
-            <use href="/eatly/assets/sprite-6f261426.svg#icon-instagram-footer"></use>
+            <use href="/eatly/assets/sprite-6bf4fdbf.svg#icon-instagram-footer"></use>
           </svg>
         </a>
       </li>
       <li class="footer-social-item">
         <a target="_blank" href="" class="footer-social-links">
           <svg class="footer-social-links-icon" width="16" height="16">
-            <use href="/eatly/assets/sprite-6f261426.svg#icon-linkedin-footer"></use>
+            <use href="/eatly/assets/sprite-6bf4fdbf.svg#icon-linkedin-footer"></use>
           </svg>
         </a>
       </li>
       <li class="footer-social-item">
         <a target="_blank" href="" class="footer-social-links">
           <svg class="footer-social-links-icon" width="16" height="16">
-            <use href="/eatly/assets/sprite-6f261426.svg#icon-facebook-footer"></use>
+            <use href="/eatly/assets/sprite-6bf4fdbf.svg#icon-facebook-footer"></use>
           </svg>
         </a>
       </li>
       <li class="footer-social-item">
         <a target="_blank" href="" class="footer-social-links">
           <svg class="footer-social-links-icon" width="16" height="16">
-            <use href="/eatly/assets/sprite-6f261426.svg#icon-twitter-footer"></use>
+            <use href="/eatly/assets/sprite-6bf4fdbf.svg#icon-twitter-footer"></use>
           </svg>
         </a>
       </li>
@@ -120,8 +119,102 @@
 </header>
 
     <main>
-      <section class="section">
-  <div class="container"></div>
+      <section class="section section-map">
+  <div class="map-wrap">
+    <div class="map" id="map"></div>
+    <div class="map-model-wrap"></div>
+  </div>
+  <div class="container map-container">
+    <div class="map-entry-wrap">
+      <h2 class="map-entry-title">Data <span>entry</span></h2>
+      <form class="map-entry-form">
+        <input
+          class="map-entry-input"
+          type="text"
+          name="userName"
+          placeholder="Enter your name"
+          required
+        />
+        <input
+          class="map-entry-input"
+          type="email"
+          name="userEmail"
+          placeholder="Enter your email or phone"
+          required
+        />
+        <input
+          class="map-entry-input input-user-addr"
+          type="text"
+          name="userAddr"
+          placeholder="Enter your address"
+          required
+        />
+        <p>or</p>
+        <div>
+          <input
+            class="map-entry-input-location visually-hidden"
+            type="checkbox"
+            id="my-location"
+            name="myLocation"
+          />
+          <label class="map-entry-label-location" for="my-location">
+            <span>
+              <svg width="10px" height="10px">
+                <use href="/eatly/assets/sprite-6bf4fdbf.svg#icon-checkmark"></use>
+              </svg>
+            </span>
+            My location</label
+          >
+        </div>
+        <button type="submit">Save</button>
+      </form>
+    </div>
+    <div class="map-payment-container">
+      <div class="map-products-wrap"></div>
+      <div class="map-payment-wrap">
+        <for class="map-payment-form">
+          <input
+            class="map-payment-input"
+            type="text"
+            name="apply"
+            placeholder="Apply Coupon"
+          />
+          <svg class="map-payment-input-icon" width="16px" height="18px">
+            <use href="/eatly/assets/sprite-6bf4fdbf.svg#icon-coupon"></use>
+          </svg>
+          <button class="map-payment-form-btn" type="submit">Apply</button>
+        </for>
+        <ul class="map-payment-list">
+          <li>
+            <p>Subtotal</p>
+            <p class="js-map-payment-subtotal">$0.00</p>
+            <div class="map-payment-line"></div>
+          </li>
+          <li>
+            <p>Delivery</p>
+            <p class="js-map-payment-delivery">$0.00</p>
+            <div class="map-payment-line"></div>
+          </li>
+          <li>
+            <p class="map-payment-text-total">Total</p>
+            <p class="map-payment-text-total js-map-payment-text-total">
+              $0.00
+            </p>
+          </li>
+        </ul>
+        <button class="map-payment-btn" type="button">Review Payment</button>
+      </div>
+      <svg class="map-payment-illustration-icon" width="30px" height="35px">
+        <use href="/eatly/assets/sprite-6bf4fdbf.svg#icon-Illustration-3"></use>
+      </svg>
+      <svg class="map-payment-spiral-left-icon" width="130px" height="100px">
+        <use href="/eatly/assets/sprite-6bf4fdbf.svg#icon-spiral-arrow"></use>
+      </svg>
+      <svg class="map-payment-spiral-right-icon" width="130px" height="100px">
+        <use href="/eatly/assets/sprite-6bf4fdbf.svg#icon-spiral-arrow"></use>
+      </svg>
+    </div>
+  </div>
 </section>
 
       <section class="section">
@@ -156,7 +249,7 @@
     <div class="footer-logo-container">
       <a href="../index.html" class="footer-logo">
         <svg class="logo-icon" width="40" height="40">
-          <use href="/eatly/assets/sprite-6f261426.svg#icon-Logo-eatly">
+          <use href="/eatly/assets/sprite-6bf4fdbf.svg#icon-Logo-eatly">
         </svg>
         eatly
       </a>
@@ -178,25 +271,25 @@
        <li class="footer-social-item">
         <a target="_blank" href="" class="footer-social-links">
           <svg class="footer-social-links-icon" width="16" height="16">
-          <use href="/eatly/assets/sprite-6f261426.svg#icon-instagram-footer"></use>
+          <use href="/eatly/assets/sprite-6bf4fdbf.svg#icon-instagram-footer"></use>
         </svg></a>
        </li>
        <li class="footer-social-item">
         <a target="_blank" href="" class="footer-social-links">
           <svg class="footer-social-links-icon" width="16" height="16">
-          <use href="/eatly/assets/sprite-6f261426.svg#icon-linkedin-footer"></use>
+          <use href="/eatly/assets/sprite-6bf4fdbf.svg#icon-linkedin-footer"></use>
         </svg></a>
        </li>
        <li class="footer-social-item">
         <a target="_blank" href="" class="footer-social-links">
           <svg class="footer-social-links-icon" width="16" height="16">
-            <use href="/eatly/assets/sprite-6f261426.svg#icon-facebook-footer"></use>
+            <use href="/eatly/assets/sprite-6bf4fdbf.svg#icon-facebook-footer"></use>
           </svg></a>
         </li>
         <li class="footer-social-item">
           <a target="_blank" href="" class="footer-social-links">
             <svg class="footer-social-links-icon" width="16" height="16">
-              <use href="/eatly/assets/sprite-6f261426.svg#icon-twitter-footer"></use>
+              <use href="/eatly/assets/sprite-6bf4fdbf.svg#icon-twitter-footer"></use>
             </svg></a>
           </li>
         </ul>
@@ -224,25 +317,25 @@
        <li class="footer-social-item">
         <a target="_blank" href="" class="footer-social-links">
           <svg class="footer-social-links-icon" width="16" height="16">
-          <use href="/eatly/assets/sprite-6f261426.svg#icon-instagram-footer"></use>
+          <use href="/eatly/assets/sprite-6bf4fdbf.svg#icon-instagram-footer"></use>
         </svg></a>
        </li>
        <li class="footer-social-item">
         <a target="_blank" href="" class="footer-social-links">
           <svg class="footer-social-links-icon" width="16" height="16">
-          <use href="/eatly/assets/sprite-6f261426.svg#icon-linkedin-footer"></use>
+          <use href="/eatly/assets/sprite-6bf4fdbf.svg#icon-linkedin-footer"></use>
         </svg></a>
        </li>
        <li class="footer-social-item">
         <a target="_blank" href="" class="footer-social-links">
           <svg class="footer-social-links-icon" width="16" height="16">
-          <use href="/eatly/assets/sprite-6f261426.svg#icon-facebook-footer"></use>
+          <use href="/eatly/assets/sprite-6bf4fdbf.svg#icon-facebook-footer"></use>
         </svg></a>
        </li>
        <li class="footer-social-item">
         <a target="_blank" href="" class="footer-social-links">
           <svg class="footer-social-links-icon" width="16" height="16">
-          <use href="/eatly/assets/sprite-6f261426.svg#icon-twitter-footer"></use>
+          <use href="/eatly/assets/sprite-6bf4fdbf.svg#icon-twitter-footer"></use>
         </svg></a>
        </li>
      </ul>
@@ -258,74 +351,80 @@
       id="closeBackrop"
     >
       <svg width="10px" height="10px">
-        <use href="/eatly/assets/sprite-6f261426.svg#icon-close-order"></use>
+        <use href="/eatly/assets/sprite-6bf4fdbf.svg#icon-close-order"></use>
       </svg>
     </button>
-    <form class="order-form" action="">
+    <form class="order-form" action="" id="orderForm">
       <input
         class="model-order-input"
         type="text"
+        name="nameUser"
         placeholder="Enter NAME"
         required
       />
       <input
         class="model-order-input"
-        type="text"
+        type="email"
+        name="mailUser"
         placeholder="Enter EMAIL"
         required
       />
       <input
         class="model-order-input"
         type="text"
+        name="addrUser"
         placeholder="Enter ADRESS"
         required
       />
     </form>
     <div class="model-order-container">
-      <div class="order-wrap">
-        <div class="order-wrap-name">
-          <p class="order-wrap-text">Product name:</p>
-          <p class="order-wrap-variables" id="product">product*</p>
-        </div>
-        <ul class="order-list-price">
-          <li>
-            <p class="order-wrap-text">Number:</p>
-            <p class="order-wrap-variables" id="numberProduct">0</p>
-          </li>
-          <li>
-            <p class="order-wrap-text">Price:</p>
-            <p class="order-wrap-variables" id="priceProduct">0</p>
-          </li>
-        </ul>
-        <div class="order-wrap-button">
-          <button class="order-wrap-btn" type="button" id="minusProduct">
-            <svg width="10px" height="10px">
-              <use href="/eatly/assets/sprite-6f261426.svg#icon-minus"></use>
-            </svg>
-          </button>
-          <button class="order-wrap-btn" type="button" id="plusProduct">
-            <svg width="10px" height="10px">
-              <use href="/eatly/assets/sprite-6f261426.svg#icon-plus"></use>
-            </svg>
-          </button>
-        </div>
-      </div>
       <picture id="imgProduct" class="model-img">
         <img src="/eatly/assets/food-deskt-2-1x-ac986fb8.png" alt="menu" />
       </picture>
+      <div class="order-wrap">
+        <div class="order-wrap-name">
+          <p class="order-wrap-variables" id="product">product*</p>
+          <p class="order-wrap-variables" id="priceForOneProd">$00.00</p>
+        </div>
+        <div class="order-wrap-button">
+          <button
+            class="order-wrap-btn order-wrap-btn-minus"
+            type="button"
+            id="minusProduct"
+          >
+            <svg width="7px" height="7px">
+              <use href="/eatly/assets/sprite-6bf4fdbf.svg#icon-minus"></use>
+            </svg>
+          </button>
+          <p
+            class="order-wrap-variables order-wrap-variables-num"
+            id="numberProduct"
+          >
+            1
+          </p>
+          <button class="order-wrap-btn" type="button" id="plusProduct">
+            <svg width="7px" height="7px">
+              <use href="/eatly/assets/sprite-6bf4fdbf.svg#icon-plus"></use>
+            </svg>
+          </button>
+          <p
+            class="order-wrap-variables order-wrap-variables-price"
+            id="priceProduct"
+          >
+            0
+          </p>
+        </div>
+      </div>
       <div class="model-delete">
         <button type="button" class="button-open-delete" id="buttonOpenDelete">
-          <!-- <svg width="16px" height="30px">
-            <use href="./img/sprite.svg#icon-three-dots"></use>
-          </svg> -->
           <svg width="16px" height="20px">
-            <use href="/eatly/assets/sprite-6f261426.svg#icon-menu-bar"></use>
+            <use href="/eatly/assets/sprite-6bf4fdbf.svg#icon-menu-bar"></use>
           </svg>
         </button>
         <div class="delete-wrap">
-          <button type="button">
+          <button class="delete-wrap-btn" type="button">
             <svg width="16px" height="30px">
-              <use href="/eatly/assets/sprite-6f261426.svg#icon-dump"></use>
+              <use href="/eatly/assets/sprite-6bf4fdbf.svg#icon-dump"></use>
             </svg>
             Delete
           </button>
@@ -336,7 +435,7 @@
       <button class="button-basket target-btn" type="button">
         Continue Shopping
       </button>
-      <button class="button-order" type="button">Order</button>
+      <button class="button-order" type="submit" form="orderForm">Order</button>
     </div>
   </div>
 </div>
@@ -351,12 +450,12 @@
     </ul>
     <button type="button" class="basket-close-btn" id="closeBasket">
       <svg width="10px" height="10px">
-        <use href="/eatly/assets/sprite-6f261426.svg#icon-close-order"></use>
+        <use href="/eatly/assets/sprite-6bf4fdbf.svg#icon-close-order"></use>
       </svg>
     </button>
     <div class="empty-basket">
       <svg>
-        <use href="/eatly/assets/sprite-6f261426.svg#icon-basket"></use>
+        <use href="/eatly/assets/sprite-6bf4fdbf.svg#icon-basket"></use>
       </svg>
       <p class="basket-modal-heading">The basket is empty</p>
       <p class="basket-modal-caption">But it's never too late to fix it :)</p>
@@ -372,7 +471,9 @@
   </div>
 </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     
+    
+    <!-- <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script> -->
+    <!-- <script type="module" src="./main.js"></script> -->
   </body>
 </html>
