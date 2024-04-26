@@ -322,6 +322,15 @@ const elMapPayTotalPrice = document.querySelector('.js-map-payment-text-total');
 const shopper = {};
 let switchEnterInput = true;
 
+//* Receving info user whith localStorage
+if (localStorage.getItem('seveInfoUserForOrder')) {
+  const objInfoUser = JSON.parse(localStorage.getItem('seveInfoUserForOrder'));
+
+  elMapForm.elements.userName.value = objInfoUser.nameUser;
+  elMapForm.elements.userEmail.value = objInfoUser.emailUser;
+  elMapForm.elements.userAddr.value = objInfoUser.addressUser;
+}
+
 const receivingInfoOrder = event => {
   event.preventDefault();
 

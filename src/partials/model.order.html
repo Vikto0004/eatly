@@ -9,58 +9,67 @@
         <use href="./img/sprite.svg#icon-close-order"></use>
       </svg>
     </button>
-    <form class="order-form" action="">
+    <form class="order-form" action="" id="orderForm">
       <input
         class="model-order-input"
         type="text"
+        name="nameUser"
         placeholder="Enter NAME"
         required
       />
       <input
         class="model-order-input"
-        type="text"
+        type="email"
+        name="mailUser"
         placeholder="Enter EMAIL"
         required
       />
       <input
         class="model-order-input"
         type="text"
+        name="addrUser"
         placeholder="Enter ADRESS"
         required
       />
     </form>
     <div class="model-order-container">
-      <div class="order-wrap">
-        <div class="order-wrap-name">
-          <p class="order-wrap-text">Product name:</p>
-          <p class="order-wrap-variables" id="product">product*</p>
-        </div>
-        <ul class="order-list-price">
-          <li>
-            <p class="order-wrap-text">Number:</p>
-            <p class="order-wrap-variables" id="numberProduct">1</p>
-          </li>
-          <li>
-            <p class="order-wrap-text">Price:</p>
-            <p class="order-wrap-variables" id="priceProduct">0</p>
-          </li>
-        </ul>
-        <div class="order-wrap-button">
-          <button class="order-wrap-btn" type="button" id="minusProduct">
-            <svg width="10px" height="10px">
-              <use href="./img/sprite.svg#icon-minus"></use>
-            </svg>
-          </button>
-          <button class="order-wrap-btn" type="button" id="plusProduct">
-            <svg width="10px" height="10px">
-              <use href="./img/sprite.svg#icon-plus"></use>
-            </svg>
-          </button>
-        </div>
-      </div>
       <picture id="imgProduct" class="model-img">
         <img src="./img/dishes-list/food-deskt-2-1x.png" alt="menu" />
       </picture>
+      <div class="order-wrap">
+        <div class="order-wrap-name">
+          <p class="order-wrap-variables" id="product">product*</p>
+          <p class="order-wrap-variables" id="priceForOneProd">$00.00</p>
+        </div>
+        <div class="order-wrap-button">
+          <button
+            class="order-wrap-btn order-wrap-btn-minus"
+            type="button"
+            id="minusProduct"
+          >
+            <svg width="7px" height="7px">
+              <use href="./img/sprite.svg#icon-minus"></use>
+            </svg>
+          </button>
+          <p
+            class="order-wrap-variables order-wrap-variables-num"
+            id="numberProduct"
+          >
+            1
+          </p>
+          <button class="order-wrap-btn" type="button" id="plusProduct">
+            <svg width="7px" height="7px">
+              <use href="./img/sprite.svg#icon-plus"></use>
+            </svg>
+          </button>
+          <p
+            class="order-wrap-variables order-wrap-variables-price"
+            id="priceProduct"
+          >
+            0
+          </p>
+        </div>
+      </div>
       <div class="model-delete">
         <button type="button" class="button-open-delete" id="buttonOpenDelete">
           <svg width="16px" height="20px">
@@ -81,7 +90,7 @@
       <button class="button-basket target-btn" type="button">
         Continue Shopping
       </button>
-      <button class="button-order" type="button">Order</button>
+      <button class="button-order" type="submit" form="orderForm">Order</button>
     </div>
   </div>
 </div>

@@ -2,6 +2,7 @@ const backrop = document.querySelector('.backrop');
 const closeBackrop = document.querySelector('#closeBackrop');
 const openBackrop = document.querySelectorAll('#openBackrop');
 const elDishesList = document.querySelector('.js-dishes-list');
+const elOrderForm = document.querySelector('.order-form');
 
 const priceProduct = document.querySelector('#priceProduct');
 const product = document.querySelector('#product');
@@ -18,6 +19,7 @@ const elMinusProdMod = document.querySelector('#minusProduct');
 const elWrapProdMod = document.querySelector('.model-order-container');
 const elBtnPushOnBask = document.querySelector('.target-btn');
 const elBtnOrderMod = document.querySelector('.button-order');
+const elPriceForOneProd = document.querySelector('#priceForOneProd');
 
 const basketModal = document.querySelector('.basket-modal');
 const openBasket = document.querySelector('#openBasket');
@@ -41,13 +43,11 @@ const operationsOnProducts = event => {
   //* Seving heard
   if (elHeardIcon === elTarget || elTarget.closest('.dishes-list-heart-link')) {
     if (elHeardIcon.style.fill === 'rgb(255, 255, 255)') {
-      console.log(1244);
       elHeardIcon.style.fill = 'rgb(108, 95, 188)';
       savingTheHeartArr.push(elHeardIcon.id);
       localStorage.setItem('elHeardIcon', JSON.stringify(savingTheHeartArr));
     } else {
       elHeardIcon.style.fill = 'rgb(255, 255, 255)';
-      console.log(elHeardIcon.style.fill);
       for (const element of savingTheHeartArr) {
         if (element === elHeardIcon.id) {
           savingTheHeartArr.splice(savingTheHeartArr.indexOf(element), 1);
@@ -66,6 +66,7 @@ const operationsOnProducts = event => {
 
   elImgProdMod.src = photoProd;
   elPriceProdMod.textContent = costProd;
+  elPriceForOneProd.textContent = costProd;
   elNameProdMod.textContent = nameProd;
   elNumberProdMod.textContent = 1;
 
@@ -77,7 +78,6 @@ const operationsOnProducts = event => {
     elNumberProdMod.textContent = ++numberProdMod;
     elPriceProdMod.textContent =
       '$' + (priceProdMod * numberProdMod).toFixed(2);
-    console.log(elWrapProdMod.innerHTML);
   });
 
   //* Subtraction products
@@ -127,6 +127,7 @@ if (saveProdArr.length === 0 && localStorage.getItem('saveProdBask')) {
   localStorage.setItem('counterId', counterId);
 }
 
+//* Adding products on localStore
 const addOnLocalStore = () => {
   saveProdArr.push(
     `<div class="model-order-container" id="numProdBask${++counterId}">${
@@ -140,12 +141,38 @@ const addOnLocalStore = () => {
 };
 
 elBtnPushOnBask.addEventListener('click', addOnLocalStore);
-elBtnOrderMod.addEventListener('click', () => {
-  addOnLocalStore();
+
+//* Save change in basket and transition on order page
+elBtnBaskOrder.addEventListener('click', () => {
+  saveProdArr = [...elBasket.children];
+  const newSaveArr = saveProdArr.reduce((acc, el) => {
+    acc.push(
+      `<div class="model-order-container" id="numProdBask${++counterId}">${
+        el.innerHTML
+      }</div>`
+    );
+    return acc;
+  }, []);
+
+  localStorage.setItem('saveProdBask', JSON.stringify(newSaveArr));
   window.location.href = 'menu-map.html';
 });
-elBtnBaskOrder.addEventListener('click', () => {
-  localStorage.setItem('saveProdBask', JSON.stringify(saveProdArr));
+
+//* Seving info user for order
+elOrderForm.addEventListener('submit', event => {
+  event.preventDefault();
+  const objInfoUser = {
+    nameUser: '',
+    emailUser: '',
+    addressUser: '',
+  };
+
+  objInfoUser.nameUser = elOrderForm.elements.nameUser.value.trim();
+  objInfoUser.emailUser = elOrderForm.elements.mailUser.value.trim();
+  objInfoUser.addressUser = elOrderForm.elements.addrUser.value.trim();
+
+  localStorage.setItem('seveInfoUserForOrder', JSON.stringify(objInfoUser));
+  addOnLocalStore();
   window.location.href = 'menu-map.html';
 });
 
@@ -157,7 +184,6 @@ document.onclick = e => {
   if (e.target !== elCloseWrapDel && elCloseWrapDel) {
     elCloseWrapDel.style.display = 'none';
     elCloseWrapDel = '';
-    console.log(elCloseWrapDel);
   }
 };
 
@@ -262,39 +288,9 @@ const emptyBasketNone = () => {
 };
 emptyBasketNone();
 
-//! --- збереження сердечка --- //
-
-// const dishesListHeartLink = document.querySelectorAll(
-//   '.dishes-list-heart-link'
-// );
-
-// const savingTheHeartArray = [];
-// const savingTheHeart = event => {
-//   const heartIcon = event.currentTarget.querySelector('.dishes-list-icon');
-//   if (heartIcon.style.fill === 'rgb(255, 255, 255)') {
-//     heartIcon.style.fill = '#6c5fbc';
-//     savingTheHeartArray.push(heartIcon.id);
-//     localStorage.setItem('heartIcon', JSON.stringify(savingTheHeartArray)); // даємо в сховище
-//   } else {
-//     heartIcon.style.fill = 'rgb(255, 255, 255)';
-//     for (const element of savingTheHeartArray) {
-//       if (element === heartIcon.id) {
-//         savingTheHeartArray.splice(savingTheHeartArray.indexOf(element), 1);
-//       }
-//     }
-//     localStorage.setItem('heartIcon', JSON.stringify(savingTheHeartArray)); // стираємо з сховища
-//   }
-// };
-
-// for (const element of dishesListHeartLink) {
-//   element.addEventListener('click', savingTheHeart);
-// }
-
 const receivingTheHeart = () => {
   const arrayFromStorage = JSON.parse(localStorage.getItem('elHeardIcon'));
-  console.log(123);
   if (!arrayFromStorage) return;
-  console.log(123445);
   for (const element of arrayFromStorage) {
     savingTheHeartArr.push(element);
     const heartIcon = document.querySelector(`#${element}`);
