@@ -198,6 +198,10 @@
   position: relative;
 }
 
+.model-delete-open {
+  display: block;
+}
+
 .delete-wrap {
   display: none;
   background-color: #f9f9f9;
