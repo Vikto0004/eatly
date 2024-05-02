@@ -15,6 +15,8 @@ const clickOpenClose = event => {
     previousClickEl = ancestor;
     previousListItem = elListItem;
 
+    //12321
+
     iconPlus.lastElementChild.setAttribute(
       'href',
       '../img/sprite.svg#icon-minus'
