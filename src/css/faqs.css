@@ -5,7 +5,8 @@
   text-align: center;
   color: #323142;
   position: relative;
-  margin-bottom: 67px;
+  max-width: 250px;
+  margin: 0 auto 67px;
 }
 
 .questions-title span {
@@ -15,7 +16,7 @@
 .questions-title svg {
   position: absolute;
   top: -10px;
-  right: 20px;
+  right: -10px;
   stroke-dasharray: 100%;
   animation: draw 1.3s ease-in-out infinite;
 }
@@ -47,6 +48,10 @@
   font-size: 12px;
   line-height: 253%;
   color: #323142;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .questions-open-btn {

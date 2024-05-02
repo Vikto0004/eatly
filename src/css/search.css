@@ -152,6 +152,17 @@
   gap: 8px;
 }
 
+@media screen and (max-width: 370px) {
+  .search-sort-list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .search-category-list li {
+    width: 50px;
+  }
+}
+
 .search-sort-checkbox-label {
   font-weight: 500;
   font-size: 12px;

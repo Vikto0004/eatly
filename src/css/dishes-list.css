@@ -74,6 +74,10 @@
   line-height: 25px;
   line-height: 1.625;
   color: #323142;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .dishes-wrap-prg {

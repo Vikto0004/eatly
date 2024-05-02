@@ -78,6 +78,7 @@
   border: none;
   background-color: transparent;
   grid-row: 1;
+  width: 30px;
 }
 
 .header-basket-btn p {
@@ -86,7 +87,7 @@
   justify-content: center;
   align-items: center;
   bottom: 15px;
-  left: 45px;
+  left: 20px;
   top: -10px;
   width: 18px;
   height: 18px;
