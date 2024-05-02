@@ -30,6 +30,7 @@ const totalPrice = document.querySelector('.basket-wrap-price');
 const emptyBasket = document.querySelector('.empty-basket');
 const elBasket = document.querySelector('.basket-container');
 const elBtnBaskOrder = document.querySelector('.basket-wrap-btn');
+const elBaskLoginList = document.querySelector('.js-basket-login');
 
 // --------------------------- Oprations on products of modal --------------------------- //
 const savingTheHeartArr = [];
@@ -245,6 +246,7 @@ elBasket.addEventListener('click', operationsOnProdBask);
 const clickOpenBasket = event => {
   basketModal.style.display = 'block';
   document.body.style.overflow = 'hidden';
+  elBaskLoginList.style.display = 'flex';
 
   //* Update list products on basket
   basket.innerHTML = '';

@@ -45,6 +45,20 @@
 .header-login {
   display: none;
   grid-row: 1;
+  gap: 5px;
+  grid-row: 1;
+}
+
+.header-login-item {
+  font-family: Inter, sans-serif;
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 1.5;
+  color: #606060;
+  padding: 10px 15px;
+  border-radius: 18px;
+  border: 1px solid transparent;
+  transition: all 0.4s ease;
 }
 
 .curent-page::after {
@@ -179,8 +193,18 @@
   .header-nav-list,
   .header-login {
     display: flex;
-    gap: 5px;
-    grid-row: 1;
+  }
+
+  .header-login-item {
+    padding: 17px 26px;
+  }
+
+  .header-login-item:focus,
+  .header-login-item:hover {
+    border: 1px solid #6c5fbc;
+    width: 130px;
+    height: 62px;
+    color: #6c5fbc;
   }
 
   .header-nav-list {
@@ -201,26 +225,6 @@
   .header-nav-item:focus,
   .header-nav-item:hover {
     color: rgb(108, 95, 188);
-  }
-
-  .header-login-item {
-    font-family: Inter, sans-serif;
-    font-weight: 700;
-    font-size: 17px;
-    line-height: 1.5;
-    color: #606060;
-    padding: 17px 26px;
-    border-radius: 18px;
-    border: 1px solid transparent;
-    transition: all 0.4s ease;
-  }
-
-  .header-login-item:focus,
-  .header-login-item:hover {
-    border: 1px solid #6c5fbc;
-    width: 130px;
-    height: 62px;
-    color: #6c5fbc;
   }
 
   .signup {

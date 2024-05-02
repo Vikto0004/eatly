@@ -7,6 +7,7 @@ const elHeaderGuide = document.querySelectorAll('.js-header-guide');
 const handleOpenMenuHeader = () => {
   document.body.style.overflow = 'hidden';
   elHeaderMenuWrap.style.display = 'flex';
+
   setTimeout(() => {
     elHeaderMenuWrap.style.transform = 'translateX(0%)';
   }, 100);
@@ -18,6 +19,7 @@ elHeaderMenuOpen.addEventListener('click', handleOpenMenuHeader);
 const handleCloseMenuHeader = () => {
   elHeaderMenuWrap.style.transform = 'translateX(100%)';
   document.body.style.overflow = 'auto';
+
   setTimeout(() => {
     elHeaderMenuWrap.style.display = 'none';
   }, 700);
