@@ -112,8 +112,6 @@
   align-items: center;
   position: relative;
   margin-bottom: 75px;
-  opacity: 0;
-  transform: translateX(500px);
 }
 
 .hero-images-icon-top {
@@ -187,11 +185,6 @@
   height: 120px;
   bottom: 0;
   right: 0px;
-}
-
-.hero-wrap-left {
-  opacity: 0;
-  transform: translateX(-500px);
 }
 
 @media screen and (min-width: 1024px) {
