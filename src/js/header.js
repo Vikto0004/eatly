@@ -39,7 +39,8 @@ for (const element of elHeaderGuide) {
 if (
   currentPage === 'index.html' ||
   currentPage === 'menu.html' ||
-  currentPage === 'result-search.html'
+  currentPage === 'result-search.html' ||
+  currentPage === ''
 ) {
   openBasket.style.display = 'block';
 }
