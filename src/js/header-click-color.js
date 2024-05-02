@@ -7,3 +7,6 @@ for (const element of headerNavItem) {
     element.classList.add('curent-page');
   }
 }
+
+const elHeader = document.querySelector('.header');
+elHeader.classList.remove('js-header-animation');

@@ -57,3 +57,25 @@ window.addEventListener('scroll', () => {
     elHeaderBox.style.padding = '40px 0';
   }
 });
+
+//* Double click for mobil off
+document.addEventListener(
+  'DOMContentLoaded',
+  function () {
+    var lastTouchEnd = 0;
+    var delay = 500;
+
+    document.addEventListener(
+      'touchend',
+      function (event) {
+        var now = new Date().getTime();
+        if (now - lastTouchEnd <= delay) {
+          event.preventDefault();
+        }
+        lastTouchEnd = now;
+      },
+      false
+    );
+  },
+  false
+);
