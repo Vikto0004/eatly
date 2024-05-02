@@ -34,7 +34,11 @@ const clickOpenClose = event => {
     previousClickEl
       .closest('.questions-list-item')
       .querySelector('.questions-open-icon')
-      .lastElementChild.setAttribute('href', '../img/sprite.svg#icon-plus');
+
+      .lastElementChild.setAttribute(
+        'href',
+        '/eatly/assets/sprite-66f10b04.svg#icon-plus'
+      );
 
     if (previousClickEl !== ancestor) {
       clickOpenCloseFn(ancestor, elListItem);
