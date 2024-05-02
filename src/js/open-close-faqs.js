@@ -16,11 +16,7 @@ const clickOpenClose = event => {
     previousListItem = elListItem;
 
     //12321
-
-    iconPlus.lastElementChild.setAttribute(
-      'href',
-      '../img/sprite.svg#icon-minus'
-    );
+    iconPlus.lastElementChild.setAttribute('href', '/sprite.svg#icon-minus');
   }
 
   const elListItem = event.target.closest('.questions-list-item');
