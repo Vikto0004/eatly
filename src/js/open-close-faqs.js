@@ -15,8 +15,10 @@ const clickOpenClose = event => {
     previousClickEl = ancestor;
     previousListItem = elListItem;
 
-    //12321
-    iconPlus.lastElementChild.setAttribute('href', '/sprite.svg#icon-minus');
+    iconPlus.lastElementChild.setAttribute(
+      'href',
+      '/eatly/assets/sprite-66f10b04.svg#icon-minus'
+    );
   }
 
   const elListItem = event.target.closest('.questions-list-item');
@@ -34,7 +36,6 @@ const clickOpenClose = event => {
     previousClickEl
       .closest('.questions-list-item')
       .querySelector('.questions-open-icon')
-
       .lastElementChild.setAttribute(
         'href',
         '/eatly/assets/sprite-66f10b04.svg#icon-plus'
