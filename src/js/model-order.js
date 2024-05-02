@@ -38,6 +38,7 @@ const operationsOnProducts = event => {
   //* Giving of current elements
   const elTarget = event.target;
   const elItem = event.target.closest('.dishes-list-item');
+  if (!elItem) return;
   const elHeardIcon = elItem.querySelector('.dishes-list-icon');
 
   //* Seving heard

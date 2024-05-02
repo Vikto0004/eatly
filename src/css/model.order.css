@@ -20,8 +20,7 @@
   transform: translate(-50%, -50%) scale(1);
   background-color: #f9f9f9;
   width: 315px;
-  height: 55vh;
-  max-height: 630px;
+  height: 500px;
   padding: 60px 33px 40px;
   justify-content: space-between;
   border-radius: 20px;

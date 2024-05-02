@@ -60,23 +60,20 @@ window.addEventListener('scroll', () => {
 });
 
 //* Double click for mobil off
-document.addEventListener(
-  'DOMContentLoaded',
-  function () {
-    var lastTouchEnd = 0;
-    var delay = 500;
 
-    document.addEventListener(
-      'touchend',
-      function (event) {
-        var now = new Date().getTime();
-        if (now - lastTouchEnd <= delay) {
-          event.preventDefault();
-        }
-        lastTouchEnd = now;
-      },
-      false
-    );
-  },
-  false
-);
+const elBody = document.querySelector('body');
+
+function handleTouchStart(event) {
+  if (event.touches.length > 1) {
+    event.preventDefault();
+  }
+}
+
+function handleTouchEnd(event) {
+  if (event.touches.length > 0) {
+    event.preventDefault();
+  }
+}
+
+elBody.addEventListener('touchstart', handleTouchStart, { passive: false });
+elBody.addEventListener('touchend', handleTouchEnd, { passive: false });
