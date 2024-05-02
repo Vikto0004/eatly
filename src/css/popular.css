@@ -89,19 +89,28 @@
   border-radius: 5px;
 }
 
+.result-search-container {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  margin-bottom: 45px;
+}
+
 .result-search-titlte {
   font-weight: 600;
   font-size: 18px;
   color: #323142;
-  margin-bottom: 45px;
   display: flex;
   gap: 3px;
-  align-items: center;
-  justify-content: center;
 }
 
-.result-search-titlte svg {
+.result-search-icon {
   fill: #6c5fbc;
+  display: none;
+}
+
+.result-search-icon-open {
+  display: block;
 }
 
 .result-search-titlte span {
