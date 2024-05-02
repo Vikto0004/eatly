@@ -1,1 +1,1 @@
-{"version":3,"file":"commonHelpers5.js","sources":["../src/js/aos-animation-in-index.js"],"sourcesContent":["import AOS from 'aos';\nimport 'aos/dist/aos.css';\n\nsetTimeout(() => {\n  AOS.init({\n    disable: 'mobile',\n    duration: 1700,\n    offset: 300,\n    once: true,\n  });\n}, 100);\n"],"names":["AOS"],"mappings":"oPAGA,WAAW,IAAM,CACfA,EAAI,KAAK,CACP,QAAS,SACT,SAAU,KACV,OAAQ,IACR,KAAM,EACV,CAAG,CACH,EAAG,GAAG"}
+{"version":3,"file":"commonHelpers5.js","sources":[],"sourcesContent":[],"names":[],"mappings":""}
