@@ -27,26 +27,6 @@
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.order-close-wrap {
-  position: absolute;
-  top: 12px;
-  right: 12px;
-  background-color: #e7e9fc;
-  border: transparent 1px solid;
-  border-radius: 50%;
-  width: 24px;
-  height: 24px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: all 0.8s ease;
-}
-
-.order-close-wrap svg {
-  fill: #6c5fbc;
-  transition: transform 0.3s;
-}
-
 .order-form {
   display: flex;
   flex-direction: column;
@@ -85,7 +65,6 @@
 
 .order-wrap {
   display: flex;
-  gap: 15px;
   width: 100%;
   justify-content: space-between;
 }
@@ -294,15 +273,6 @@
 
   .model-order-container::after {
     bottom: 0;
-  }
-
-  .order-close-wrap:hover {
-    background-color: transparent;
-    border: #6c5fbc 1px solid;
-  }
-
-  .order-close-wrap:hover svg {
-    transform: rotate(180deg);
   }
 
   .order-wrap-button {
