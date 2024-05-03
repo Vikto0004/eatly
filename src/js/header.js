@@ -62,26 +62,4 @@ window.addEventListener('scroll', () => {
 });
 
 //* Double click for mobil off
-
-// const elBody = document.querySelector('body');
-
-// function handleTouchStart(event) {
-//   if (event.touches.length > 1) {
-//     event.preventDefault();
-//   }
-// }
-
-// function handleTouchEnd(event) {
-//   if (event.touches.length > 0) {
-//     event.preventDefault();
-//   }
-// }
-
-// elBody.addEventListener('touchstart', handleTouchStart, { passive: false });
-// elBody.addEventListener('touchend', handleTouchEnd, { passive: false });
-function handleDoubleClick(event) {
-  event.preventDefault(); // Забороняємо стандартну реакцію браузера
-}
-
-// Додаємо обробник події подвійного кліку до body
-document.body.addEventListener('dblclick', handleDoubleClick);
+document.body.addEventListener('dblclick', event => event.preventDefault());
