@@ -186,6 +186,21 @@
   margin-bottom: 20px;
 }
 
+.header-nav-item {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 1.5;
+  color: #606060;
+  display: block;
+  position: relative;
+}
+
+.header-nav-item:focus,
+.header-nav-item:hover {
+  color: rgb(108, 95, 188);
+}
+
 @media screen and (min-width: 1024px) {
   .header-menu {
     display: none;
@@ -211,21 +226,6 @@
   .header-nav-list {
     gap: 53px;
     grid-column: 2 / 7;
-  }
-
-  .header-nav-item {
-    font-family: 'Inter', sans-serif;
-    font-weight: 500;
-    font-size: 17px;
-    line-height: 1.5;
-    color: #606060;
-    display: block;
-    position: relative;
-  }
-
-  .header-nav-item:focus,
-  .header-nav-item:hover {
-    color: rgb(108, 95, 188);
   }
 
   .signup {

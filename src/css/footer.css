@@ -53,10 +53,7 @@
   bottom: -5px;
   left: -5px;
 }
-/* .footer-social-links-icon:hover,
-.footer-social-links-icon:focus {
-  fill: #6c5fbc;
-} */
+
 .footer-navigation-list {
   display: flex;
   flex-direction: column;
@@ -67,8 +64,6 @@
   display: none;
 }
 
-.footer-navigation-item {
-}
 .footer-navigation-links {
   font-family: 'Inter', sans-serif;
   font-weight: 500;
@@ -95,6 +90,44 @@
   font-size: 13px;
   line-height: 1.47em;
   color: #70798b;
+}
+
+.scroll-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 45px;
+  height: 45px;
+  border: none;
+  border-radius: 50%;
+  background-color: #6c5fbc;
+  position: fixed;
+  right: 3%;
+  bottom: 3%;
+  transform: scale(0);
+  visibility: hidden;
+  z-index: 99999;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.scroll-btn:focus,
+.scroll-btn:hover {
+  background-color: #5c51a0;
+}
+
+.scroll-btn-icon {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: aliceblue;
+  opacity: 0.6;
+}
+
+.is-active-scroll {
+  transform: scale(1);
+  visibility: visible;
+  opacity: 1;
 }
 
 /* =====================FOOTER_TABLET==================== */
