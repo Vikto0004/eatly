@@ -1,0 +1,143 @@
+.latest-articles-list {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  align-items: center;
+  margin-bottom: 80px;
+}
+
+.latest-articles-list li {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 11px;
+  width: 239px;
+  height: 302px;
+  box-shadow: 0 3px 32px 0 rgba(197, 197, 197, 0.25);
+  background: #fff;
+  cursor: pointer;
+  padding: 17px 13.5px 18px;
+}
+
+.latest-articles-img {
+  border-radius: 8px;
+  height: 187px;
+  object-fit: contain;
+  width: 100%;
+}
+
+.latest-articles-questions {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1.19112;
+  color: #252525;
+}
+
+.latest-articles-wrap {
+  display: flex;
+  align-items: center;
+}
+
+.latest-articles-wrap div {
+  margin-left: 8px;
+}
+
+.latest-articles-written {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 8px;
+  color: #8d8d8d;
+}
+
+.latest-articles-autor {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 1.53333;
+  color: #000;
+}
+
+.latest-articles-date {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 1.97965;
+  color: #b7b4b4;
+  margin: auto 0 0 auto;
+}
+
+@media screen and (min-width: 1024px) {
+  .latest-articles-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 44px;
+  }
+
+  .latest-articles-list li {
+    width: 248px;
+    height: 313px;
+  }
+
+  .latest-articles-img {
+    border-radius: 9px;
+    height: 193px;
+  }
+
+  .latest-articles-questions {
+    font-size: 15px;
+  }
+
+  .latest-articles-autor {
+    font-size: 12px;
+  }
+
+  .latest-articles-date {
+    font-size: 11px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .latest-articles-list {
+    gap: 61px;
+    margin-bottom: 100px;
+  }
+
+  .latest-articles-list li {
+    border-radius: 16px;
+    width: 348px;
+    height: 440px;
+    padding: 25px 20px 30px;
+  }
+
+  .latest-articles-img {
+    border-radius: 12px;
+    height: 272px;
+  }
+
+  .latest-articles-questions {
+    font-size: 21px;
+  }
+
+  .latest-articles-wrap div {
+    margin-left: 11px;
+  }
+
+  .latest-articles-wrap > img {
+    width: 43.7px;
+    height: 43.7px;
+  }
+
+  .latest-articles-written {
+    font-size: 11px;
+  }
+
+  .latest-articles-autor {
+    font-size: 17px;
+  }
+
+  .latest-articles-date {
+    font-size: 15px;
+  }
+}

@@ -16,6 +16,7 @@
   "license": "ISC",
   "dependencies": {
     "aos": "^3.0.0-beta.6",
+    "firebase": "^10.12.2",
     "vite-plugin-full-reload": "^1.0.5",
     "vite-plugin-html-inject": "^1.0.1",
     "wow.js": "^1.2.2"
