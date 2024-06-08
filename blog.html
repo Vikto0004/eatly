@@ -24,9 +24,11 @@
 
   
   <title>Eatly</title>
-  <script type="module" crossorigin src="/eatly/assets/header-be749d18.js"></script>
-  <script type="module" crossorigin src="/eatly/assets/header-click-color-0ea842b7.js"></script>
-  <link rel="stylesheet" href="/eatly/assets/styles-cab8bb41.css">
+  <script type="module" crossorigin src="/eatly/commonHelpers2.js"></script>
+  <link rel="modulepreload" crossorigin href="/eatly/assets/header-be749d18.js">
+  <link rel="modulepreload" crossorigin href="/eatly/assets/header-click-color-0ea842b7.js">
+  <link rel="modulepreload" crossorigin href="/eatly/assets/vendor-fb52cd0a.js">
+  <link rel="stylesheet" href="/eatly/assets/styles-4fe1f76f.css">
 </head>
 
   <body>
@@ -147,7 +149,222 @@
 </section>
 
       <section class="section">
-  <div class="container"></div>
+  <div class="container">
+    <h2 class="section-title">Latest <span>Articles</span></h2>
+    <ul class="latest-articles-list">
+      <li>
+        <picture>
+          <source
+            srcset="/eatly/assets/food-deskt-1-1x-2b493908.png 1x, /eatly/assets/food-deskt-1-2x-af6d4919.png 2x"
+            media="(min-width: 1440px)"
+          />
+          <source
+            srcset="/eatly/assets/food-tabl-1-1x-1e89af21.png 1x, /eatly/assets/food-tabl-1-2x-5c9b4c0d.png 2x"
+            media="(min-width: 1024px)"
+          />
+          <source
+            srcset="/eatly/assets/dishes-list-1-1x-e5e5fef8.png 1x, /eatly/assets/dishes-list-1-2x-045eb6df.png 2x"
+            media="(max-width: 1023px)"
+          />
+          <img
+            class="latest-articles-img"
+            src="/eatly/assets/food-deskt-1-2x-af6d4919.png"
+            alt="latest articles img"
+          />
+        </picture>
+        <h3 class="latest-articles-questions">How To Manage Cards ?</h3>
+        <div class="latest-articles-wrap">
+          <img
+            srcset="data:image/png;base64,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 1x, /eatly/assets/user-2x-cfab8496.png 2x"
+            alt="user"
+            width="30px"
+            height="30px"
+          />
+          <div>
+            <p class="latest-articles-written">Written By</p>
+            <p class="latest-articles-autor">Perperzon</p>
+          </div>
+          <p class="latest-articles-date">15 DEC, 2022</p>
+        </div>
+      </li>
+      <li>
+        <picture>
+          <source
+            srcset="/eatly/assets/food-deskt-1-1x-2b493908.png 1x, /eatly/assets/food-deskt-1-2x-af6d4919.png 2x"
+            media="(min-width: 1440px)"
+          />
+          <source
+            srcset="/eatly/assets/food-tabl-1-1x-1e89af21.png 1x, /eatly/assets/food-tabl-1-2x-5c9b4c0d.png 2x"
+            media="(min-width: 1024px)"
+          />
+          <source
+            srcset="/eatly/assets/dishes-list-1-1x-e5e5fef8.png 1x, /eatly/assets/dishes-list-1-2x-045eb6df.png 2x"
+            media="(max-width: 1023px)"
+          />
+          <img
+            class="latest-articles-img"
+            src="/eatly/assets/food-deskt-1-2x-af6d4919.png"
+            alt="latest articles img"
+          />
+        </picture>
+        <h3 class="latest-articles-questions">How To Manage Cards ?</h3>
+        <div class="latest-articles-wrap">
+          <img
+            srcset="data:image/png;base64,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 1x, /eatly/assets/user-2x-cfab8496.png 2x"
+            alt="user"
+            width="30px"
+            height="30px"
+          />
+          <div>
+            <p class="latest-articles-written">Written By</p>
+            <p class="latest-articles-autor">Perperzon</p>
+          </div>
+          <p class="latest-articles-date">15 DEC, 2022</p>
+        </div>
+      </li>
+      <li>
+        <picture>
+          <source
+            srcset="/eatly/assets/food-deskt-1-1x-2b493908.png 1x, /eatly/assets/food-deskt-1-2x-af6d4919.png 2x"
+            media="(min-width: 1440px)"
+          />
+          <source
+            srcset="/eatly/assets/food-tabl-1-1x-1e89af21.png 1x, /eatly/assets/food-tabl-1-2x-5c9b4c0d.png 2x"
+            media="(min-width: 1024px)"
+          />
+          <source
+            srcset="/eatly/assets/dishes-list-1-1x-e5e5fef8.png 1x, /eatly/assets/dishes-list-1-2x-045eb6df.png 2x"
+            media="(max-width: 1023px)"
+          />
+          <img
+            class="latest-articles-img"
+            src="/eatly/assets/food-deskt-1-2x-af6d4919.png"
+            alt="latest articles img"
+          />
+        </picture>
+        <h3 class="latest-articles-questions">How To Manage Cards ?</h3>
+        <div class="latest-articles-wrap">
+          <img
+            srcset="data:image/png;base64,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 1x, /eatly/assets/user-2x-cfab8496.png 2x"
+            alt="user"
+            width="30px"
+            height="30px"
+          />
+          <div>
+            <p class="latest-articles-written">Written By</p>
+            <p class="latest-articles-autor">Perperzon</p>
+          </div>
+          <p class="latest-articles-date">15 DEC, 2022</p>
+        </div>
+      </li>
+      <li>
+        <picture>
+          <source
+            srcset="/eatly/assets/food-deskt-1-1x-2b493908.png 1x, /eatly/assets/food-deskt-1-2x-af6d4919.png 2x"
+            media="(min-width: 1440px)"
+          />
+          <source
+            srcset="/eatly/assets/food-tabl-1-1x-1e89af21.png 1x, /eatly/assets/food-tabl-1-2x-5c9b4c0d.png 2x"
+            media="(min-width: 1024px)"
+          />
+          <source
+            srcset="/eatly/assets/dishes-list-1-1x-e5e5fef8.png 1x, /eatly/assets/dishes-list-1-2x-045eb6df.png 2x"
+            media="(max-width: 1023px)"
+          />
+          <img
+            class="latest-articles-img"
+            src="/eatly/assets/food-deskt-1-2x-af6d4919.png"
+            alt="latest articles img"
+          />
+        </picture>
+        <h3 class="latest-articles-questions">How To Manage Cards ?</h3>
+        <div class="latest-articles-wrap">
+          <img
+            srcset="data:image/png;base64,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 1x, /eatly/assets/user-2x-cfab8496.png 2x"
+            alt="user"
+            width="30px"
+            height="30px"
+          />
+          <div>
+            <p class="latest-articles-written">Written By</p>
+            <p class="latest-articles-autor">Perperzon</p>
+          </div>
+          <p class="latest-articles-date">15 DEC, 2022</p>
+        </div>
+      </li>
+      <li>
+        <picture>
+          <source
+            srcset="/eatly/assets/food-deskt-1-1x-2b493908.png 1x, /eatly/assets/food-deskt-1-2x-af6d4919.png 2x"
+            media="(min-width: 1440px)"
+          />
+          <source
+            srcset="/eatly/assets/food-tabl-1-1x-1e89af21.png 1x, /eatly/assets/food-tabl-1-2x-5c9b4c0d.png 2x"
+            media="(min-width: 1024px)"
+          />
+          <source
+            srcset="/eatly/assets/dishes-list-1-1x-e5e5fef8.png 1x, /eatly/assets/dishes-list-1-2x-045eb6df.png 2x"
+            media="(max-width: 1023px)"
+          />
+          <img
+            class="latest-articles-img"
+            src="/eatly/assets/food-deskt-1-2x-af6d4919.png"
+            alt="latest articles img"
+          />
+        </picture>
+        <h3 class="latest-articles-questions">How To Manage Cards ?</h3>
+        <div class="latest-articles-wrap">
+          <img
+            srcset="data:image/png;base64,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 1x, /eatly/assets/user-2x-cfab8496.png 2x"
+            alt="user"
+            width="30px"
+            height="30px"
+          />
+          <div>
+            <p class="latest-articles-written">Written By</p>
+            <p class="latest-articles-autor">Perperzon</p>
+          </div>
+          <p class="latest-articles-date">15 DEC, 2022</p>
+        </div>
+      </li>
+      <li>
+        <picture>
+          <source
+            srcset="/eatly/assets/food-deskt-1-1x-2b493908.png 1x, /eatly/assets/food-deskt-1-2x-af6d4919.png 2x"
+            media="(min-width: 1440px)"
+          />
+          <source
+            srcset="/eatly/assets/food-tabl-1-1x-1e89af21.png 1x, /eatly/assets/food-tabl-1-2x-5c9b4c0d.png 2x"
+            media="(min-width: 1024px)"
+          />
+          <source
+            srcset="/eatly/assets/dishes-list-1-1x-e5e5fef8.png 1x, /eatly/assets/dishes-list-1-2x-045eb6df.png 2x"
+            media="(max-width: 1023px)"
+          />
+          <img
+            class="latest-articles-img"
+            src="/eatly/assets/food-deskt-1-2x-af6d4919.png"
+            alt="latest articles img"
+          />
+        </picture>
+        <h3 class="latest-articles-questions">How To Manage Cards ?</h3>
+        <div class="latest-articles-wrap">
+          <img
+            srcset="data:image/png;base64,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 1x, /eatly/assets/user-2x-cfab8496.png 2x"
+            alt="user"
+            width="30px"
+            height="30px"
+          />
+          <div>
+            <p class="latest-articles-written">Written By</p>
+            <p class="latest-articles-autor">Perperzon</p>
+          </div>
+          <p class="latest-articles-date">15 DEC, 2022</p>
+        </div>
+      </li>
+    </ul>
+    <button type="button">Load more</button>
+  </div>
 </section>
 
       <section class="section">
@@ -356,6 +573,6 @@
 
     
     
-  </body>
+    
   </body>
 </html>
