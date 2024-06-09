@@ -17,7 +17,7 @@ const clickOpenClose = event => {
     previousClickEl = ancestor;
     previousListItem = elListItem;
 
-    iconPlus.lastElementChild.setAttribute('href', `${sprite}icon-minus`);
+    iconPlus.lastElementChild.setAttribute('href', `${sprite}#icon-minus`);
   }
 
   const elListItem = event.target.closest('.questions-list-item');
@@ -35,7 +35,7 @@ const clickOpenClose = event => {
     previousClickEl
       .closest('.questions-list-item')
       .querySelector('.questions-open-icon')
-      .lastElementChild.setAttribute('href', `${sprite}icon-plus`);
+      .lastElementChild.setAttribute('href', `${sprite}#icon-plus`);
 
     if (previousClickEl !== ancestor) {
       clickOpenCloseFn(ancestor, elListItem);
