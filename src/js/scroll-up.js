@@ -1,5 +1,5 @@
 'use strict';
-const elScrollBtn = document.querySelector('.scroll-btn ');
+export const elScrollBtn = document.querySelector('.scroll-btn ');
 
 let lastScrollTop = 0;
 let switchScroll = true;

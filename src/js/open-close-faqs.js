@@ -1,3 +1,5 @@
+import sprite from '/img/sprite.svg';
+
 const elQuestionsList = document.querySelector('.js-questions-list');
 
 let switchClickFaqs = true;
@@ -15,10 +17,7 @@ const clickOpenClose = event => {
     previousClickEl = ancestor;
     previousListItem = elListItem;
 
-    iconPlus.lastElementChild.setAttribute(
-      'href',
-      '/eatly/assets/sprite-66f10b04.svg#icon-minus'
-    );
+    iconPlus.lastElementChild.setAttribute('href', `${sprite}icon-minus`);
   }
 
   const elListItem = event.target.closest('.questions-list-item');
@@ -36,10 +35,7 @@ const clickOpenClose = event => {
     previousClickEl
       .closest('.questions-list-item')
       .querySelector('.questions-open-icon')
-      .lastElementChild.setAttribute(
-        'href',
-        '/eatly/assets/sprite-66f10b04.svg#icon-plus'
-      );
+      .lastElementChild.setAttribute('href', `${sprite}icon-plus`);
 
     if (previousClickEl !== ancestor) {
       clickOpenCloseFn(ancestor, elListItem);

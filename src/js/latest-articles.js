@@ -1,7 +1,10 @@
+'use strict';
+
 import { initializeApp } from 'firebase/app';
 import { getFirestore, collection, getDocs } from 'firebase/firestore/lite';
 import { query, limit, startAfter } from 'firebase/firestore/lite';
 import { latestArticlesItems } from './render-markup.js';
+import { elScrollBtn } from './scroll-up.js';
 
 const elLatestArticlesList = document.querySelector('.latest-articles-list-js');
 const elLatestArticlesBtn = document.querySelector('.latest-articles-more-js');
@@ -102,6 +105,7 @@ document.addEventListener('keydown', event => {
 });
 
 function openAnswer() {
+  elScrollBtn.classList.remove('is-active-scroll');
   elLatestBackdrop.style.display = 'block';
   elLatestAnswer.style.display = 'flex';
   document.body.style.overflow = 'hidden';

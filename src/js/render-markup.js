@@ -1,3 +1,5 @@
+'use strict';
+
 export const latestArticlesItems = dataArray => {
   const markup = dataArray.map(({ author, images, publishedAt, title }) => {
     return `<li class="latest-articles-item">
