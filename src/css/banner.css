@@ -1,12 +1,11 @@
 .banner {
-  padding-bottom: 200px;
+  padding: 67px 0 115px;
 }
 
 .banner-container {
   border-radius: 15px;
   background: #6c5fbc;
   min-height: 256px;
-  opacity: 0.8;
 }
 
 .banner-tittle {
@@ -71,7 +70,7 @@
 }
 @media screen and (min-width: 1024px) {
   .banner {
-    padding-bottom: 150px;
+    padding: 67px 0 50px;
   }
   .banner-container {
     min-height: 200px;
@@ -117,6 +116,10 @@
   }
 }
 @media screen and (min-width: 1440px) {
+  .banner {
+    padding: 95px 0 67px;
+  }
+
   .banner-container {
     border-radius: 30px;
     min-width: 1214px;

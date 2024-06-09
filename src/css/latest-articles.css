@@ -18,7 +18,6 @@
   flex-direction: column;
   gap: 50px;
   align-items: center;
-  margin-bottom: 80px;
 }
 
 .latest-articles-item {
@@ -32,6 +31,12 @@
   background: #fff;
   cursor: pointer;
   padding: 17px 13.5px 18px;
+  transition: box-shadow 0.3s ease;
+}
+
+.latest-articles-item:focus,
+.latest-articles-item:hover {
+  box-shadow: 0 2px 6px 0 rgba(197, 197, 197, 0.8);
 }
 
 .latest-articles-img {
@@ -94,8 +99,28 @@
   border: none;
   display: block;
   margin: 0 auto;
+  margin-top: 80px;
   position: relative;
   transition: all 0.3s ease;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #6c5fbc;
+  }
+
+  &.load {
+    color: #6c5fbc;
+    cursor: not-allowed;
+  }
+
+  &.load::after {
+    animation: expand-width 1s infinite;
+  }
 }
 
 .latest-articles-more:focus,
@@ -103,14 +128,16 @@
   color: #6c5fbc;
 }
 
-.latest-articles-more::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background-color: #6c5fbc;
+@keyframes expand-width {
+  0% {
+    width: 100%;
+  }
+  50% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
 }
 
 .latest-articles-error {
@@ -132,7 +159,75 @@
   font-size: 16px;
 }
 
-.latest-articles-error-text {
+.latest-articles-answer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 300px;
+  max-height: 70vh;
+  z-index: 1001;
+  padding: 20px;
+  border-radius: 11px;
+  background: #fff;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: all 0.3s ease-in;
+}
+
+.latest-answer-active {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.latest-articles-answer p {
+  overflow: auto;
+}
+
+.latest-answer-btn {
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  border: 1px #6c5fbc solid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: transparent;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  transition: all 0.5s ease;
+}
+
+.latest-answer-btn svg {
+  fill: #6c5fbc;
+}
+
+.latest-answer-btn:focus,
+.latest-answer-btn:hover {
+  transform: rotate(180deg);
+  border: 1px transparent solid;
+}
+
+.latest-articles-backdrop {
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(30, 32, 35, 0.8);
+  transition: all 0.5s ease;
+}
+
+.latest-backdrop-active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
 }
 
 @media screen and (min-width: 1024px) {
@@ -173,6 +268,10 @@
   .latest-articles-more {
     font-size: 20px;
   }
+
+  .latest-articles-answer {
+    width: 400px;
+  }
 }
 
 @media screen and (min-width: 1440px) {
@@ -183,7 +282,6 @@
 
   .latest-articles-list {
     gap: 61px;
-    margin-bottom: 80px;
   }
 
   .latest-articles-item {
@@ -238,5 +336,61 @@
 
   .latest-articles-error-text {
     font-size: 18px;
+  }
+
+  .latest-articles-answer {
+    width: 500px;
+  }
+
+  .latest-answer-btn {
+    width: 25px;
+    height: 25px;
+    padding: 0;
+    border: 1px #6c5fbc solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: transparent;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+  }
+
+  .latest-answer-btn svg {
+    width: 10px;
+    height: 10px;
+  }
+}
+
+.loader {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: inline-block;
+  border-top: 4px solid #363636;
+  border-right: 4px solid transparent;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+.loader::after {
+  content: '';
+  box-sizing: border-box;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border-left: 4px solid #6c5fbc;
+  border-bottom: 4px solid transparent;
+  animation: rotation 0.5s linear infinite reverse;
+}
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }
