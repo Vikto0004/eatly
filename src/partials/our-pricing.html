@@ -1,3 +1,46 @@
-<section class="section">
-  <div class="container"></div>
+<section class="section our-pricing">
+  <div class="container">
+    <div class="our-pricing-wrap">
+      <p class="our-pricing-text">Our Pricing</p>
+      <svg class="our-pricing-spiral-icon" width="43px" height="35px">
+        <use href="./img/sprite.svg#icon-spiral-arrow"></use>
+      </svg>
+    </div>
+    <div class="our-pricing-container">
+      <svg class="our-illustration-icon" width="30px" height="34px">
+        <use href="./img/sprite.svg#icon-Illustration-3"></use>
+      </svg>
+      <picture>
+        <source
+          srcset="
+            ./img/pricing/desktop-1-1x.png 1x,
+            ./img/pricing/desktop-1-2x.png 2x
+          "
+          media="(min-width: 1440px)"
+        />
+        <source
+          srcset="
+            ./img/pricing/tablet-1-1x.png 1x,
+            ./img/pricing/tablet-1-2x.png 2x
+          "
+          media="(min-width: 1024px)"
+        />
+        <source
+          srcset="
+            ./img/pricing/mobil-1-1x.png 1x,
+            ./img/pricing/mobil-1-2x.png 2x
+          "
+          media="(max-width: 1023px)"
+        />
+        <img
+          class="our-pricing-img"
+          src="./img/pricing/desktop-1-1x.png"
+          alt="menu"
+        />
+      </picture>
+      <svg class="our-pricing-illustration-icon" width="24px" height="22px">
+        <use href="./img/sprite.svg#icon-Illustration-2"></use>
+      </svg>
+    </div>
+  </div>
 </section>

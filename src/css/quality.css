@@ -90,7 +90,7 @@
   position: absolute;
   top: -15px;
   right: 40px;
-  stroke: rgb(0, 0, 0);
+  stroke: #6c5fbc;
   stroke-width: 2px;
   stroke-dasharray: 100%;
   animation: draw 1.3s ease-in-out infinite;
