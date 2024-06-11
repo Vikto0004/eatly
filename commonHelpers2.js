@@ -1,4 +1,4 @@
-import"./assets/header-be749d18.js";/* empty css                      */import"./assets/header-click-color-0ea842b7.js";import{i as q,g as S,c as $,q as p,l as m,a as b,s as g}from"./assets/vendor-b1deaf70.js";import{e as B}from"./assets/scroll-up-f0ac5aba.js";import"./assets/open-close-faqs-d097043d.js";const h=t=>t.map(({author:s,images:e,publishedAt:a,title:c})=>`<li class="latest-articles-item">
+import"./assets/header-be749d18.js";/* empty css                      */import"./assets/header-click-color-0ea842b7.js";import{i as q,g as S,c as $,q as p,l as m,a as b,s as g}from"./assets/vendor-b1deaf70.js";import{e as B}from"./assets/scroll-up-f0ac5aba.js";import"./assets/open-close-faqs-61d98cf7.js";const h=t=>t.map(({author:s,images:e,publishedAt:a,title:c})=>`<li class="latest-articles-item">
         <picture>
           <source
             srcset="
