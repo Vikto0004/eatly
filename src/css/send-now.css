@@ -1,25 +1,32 @@
-.contact-wrap {
-  display: flex;
+.send-now-wrap {
   padding-top: 24px;
   height: 150px;
   background: #6c5fbc;
   margin-bottom: 46px;
 }
 
-.contact-wrap-icon {
+.send-now-wrap div:nth-child(1) {
+  display: flex;
+}
+
+.send-now-wrap div:nth-child(2) {
+  display: none;
+}
+
+.send-now-wrap-icon {
   fill: none;
   stroke: #fff;
   stroke-width: 3px;
   transform: rotate(260deg);
 }
 
-.contact-wrap-icon use {
+.send-now-wrap-icon use {
   stroke-dashoffset: 320;
   stroke-dasharray: 330;
   animation: drawTwo 3s backwards infinite;
 }
 
-.contact-wrap-title {
+.send-now-wrap-title {
   font-family: 'Poppins', sans-serif;
   font-weight: 600;
   font-size: 24px;
@@ -29,20 +36,20 @@
   color: #f9f9f9;
 }
 
-.contact-wrapper-title {
+.send-now-wrapper-title {
   display: none;
 }
 
-.contact-form {
+.send-now-form {
   display: flex;
   flex-direction: column;
 }
 
-.contact-form input {
+.send-now-form input {
   border: 1.26px solid #b6b6b6;
   border-radius: 11px;
   padding: 13px 15px;
-  width: 314px;
+  width: 100%;
   height: 57px;
   font-family: 'Inter', sans-serif;
   font-weight: 600;
@@ -54,24 +61,24 @@
   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.contact-form input:focus,
-.contact-form input:hover {
+.send-now-form input:focus,
+.send-now-form input:hover {
   border-color: #6c5fbc;
 }
 
-.contact-form input:first-child {
+.send-now-form input:first-child {
   margin-bottom: 12px;
 }
 
-.contact-form input:nth-child(3) {
+.send-now-form input:nth-child(3) {
   margin-bottom: 50px;
 }
 
-.contact-form textarea {
+.send-now-form textarea {
   border: 1.22px solid #b6b6b6;
   border-radius: 11px;
   padding: 13px 0px 13px 16px;
-  width: 314px;
+  width: 100%;
   height: 210px;
   font-family: 'Inter', sans-serif;
   font-weight: 600;
@@ -84,14 +91,15 @@
   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.contact-form textarea:focus,
-.contact-form textarea:hover {
+.send-now-form textarea:focus,
+.send-now-form textarea:hover {
   border-color: #6c5fbc;
 }
 
-.contact-form button {
+.send-now-form button {
   border-radius: 10px;
   height: 55px;
+  width: 100%;
   background: #6c5fbc;
   font-family: 'Poppins', sans-serif;
   font-weight: 500;
@@ -102,7 +110,124 @@
   border: none;
 }
 
+.send-now-wrapper-icon {
+  display: none;
+}
+
 @media screen and (min-width: 1024px) {
+  .send-now {
+    padding-bottom: 150px;
+  }
+
+  .send-now-container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .send-now-wrap {
+    padding-top: 60px;
+    height: 581px;
+    background: #6c5fbc;
+    margin-bottom: 0;
+    width: 377px;
+    margin-left: -68px;
+  }
+
+  .send-now-wrap div:nth-child(1) {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+
+  .send-now-wrap-title {
+    font-size: 34px;
+  }
+
+  .send-now-wrap-icon {
+    width: 238px;
+    height: 90px;
+    stroke-width: 2px;
+    transform: rotate(180deg);
+  }
+
+  .send-now-wrap div:nth-child(2) {
+    display: flex;
+    margin-right: -154px;
+    justify-content: flex-end;
+    gap: 5px;
+  }
+
+  .send-now-wrap div:nth-child(2) svg {
+    stroke: #6c5fbc;
+    stroke-width: 2px;
+    stroke-dasharray: 100%;
+    animation: draw 1.3s ease-in-out infinite;
+    margin-top: -10px;
+  }
+
+  .send-now-wrapper {
+    position: relative;
+  }
+
+  .send-now-wrapper-title {
+    display: block;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 1.38512;
+    color: #252525;
+    margin-bottom: 44px;
+  }
+
+  .send-now-wrapper-title span {
+    color: #6c5fbc;
+  }
+
+  .send-now-form {
+    width: 350px;
+  }
+
+  .send-now-form input {
+    border: 1.42px solid #b6b6b6;
+    border-radius: 12px;
+    font-size: 12px;
+  }
+
+  .send-now-form input:first-child {
+    margin-bottom: 18px;
+  }
+
+  .send-now-form input:nth-child(3) {
+    margin-bottom: 37px;
+  }
+
+  .send-now-form textarea {
+    margin-bottom: 30px;
+    font-size: 12px;
+    border: 1.42px solid #b6b6b6;
+    border-radius: 12px;
+  }
+
+  .send-now-form button {
+    font-size: 14px;
+  }
+
+  .send-now-wrapper-icon {
+    position: absolute;
+    bottom: -50px;
+    left: -80px;
+    display: block;
+    fill: none;
+    stroke: #6c5fbc;
+    transform: rotate(156deg);
+    stroke-width: 2.5px;
+  }
+
+  .send-now-wrapper-icon use {
+    stroke-dashoffset: 320;
+    stroke-dasharray: 330;
+    animation: drawTwo 3s backwards infinite;
+  }
 }
 
 @media screen and (min-width: 1440px) {
