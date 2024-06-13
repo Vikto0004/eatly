@@ -251,6 +251,11 @@ button.plans-drop-btn.ac-trigger {
     color: #606060;
   }
 
+  .plans-wrap-features-icon {
+    width: 25px;
+    height: 25px;
+  }
+
   .plans-wrap-buttons {
     display: flex;
     gap: 162px;
@@ -283,4 +288,80 @@ button.plans-drop-btn.ac-trigger {
 }
 
 @media screen and (min-width: 1440px) {
+  .plans-wrap {
+    padding: 51px 0 54px;
+    border-radius: 15px;
+    width: 1251px;
+  }
+
+  .plans-wrap-list-headlines {
+    padding: 0 65px 0 92px;
+    margin-bottom: 37px;
+  }
+
+  .plans-wrap-list-headlines li {
+    max-width: 158px;
+  }
+
+  .plans-wrap-headlines-title {
+    font-size: 40px;
+    margin-bottom: 25px;
+  }
+
+  .plans-wrap-headlines-text {
+    font-size: 16px;
+  }
+
+  .plans-wrap-line {
+    margin-bottom: 45px;
+  }
+
+  .plans-wrap-list-price {
+    padding-right: 138px;
+    margin-bottom: 40px;
+    gap: 261px;
+  }
+
+  .plans-wrap-price-prg {
+    font-size: 64px;
+  }
+
+  .plans-wrap-price-prg span:first-child {
+    font-size: 24px;
+  }
+
+  .plans-wrap-price-prg span:last-child {
+    font-size: 16px;
+  }
+
+  .plans-wrap-list-features {
+    padding-left: 63px;
+    width: 1056px;
+    margin-bottom: 62px;
+    gap: 36px;
+  }
+
+  .plans-wrap-prg {
+    font-size: 24px;
+  }
+
+  .plans-wrap-features-prg {
+    font-size: 22px;
+  }
+
+  .plans-wrap-features-icon {
+    width: 35px;
+    height: 35px;
+  }
+
+  .plans-wrap-buttons {
+    padding-right: 104px;
+  }
+
+  .plans-wrap-buttons button {
+    font-size: 16px;
+    width: 146px;
+    height: 58px;
+    border-radius: 12px;
+  }
 }
