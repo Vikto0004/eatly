@@ -130,6 +130,13 @@
     margin-bottom: 0;
     width: 377px;
     margin-left: -68px;
+    position: relative;
+  }
+
+  .send-now-stars {
+    position: absolute;
+    top: 33px;
+    left: 58px;
   }
 
   .send-now-wrap div:nth-child(1) {
@@ -242,6 +249,13 @@
     height: 818px;
     margin-left: -95px;
     padding-top: 84px;
+  }
+
+  .send-now-stars {
+    width: 30px;
+    height: 57px;
+    top: 47px;
+    left: 82px;
   }
 
   .send-now-wrap-title {
