@@ -1,10 +1,8 @@
 'use strict';
 
-import { initializeApp } from 'firebase/app';
-import { getFirestore, collection, getDocs } from 'firebase/firestore/lite';
-import { query, limit, startAfter } from 'firebase/firestore/lite';
 import { latestArticlesItems } from './render-markup.js';
 import { elScrollBtn } from './scroll-up.js';
+import { receivingDataArticles } from './mockapi.js';
 
 const elLatestArticlesList = document.querySelector('.latest-articles-list-js');
 const elLatestArticlesBtn = document.querySelector('.latest-articles-more-js');
@@ -14,72 +12,38 @@ const elLatestQuestions = document.querySelector('.latest-articles-questions');
 const elLatestAnswerDate = document.querySelector('.latest-articles-date');
 const elLatestAnswerBtn = document.querySelector('.latest-answer-btn-js');
 
-let startIndex = 0;
-let count = 3;
-let nameCollection = 'latest-articles';
-let totalDate = 6;
-
+let page = 1;
+let limit = 3;
+let totalPage = 3;
 const dateArray = [];
 
-const firebaseConfig = {
-  apiKey: 'AIzaSyCR0kAmNb9OqAWbGZEA3sJGJxmVfHTI72o',
-  authDomain: 'eatly-d7d44.firebaseapp.com',
-  projectId: 'eatly-d7d44',
-  storageBucket: 'eatly-d7d44.appspot.com',
-  messagingSenderId: '804736586438',
-  appId: '1:804736586438:web:a66af0c70aea356c53bdc7',
-  measurementId: 'G-B5LDCNKSKB',
-};
-
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
-
-async function promiseDataFromBeckend(db, collectionName, startIndex, count) {
-  const col = collection(db, collectionName);
-  let mainQuery;
-
-  if (startIndex === 0) {
-    mainQuery = query(col, limit(count));
-  } else {
-    const preQuery = query(col, limit(startIndex));
-    const preSnapshot = await getDocs(preQuery);
-    const lastVisible = preSnapshot.docs[preSnapshot.docs.length - 1];
-    mainQuery = query(col, startAfter(lastVisible), limit(count));
-  }
-
-  const mainSnapshot = await getDocs(mainQuery);
-  const docList = mainSnapshot.docs.map(doc => doc.data());
-  return docList;
-}
-
-promiseDataFromBeckend(db, nameCollection, startIndex, count)
-  .then(array => {
-    elLatestArticlesList.innerHTML = latestArticlesItems(array);
-    dateArray.push(...array);
+receivingDataArticles(page, limit)
+  .then(data => {
+    dateArray.push(...data);
+    elLatestArticlesList.innerHTML = latestArticlesItems(data);
   })
   .catch(error => console.log(error));
 
 elLatestArticlesBtn.addEventListener('click', () => {
   elLatestArticlesBtn.classList.add('load');
   elLatestArticlesBtn.disabled = true;
-  startIndex += count;
 
-  promiseDataFromBeckend(db, nameCollection, startIndex, count)
-    .then(array => {
-      elLatestArticlesList.insertAdjacentHTML(
-        'beforeend',
-        latestArticlesItems(array)
-      );
-      dateArray.push(...array);
-
+  receivingDataArticles(++page, limit)
+    .then(data => {
       elLatestArticlesBtn.classList.remove('load');
       elLatestArticlesBtn.disabled = false;
+      elLatestArticlesList.insertAdjacentHTML(
+        'beforeend',
+        latestArticlesItems(data)
+      );
+
+      dateArray.push(...data);
       window.scrollBy({
         top: 400,
         behavior: 'smooth',
       });
 
-      if (totalDate === elLatestArticlesList.childElementCount) {
+      if (totalPage === page) {
         elLatestArticlesBtn.style.display = 'none';
       }
     })
