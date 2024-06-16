@@ -1,4 +1,4 @@
-import"./assets/header-be749d18.js";/* empty css                      */import"./assets/header-click-color-0ea842b7.js";import{e as h}from"./assets/scroll-up-f0ac5aba.js";import"./assets/open-close-faqs-3cfc2c04.js";const u=t=>t.map(({author:s,images:e,publishedAt:o,title:x})=>`<li class="latest-articles-item">
+import"./assets/modulepreload-polyfill-3cfb730f.js";/* empty css                      */import"./assets/header-click-color-0ea842b7.js";import{e as h}from"./assets/scroll-up-f0ac5aba.js";import"./assets/header-608d5493.js";import"./assets/open-close-faqs-3cfc2c04.js";const u=t=>t.map(({author:s,images:e,publishedAt:o,title:x})=>`<li class="latest-articles-item">
         <picture>
           <source
             srcset="

@@ -24,7 +24,11 @@
 
   
   <title>Eatly</title>
-  <link rel="stylesheet" href="/eatly/assets/styles-5bca8481.css">
+  <script type="module" crossorigin src="/eatly/commonHelpers11.js"></script>
+  <link rel="modulepreload" crossorigin href="/eatly/assets/modulepreload-polyfill-3cfb730f.js">
+  <link rel="modulepreload" crossorigin href="/eatly/assets/vendor-2497bfba.js">
+  <link rel="stylesheet" href="/eatly/assets/vendor-8255b786.css">
+  <link rel="stylesheet" href="/eatly/assets/styles-e85275f9.css">
 </head>
 
   <body>
@@ -127,7 +131,7 @@
         <svg class="" width="20" height="24">
           <use
             class="google-icon"
-            href="/eatly/assets/login-sprite-e7cba52d.svg#icon-google"
+            href="/eatly/assets/login-sprite-532024c1.svg#icon-google"
           ></use>
         </svg>
       </button>
@@ -135,7 +139,7 @@
         <svg class="" width="20" height="24">
           <use
             class="ios-apple-icon"
-            href="/eatly/assets/login-sprite-e7cba52d.svg#icon-ios-apple"
+            href="/eatly/assets/login-sprite-532024c1.svg#icon-ios-apple"
           ></use>
         </svg>
       </button>
@@ -143,52 +147,52 @@
 
     <p class="text-or">OR</p>
 
-    <form class="sign-up-form" autocomplete="on">
+    <form class="sign-up-form" id="sign-up-form" autocomplete="on">
       <!-- full name -->
       <div class="input-wrap">
-        <label class="" for="user-name-field"></label>
+        <label class="" for="name"></label>
         <input
           class="input-sign-up input-name"
-          id="user-name-field"
+          id="name"
           type="text"
-          name="user-name"
+          name="name"
           placeholder="FULL NAME"
         />
         <svg class="form-icon" width="17" height="18">
-          <use href="/eatly/assets/login-sprite-e7cba52d.svg#icon-user"></use>
+          <use href="/eatly/assets/login-sprite-532024c1.svg#icon-user"></use>
         </svg>
       </div>
 
       <!-- email -->
       <div class="input-wrap">
-        <label class="" for="user-email-filed"></label>
+        <label class="" for="email"></label>
         <input
           class="input-sign-up input-email"
-          id="user-email-filed"
+          id="email"
           type="email"
-          name="user-email"
+          name="email"
           placeholder="EMAIL"
         />
         <svg class="form-icon" width="18" height="14">
-          <use href="/eatly/assets/login-sprite-e7cba52d.svg#icon-email"></use>
+          <use href="/eatly/assets/login-sprite-532024c1.svg#icon-email"></use>
         </svg>
       </div>
 
       <!-- password -->
       <div class="input-wrap">
-        <label class="" for="user-password-field"></label>
+        <label class="" for="password"></label>
         <input
           class="input-sign-up input-password"
-          id="user-password-field"
+          id="password"
           type="password"
-          name="user-password"
+          name="password"
           placeholder="PASSWORD"
         />
-        <svg class="form-icon icon-lock" width="15" height="19">
-          <use href="/eatly/assets/login-sprite-e7cba52d.svg#icon-lock"></use>
+        <svg class="form-icon" width="15" height="19">
+          <use href="/eatly/assets/login-sprite-532024c1.svg#icon-lock"></use>
         </svg>
         <svg class="icon-password" width="17" height="16">
-          <use href="/eatly/assets/login-sprite-e7cba52d.svg#icon-hide-eye"></use>
+          <use href="/eatly/assets/login-sprite-532024c1.svg#icon-hide-eye"></use>
         </svg>
       </div>
 
@@ -312,5 +316,6 @@
   </svg>
 </button>
 
+    
   </body>
 </html>
