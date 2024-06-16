@@ -19,12 +19,23 @@
         </svg>
         <p id="quantity">0</p>
       </button>
-      <ul class="header-login">
+      <ul class="header-login" style="display: none">
         <li><a href="./sign-in.html" class="header-login-item">Login</a></li>
         <li>
           <a href="./sign-up.html" class="header-login-item signup">Sign Up</a>
         </li>
       </ul>
+      <div class="header-user-wrap js-header-user-wrap">
+        <img
+          src="./img/header/user-desktop-1x.png"
+          srcset="
+            ./img/header/user-mob-1x.png 1x,
+            ./img/header/user-mob-2x.png 2x
+          "
+          alt="user avatar"
+        />
+        <p class="header-user-text js-header-user-text">User name</p>
+      </div>
       <button class="header-menu js-header-menu-open" type="button">
         <svg width="31" height="22">
           <use href="/img/sprite.svg#icon-menu"></use>
@@ -44,7 +55,7 @@
       <li><a href="./pricing.html" class="js-header-guide">Pricing</a></li>
       <li><a href="./contact-us.html" class="js-header-guide">Contact</a></li>
     </ul>
-    <ul class="header-menu-login">
+    <ul class="header-menu-login" style="display: none">
       <li><a href="./sign-in.html" class="header-menu-login-item">Login</a></li>
       <li>
         <a href="./sign-up.html" class="header-menu-login-item signup"
@@ -52,6 +63,17 @@
         >
       </li>
     </ul>
+    <div class="header-menu-user-wrap js-header-user-wrap">
+      <img
+        src="./img/header/user-mob-1x.png"
+        srcset="
+          ./img/header/user-mob-1x.png 1x,
+          ./img/header/user-mob-2x.png 2x
+        "
+        alt="user avatar"
+      />
+      <p class="header-user-text js-header-user-text">User name</p>
+    </div>
     <ul class="header-social-list">
       <li class="footer-social-item">
         <a target="_blank" href="" class="footer-social-links">
