@@ -15,12 +15,19 @@
 }
 
 .header-box {
-  display: grid;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
   border-bottom: 0.5px solid #cbcbcb;
   padding: 40px 0;
   transition: all 0.6s ease;
-  grid-template-columns: 3fr 1fr 0fr;
+}
+
+.header-box-top,
+.header-box-bottom {
+  display: flex;
+  align-items: center;
+  gap: 40px;
 }
 
 .header-logo {
@@ -44,6 +51,11 @@
 .header-login {
   display: none;
   gap: 5px;
+}
+
+.header-login.list-login-act,
+.header-menu-login.list-login-act {
+  display: none !important;
 }
 
 .header-login-item {
@@ -197,23 +209,34 @@
   color: rgb(108, 95, 188);
 }
 
+.header-menu-user-wrap {
+  display: none;
+}
+
 .header-user-wrap {
   display: none;
 }
 
-.header-menu-user-wrap {
+.header-user-active.header-user-wrap {
+  display: none;
+}
+
+.header-user-active.header-menu-user-wrap {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
+  gap: 5px;
 }
 
 .header-user-text {
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 400;
+  text-align: center;
 }
 
-.header-user-wrap img {
-  max-width: 30px;
+.header-menu-user-wrap img {
+  width: 60px;
 }
 
 @media screen and (min-width: 1024px) {
@@ -269,7 +292,7 @@
     margin-bottom: 0px;
   }
 
-  .header-user-wrap {
+  .header-user-active.header-user-wrap {
     display: flex;
     flex-direction: column;
     align-items: center;

@@ -1,46 +1,54 @@
 <header class="header">
   <div class="container">
     <div class="header-box js-header-box">
-      <a href="./index.html" class="header-logo">
-        <svg width="45" height="45">
-          <use href="/img/sprite.svg#icon-Logo-eatly"></use>
-        </svg>
-        eatly
-      </a>
-      <ul class="header-nav-list">
-        <li class="header-nav-item"><a href="./menu.html">Menu</a></li>
-        <li class="header-nav-item"><a href="./blog.html">Blog</a></li>
-        <li class="header-nav-item"><a href="./pricing.html">Pricing</a></li>
-        <li class="header-nav-item"><a href="./contact-us.html">Contact</a></li>
-      </ul>
-      <button type="button" class="header-basket-btn" id="openBasket">
-        <svg width="31" height="22">
-          <use href="./img/sprite.svg#icon-basket"></use>
-        </svg>
-        <p id="quantity">0</p>
-      </button>
-      <ul class="header-login" style="display: none">
-        <li><a href="./sign-in.html" class="header-login-item">Login</a></li>
-        <li>
-          <a href="./sign-up.html" class="header-login-item signup">Sign Up</a>
-        </li>
-      </ul>
-      <div class="header-user-wrap js-header-user-wrap">
-        <img
-          src="./img/header/user-desktop-1x.png"
-          srcset="
-            ./img/header/user-mob-1x.png 1x,
-            ./img/header/user-mob-2x.png 2x
-          "
-          alt="user avatar"
-        />
-        <p class="header-user-text js-header-user-text">User name</p>
+      <div class="header-box-top">
+        <a href="./index.html" class="header-logo">
+          <svg width="45" height="45">
+            <use href="/img/sprite.svg#icon-Logo-eatly"></use>
+          </svg>
+          eatly
+        </a>
+        <ul class="header-nav-list">
+          <li class="header-nav-item"><a href="./menu.html">Menu</a></li>
+          <li class="header-nav-item"><a href="./blog.html">Blog</a></li>
+          <li class="header-nav-item"><a href="./pricing.html">Pricing</a></li>
+          <li class="header-nav-item">
+            <a href="./contact-us.html">Contact</a>
+          </li>
+        </ul>
       </div>
-      <button class="header-menu js-header-menu-open" type="button">
-        <svg width="31" height="22">
-          <use href="/img/sprite.svg#icon-menu"></use>
-        </svg>
-      </button>
+      <div class="header-box-bottom">
+        <button type="button" class="header-basket-btn" id="openBasket">
+          <svg width="31" height="22">
+            <use href="./img/sprite.svg#icon-basket"></use>
+          </svg>
+          <p id="quantity">0</p>
+        </button>
+        <ul class="header-login js-list-login">
+          <li><a href="./sign-in.html" class="header-login-item">Login</a></li>
+          <li>
+            <a href="./sign-up.html" class="header-login-item signup"
+              >Sign Up</a
+            >
+          </li>
+        </ul>
+        <div class="header-user-wrap js-header-user-wrap">
+          <img
+            src="./img/header/user-desktop-1x.png"
+            srcset="
+              ./img/header/user-mob-1x.png 1x,
+              ./img/header/user-mob-2x.png 2x
+            "
+            alt="user avatar"
+          />
+          <p class="header-user-text js-header-user-text">User name</p>
+        </div>
+        <button class="header-menu js-header-menu-open" type="button">
+          <svg width="31" height="22">
+            <use href="/img/sprite.svg#icon-menu"></use>
+          </svg>
+        </button>
+      </div>
     </div>
   </div>
   <div class="header-menu-wrap js-header-menu-wrap">
@@ -55,7 +63,7 @@
       <li><a href="./pricing.html" class="js-header-guide">Pricing</a></li>
       <li><a href="./contact-us.html" class="js-header-guide">Contact</a></li>
     </ul>
-    <ul class="header-menu-login" style="display: none">
+    <ul class="header-menu-login js-list-login">
       <li><a href="./sign-in.html" class="header-menu-login-item">Login</a></li>
       <li>
         <a href="./sign-up.html" class="header-menu-login-item signup"

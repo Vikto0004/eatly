@@ -3,6 +3,18 @@ const elHeaderMenuOpen = document.querySelector('.js-header-menu-open');
 const elHeaderMenuWrap = document.querySelector('.js-header-menu-wrap');
 const elHeaderGuide = document.querySelectorAll('.js-header-guide');
 
+function hideLoginAndShowUser(userName) {
+  const elListLogin = document.querySelectorAll('.js-list-login');
+  const elUserWrap = document.querySelectorAll('.js-header-user-wrap');
+  const elUserText = document.querySelectorAll('.js-header-user-text');
+
+  elListLogin.forEach(el => el.classList.add('list-login-act'));
+  elUserWrap.forEach(el => el.classList.add('header-user-active'));
+  elUserText.forEach(el => (el.textContent = userName));
+}
+const userData = JSON.parse(localStorage.getItem('userData'));
+hideLoginAndShowUser(userData.name);
+
 // ---- відкриття модалки ---- //
 const handleOpenMenuHeader = () => {
   document.body.style.overflow = 'hidden';
