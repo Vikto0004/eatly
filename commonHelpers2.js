@@ -1,4 +1,4 @@
-import"./assets/modulepreload-polyfill-3cfb730f.js";/* empty css                      */import"./assets/header-click-color-0ea842b7.js";import{e as v}from"./assets/scroll-up-f0ac5aba.js";import{r as u}from"./assets/mockapi-0a9f77fa.js";import"./assets/header-608d5493.js";import"./assets/open-close-faqs-3cfc2c04.js";const p=t=>t.map(({author:a,images:e,publishedAt:c,title:y})=>`<li class="latest-articles-item">
+import"./assets/header-31341d69.js";/* empty css                      */import"./assets/header-click-color-0ea842b7.js";import{e as v}from"./assets/scroll-up-f0ac5aba.js";import{r as u}from"./assets/mockapi-0a9f77fa.js";import"./assets/open-close-faqs-3cfc2c04.js";const p=t=>t.map(({author:a,images:e,publishedAt:c,title:y})=>`<li class="latest-articles-item">
         <picture>
           <source
             srcset="
