@@ -13,7 +13,7 @@ function hideLoginAndShowUser(userName) {
   elUserText.forEach(el => (el.textContent = userName));
 }
 const userData = JSON.parse(localStorage.getItem('userData'));
-hideLoginAndShowUser(userData.name);
+userData && hideLoginAndShowUser(userData.name);
 
 // ---- відкриття модалки ---- //
 const handleOpenMenuHeader = () => {

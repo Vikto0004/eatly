@@ -121,6 +121,7 @@
   height: 20px;
   fill: none;
   stroke: #fff;
+  stroke-width: 2.5px;
 }
 
 .is-active-scroll {
