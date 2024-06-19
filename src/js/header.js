@@ -3,6 +3,16 @@ const elHeaderMenuOpen = document.querySelector('.js-header-menu-open');
 const elHeaderMenuWrap = document.querySelector('.js-header-menu-wrap');
 const elHeaderGuide = document.querySelectorAll('.js-header-guide');
 
+let isOpenUserOpt = false;
+let elUserOptCont;
+
+window.addEventListener('click', () => {
+  if (!isOpenUserOpt) return;
+  elUserOptCont.style.height = '0';
+  setTimeout(() => (elUserOptCont.style.display = 'none'), 300);
+  isOpenUserOpt = false;
+});
+
 function hideLoginAndShowUser(userName) {
   const elListLogin = document.querySelectorAll('.js-list-login');
   const elUserWrap = document.querySelectorAll('.js-header-user-wrap');
@@ -11,6 +21,18 @@ function hideLoginAndShowUser(userName) {
   elListLogin.forEach(el => el.classList.add('list-login-act'));
   elUserWrap.forEach(el => el.classList.add('header-user-active'));
   elUserText.forEach(el => (el.textContent = userName));
+
+  elUserWrap.forEach(el => {
+    el.addEventListener('click', e => {
+      if (isOpenUserOpt) return;
+      const elCurrent = e.currentTarget;
+      elUserOptCont = elCurrent.querySelector('.js-header-user-opt-cont');
+
+      elUserOptCont.style.display = 'block';
+      setTimeout(() => (elUserOptCont.style.height = '124px'));
+      setTimeout(() => (isOpenUserOpt = true), 100);
+    });
+  });
 }
 const userData = JSON.parse(localStorage.getItem('userData'));
 userData && hideLoginAndShowUser(userData.name);
