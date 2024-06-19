@@ -24,7 +24,13 @@
 
   
   <title>Eatly</title>
-  <link rel="stylesheet" href="/eatly/assets/styles-7b843ed8.css">
+  <script type="module" crossorigin src="/eatly/commonHelpers10.js"></script>
+  <link rel="modulepreload" crossorigin href="/eatly/assets/header-a472c3f4.js">
+  <link rel="modulepreload" crossorigin href="/eatly/assets/vendor-2497bfba.js">
+  <link rel="modulepreload" crossorigin href="/eatly/assets/mockapi-0a9f77fa.js">
+  <link rel="modulepreload" crossorigin href="/eatly/assets/header-click-color-0ea842b7.js">
+  <link rel="stylesheet" href="/eatly/assets/vendor-8255b786.css">
+  <link rel="stylesheet" href="/eatly/assets/styles-7d37b372.css">
 </head>
 
   <body>
@@ -64,18 +70,22 @@
           </li>
         </ul>
         <div class="header-user-wrap js-header-user-wrap">
-          <div class="header-user-icon">
-            <svg width="40px" height="40px">
+          <button class="header-user-btn">
+            <svg width="20px" height="20px">
               <use href="/eatly/assets/sprite-34294d4a.svg#icon-user"></use>
             </svg>
-          </div>
+          </button>
           <p class="header-user-text js-header-user-text">User name</p>
           <div class="header-user-opt-cont js-header-user-opt-cont">
             <ul class="header-user-list">
-              <li>Profile</li>
-              <li>History</li>
-              <li>Settings</li>
-              <li>Exit</li>
+              <li><button class="header-user-list-btn">Profile</button></li>
+              <li><button class="header-user-list-btn">History</button></li>
+              <li><button class="header-user-list-btn">Settings</button></li>
+              <li>
+                <button class="header-user-list-btn js-header-user-exit">
+                  Exit
+                </button>
+              </li>
             </ul>
           </div>
         </div>
@@ -108,18 +118,22 @@
       </li>
     </ul>
     <div class="header-menu-user-wrap js-header-user-wrap">
-      <div class="header-user-icon">
+      <button class="header-user-btn">
         <svg width="40px" height="40px">
           <use href="/eatly/assets/sprite-34294d4a.svg#icon-user"></use>
         </svg>
-      </div>
+      </button>
       <p class="header-user-text js-header-user-text">User name</p>
       <div class="header-user-opt-cont js-header-user-opt-cont">
         <ul class="header-user-list">
-          <li>Profile</li>
-          <li>History</li>
-          <li>Settings</li>
-          <li>Exit</li>
+          <li><button class="header-user-list-btn">Profile</button></li>
+          <li><button class="header-user-list-btn">History</button></li>
+          <li><button class="header-user-list-btn">Settings</button></li>
+          <li>
+            <button class="header-user-list-btn js-header-user-exit">
+              Exit
+            </button>
+          </li>
         </ul>
       </div>
     </div>
@@ -157,8 +171,126 @@
 </header>
 
     <main>
-      <section class="section">
-  <div class="container"></div>
+      <section class="section log-account">
+  <div class="container log-account-container">
+    <div class="log-wrap-left">
+      <div class="log-left-container">
+        <h1 class="title-sign-up">Sign In To <span>eatly</span></h1>
+        <form class="login-options">
+          <button class="" type="submit">
+            <svg class="" width="20" height="24">
+              <use
+                class="google-icon"
+                href="/eatly/assets/login-sprite-532024c1.svg#icon-google"
+              ></use>
+            </svg>
+          </button>
+          <button class="" type="submit">
+            <svg class="" width="20" height="24">
+              <use
+                class="ios-apple-icon"
+                href="/eatly/assets/login-sprite-532024c1.svg#icon-ios-apple"
+              ></use>
+            </svg>
+          </button>
+        </form>
+        <p class="text-or">OR</p>
+        <form
+          class="sign-up-form"
+          id="sign-in-form"
+          autocomplete="on"
+          novalidate="novalidate"
+        >
+          <!-- email -->
+          <div class="input-wrap">
+            <label class="" for="email"></label>
+            <input
+              class="input-sign-up sign-up-email"
+              id="email"
+              type="email"
+              name="email"
+              placeholder="EMAIL"
+            />
+            <svg class="form-icon" width="18" height="14">
+              <use href="/eatly/assets/login-sprite-532024c1.svg#icon-email"></use>
+            </svg>
+          </div>
+
+          <!-- password -->
+          <div class="input-wrap">
+            <label class="" for="password"></label>
+            <input
+              class="input-sign-up input-password"
+              id="password"
+              type="password"
+              name="password"
+              placeholder="PASSWORD"
+            />
+            <a href="./forget-password.html" class="sign-in-forget"
+              >Forget Password ?</a
+            >
+            <svg class="form-icon" width="15" height="19">
+              <use href="/eatly/assets/login-sprite-532024c1.svg#icon-lock"></use>
+            </svg>
+            <svg class="icon-password" width="17" height="16">
+              <use href="/eatly/assets/login-sprite-532024c1.svg#icon-hide-eye"></use>
+            </svg>
+          </div>
+
+          <button class="btn-sign-up" type="submit">SIGN IP</button>
+
+          <p class="form-text">
+            Create A New Account?
+            <a href="./sign-up.html" class="link-log-in">Sign Up?</a>
+          </p>
+        </form>
+      </div>
+      <div class="log-left-wrapper">
+        <a href="./">Privacy Policy</a>
+        <p>Copyright 2022</p>
+      </div>
+    </div>
+    <div class="log-wrap-right">
+      <picture>
+        <source
+          srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAhAAAANRCAMAAACFrXXGAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAJcEhZcwAACxMAAAsTAQCanBgAAADnUExURUdwTP///////////////////2hgt////////////////2xfvP///////2tfvP///////2xfvP///////3Bgv3Bgr////////2xfvP///2xgu21fvGpdumxevWxfvG1dvf///2pgumxgu2xeu2xevP///////2xcu21dumxgvGteu21fvW1gum1fvf///2tfvWxcvGpgumteuv///2tgu2tdu21gvWxguWxfu2xeumxevGxcuWtjvWhYt2tfvWpaumtgvGtevGxgvP///////////2thvGtevG1fvf///////////2xfvBGBzdEAAABMdFJOUwAPHxIGECAZDAMwvyoW3xcB7wkUEBAOC68TQJ9gf89gBWCAgJANAkBgULCfYI8Rn1AwoAhwcGBQz5BvUB8g3zCgoJAEHBVfX98aLgfKVKU6AAAJK0lEQVR42uzd23LbVBiAUadRsi1SxbYULAS0hCkJpyFQUobDBQPT9gLw+z8Ptux0FFs2jW1sRV7rqoiiYba/kfavHNTpNFxeRB24cx1CL777h771oAihmP4pSsKt9Th4cS+EvLx3hBCG1oN0HELUicdXipDEloPOcFxC2ptcH+whmOwrkzDRSy0FpdtJD5nbBVP55HYR9ECpf1PeMEJmA0GnfPgQwnGcGDkpbxeTi0M+7qKcPTl4xXjkvJzNnj3bCNLs7uFD9u4RNnTKR9iZVaCyvTy6tAgAAAAAAADQclluDagoenGnP0wsBFPXSRYlwWWCO1EIiW9J5U6/COGf/f4vpCdr6vv4tn99SHp5tudvUT4Ka/Kd1f/DnjKLO3GvEASzO8bkspv2+oKgMQSBIBAEgkAQCAJBIAgEgSAQBIJAEAgCQSAIBCEIQQhiX/LitSB4Zw+vOhREo+3+VYeCaLTdv+pQEM2281cdCqLhdv2qwxVB/PVklTRaQS3b21fu+FWHK4J48sEqb1ZdPro+yK3Z8asOVwbx99Pl3h4vlQhii08idvyqw5VBPF1vD9EVxLbs/lWHgmiyPbzqUBANdjXZTe74VYeCaLB9vOpQEE1+KrWHVx0K4lHY3asOBfFItpe7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 1x, /eatly/assets/pattern-desktop-2x-8e1dc953.png 2x"
+          media="(min-width: 1440px)"
+        />
+        <source
+          srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAXgAAAJeCAMAAACJXu4iAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAJcEhZcwAACxMAAAsTAQCanBgAAADeUExURUdwTGhgt////2tfvP///////////////////////////////2xfvGxfvHBgr////3Bgv////////////2pguv///////////2xgu////////2xeu2xcu2xfvG1fvP///////2xevG1dvWxevWxgu////2tgu2tdu21fvWtfvWpguv///2xgvP///////////2xfvGtfvf///21dumpdumxcvG1gumxeum1gvWteumxfu2teu2tjvWxgvG1fvWxevGtevGxguWhYt2thvGtgvP///////////2xcuWxfvFrjdswAAABJdFJOUwAgEt8TCQYZDwMBFu+/EBcQCyocMDAhDkAnFIBAz58MEJBgf4AFcHCP32ANUAIIEa+fBGBgUGCQYKDPsB+Qn2+gUCBfoAcaJFBFGq+tAAAGqklEQVR42u3caXPb1hUGYNJcriiCopiooUvt1mKpUiQvsby0TZru+P9/qAQnMwauGBPUkIAqPU8+ZIC5/vICujw84EGjUbVe+6pBDc5C6Gb/7457wqjUOPQ3G41RCP+SRbUmod1rhzDeFEXFu/wwTP+7EUTVNqe3+8QGX/0NPwlhts1TqdEw9G/6YSyJanVCuN3MasqOLCrVnYxm930Y2mxq0R76eK2pthEBAAAA2TfzTqPR9SWxet3hu1u97zrcrvPZZq9bzrvnl/vVsL/GRw4boZwXz2+nedHrDbuCryf8G8E/NYIXvOAFL3jBC17wgkfwgkfwgkfwD3XWEXwt2mH2C+nGZk/wleqEkD0KGoW+4KuVTZhmg46Hgq/Wj/1w1A/D1W31c4L/93dz/Kc9x+EzSv4srHbQcU7w3//huz/e88PGfcON55P7bNBxlRMwc4P/odxW034+wWeDjpMwEXzFrqYBbPZWOmEq+DKGszK++9tbSwRf3Q7f+62mvBV8Pd+jeoL/fyd4wQte8IIXvOAFL3jBC17wCF7wCF7wz95m757u94f3T/YEv3a9sm/yFLzgBY/gBY/gBY/gBS94wQte8IIXvOAFL3jBI3jBUzL4o04pE8GvOPiyBA8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPy+3s1ofJQZj27eiaMa70btYcgbtkfCX7fNq36Ypz/uCWd9uu3w+267AlrTxv6t2DNtd/1aNplhWOhI9Kt21g9l9O03qzUKZV0Ja4XGobzbTXmtans/CsuYSH5FuU9CkHwNjkKQfA2uls499FWVVdYzcl/p19Xlc39ho1mB/tK5j4VWywZ/KLQ6NpphR2h1VJL9M5nVccMrZ+q54ZUz9dzwyplV6Shn6tFWzjz6nUY5U89Oo5xZpVvlTD0mypla/KicqUe3ZO7KmRW7KVdGKmdWbaScqcehp9r1KPEjpg0prcGGcuaR3vEjGdWxxw/9LriWqkY5szbf7JFN5L42Z98qZ5SRtfRqlDNr1VfOPKpCXjlTz6ercqaeTV45U4G2cuaxfIVSzlSz1wyVM/U4VM48go9X5UyFxsqZund55Uw9hY1ypp5aXjlTud50sxneyKF6HT/BrmubV84AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwR7w8umvnjrZODnwoL9hYt2Dm42JHjsk7SNG1t5060picu8hdmepzkg/0yPTHIHTenx+lLSS4pyzl9/fX4Q3ac5q7EIDs+zv0BzBbkrsTbNLoSlJFkse1+PX4VB3+ZHR/kNpY0usPfCP4hjrPYcnv4dnYl3uQWnGcL/pRbkP2NtHILXkYLKJn8/qCwQTcHlx+38idO9weFWJufL98UPm3v9i/P5QgAAABPzdaiE1vxib8vWsBizUGanuRP/JKkrXwrZmtQ7M83dqYLCg8+LtL0521JLmkQNXlnjzX2cwtm7fbcI6dZdzLJBf0+aixTSjq3H/+Xryf2o378vQchg/hSUcZl1E2fdddb8Z/EcfQnke/gzzr6f5bkkq6nqX3Jn/jb9MRpfkufbi2FTf80WtCcLkiaklz60/X8OroU58Un1827T8Wq5eWnaMH1J2UNAAAAPDV7uz9t54+3Xu/uFRY0X78udmI+7BYHE6b/Qqtmae/jwYQvxd/LN/aSqEl2EU0uzJpkRkKWNXcwIf+cI24L78QN+7fawg+RLjuYsDd3MMGDkGUNoudJ2/GDkN14MCGJFtylUYOeMrY/p0lhrOC6lQ4Kn5XH0YKd/XRQ2NJPk+SvggQAAABYga23yX7hx5N7g+TnQq/mJGkVJheag6TYzPnlsriAMt7GgwlJ9PaZk/gFTK3o0YnBhAdZ2I83mLAeSdRuf7Xo1Vg7cfCfvaHpIbIXMOUfqW7vR481shGRwtxBNrmQ77/vJF4G9xAvP54Xxgq27w6iuYOPp8UfEdwdFF+E1dz96Fk3AAAAPDVbr4pzCI29V81owYeFCwwmLO2/SdTTzRr0/8gdZ3MHhcmFrEF/Ei+Q/LLiwYRZuz3JLRhEDftm3Df2vpoHWfiGJoMJ6zG7oX/9enzvDU3HcwcTcnf8bnRlKCXboQvjHKdp8SV729M7+p/5BdetNPm1Ubw0A28KekD0UWhb8QflvddKLvwXLPQ/o8Mgfu6TihAAAAAASUVORK5CYII= 1x, /eatly/assets/pattern-tabl-2x-3a8271c2.png 2x"
+          media="(min-width: 1024px)"
+        />
+        <img
+          class="log-wrap-pattern"
+          src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAhAAAANRCAMAAACFrXXGAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAJcEhZcwAACxMAAAsTAQCanBgAAADnUExURUdwTP///////////////////2hgt////////////////2xfvP///////2tfvP///////2xfvP///////3Bgv3Bgr////////2xfvP///2xgu21fvGpdumxevWxfvG1dvf///2pgumxgu2xeu2xevP///////2xcu21dumxgvGteu21fvW1gum1fvf///2tfvWxcvGpgumteuv///2tgu2tdu21gvWxguWxfu2xeumxevGxcuWtjvWhYt2tfvWpaumtgvGtevGxgvP///////////2thvGtevG1fvf///////////2xfvBGBzdEAAABMdFJOUwAPHxIGECAZDAMwvyoW3xcB7wkUEBAOC68TQJ9gf89gBWCAgJANAkBgULCfYI8Rn1AwoAhwcGBQz5BvUB8g3zCgoJAEHBVfX98aLgfKVKU6AAAJK0lEQVR42uzd23LbVBiAUadRsi1SxbYULAS0hCkJpyFQUobDBQPT9gLw+z8Ptux0FFs2jW1sRV7rqoiiYba/kfavHNTpNFxeRB24cx1CL777h771oAihmP4pSsKt9Th4cS+EvLx3hBCG1oN0HELUicdXipDEloPOcFxC2ptcH+whmOwrkzDRSy0FpdtJD5nbBVP55HYR9ECpf1PeMEJmA0GnfPgQwnGcGDkpbxeTi0M+7qKcPTl4xXjkvJzNnj3bCNLs7uFD9u4RNnTKR9iZVaCyvTy6tAgAAAAAAADQclluDagoenGnP0wsBFPXSRYlwWWCO1EIiW9J5U6/COGf/f4vpCdr6vv4tn99SHp5tudvUT4Ka/Kd1f/DnjKLO3GvEASzO8bkspv2+oKgMQSBIBAEgkAQCAJBIAgEgSAQBIJAEAgCQSAIBCEIQQhiX/LitSB4Zw+vOhREo+3+VYeCaLTdv+pQEM2281cdCqLhdv2qwxVB/PVklTRaQS3b21fu+FWHK4J48sEqb1ZdPro+yK3Z8asOVwbx99Pl3h4vlQhii08idvyqw5VBPF1vD9EVxLbs/lWHgmiyPbzqUBANdjXZTe74VYeCaLB9vOpQEE1+KrWHVx0K4lHY3asOBfFItpe7etWhIBAEgkAQCAJBIAgEgSAQBIJAEAgCQSAIQQhCEIIQhCAEIQhBCEIQdDr9eKn0zdvl/3LVTwkIop2icLzefygIQQhCEIIQhCAEIQgEgSAQBIJAEAgCQSAIBIEgEASCQBAIAkEgCEEIQhCCEIQgBCEIQSAIlgaRdNdSCKKlQaxNEG0Ud9cWWT0AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAC2of867Z7cZMlEUZx006hvUQ42hnSYhEXZSRpbnIMTXxVhuWyoiYO6NuSrapg14TpxMDlc9cL76J1IQg73SaL18gfkMHFlydosysJDJalla61hWIf7RlsnzSysJ1FEG932wtrsJNrnKmxCEbYP9930rWGbnIRNZYrQgyL0oAj7yfd/IGEp9VD9YldkLdvgcks9eDzVDnGynR4yPdhQVhzZUbZDvp0eulbSDaMit5JuGMaLFoqMF1QlxgsqUuMFW75AGC/sIIwXbXVjvKD6DMJ4QVVuvGCLW0rjRcts+GXvoRV0xzBetFmxyXhxa/3a5nqT8eLS+rVOZLxgO1sIP6TVSjfGC6oyX82ias3xwu+LaanYeMHGQ4avZgmi6th40V6p8YLNgjBetFpuvKCqa7xg/VuG8UIQxgtBGC88hzBeMBUbL6i6Nl5wT2K8oOrGeEHV0HhB1a3xgoftKo0XdpXVcdN4YRNhvDhkkVcdcM+Kl64dWR33DOOFe4bxgqrCbxKjKjVe8F/bSj/qf8i6fpMYVdeJ8YIVuwi/ScygYbxgybMI4wWdyuNK4wXVfaXxgqnLnvGCqtx4wf1thPGCe2wfAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAA/fybDD49nTh8IffDUZnHy/+9d9+H51/unj4y7NR3VlOvx+f5dQiPyKng9HY+cX88fPJ4dFCEc/Kw88WehjVnuW0PMvgpWV+PM7Kj3L0Yu7wV9PDZ/Of8PTwaP6Tfz49/NPc4S/qz0KDjeo/s4/qP/kfZofnbhoXs8Of1Nc2sMyPx6A+iB/rg/hsdvjn+iC+qc9KEI/I7JP/fO7w1/WdXMz6Oa2/FMyf5UX9hYMmbyrLfd8vC8f/LHeJCwPCq/ITflV/lj8WzvK8/iw0uYhfz/5t7w5aEwfCMI7nlMtAYMBAiKjUCtFV0UprtW63u3vY3cN8/8+zatJDM0+yCotkyv93fCnvIRlDtM87k41FfWHMXtzJh8z0xbfReGOyO91lnHKRAQAAAAAAAAAAAADATaVP/Uzk6qPiWBZ5iHiZLUU5HWSyy1o3R2eVWae5Vx/orNPhnJj6pbt46fxopTP+6K6VjFE3xvDLcQ3b011y3WXCZQ6Hbc1LXxjDj4jhfxrXzWWM2ucyvugF4bjM4TD6s10F6JNa+cHpGP6wNYbP5FZAciffHnuJvMPVcN7PennW2iXnMoe0Io6fbjGgHW+cGz77fz62zorU/iLRXY4PIMN6CO2XiIbBiYZyfFWXlKkMAAAAAAAAAAAAAMAtvI7W6j/a6Wgk/9FdjApVfmvqsmaXyrAM1K7lUfT7lL5deuV4p3ciXZ7KM6/8YmU6H9011QH6WG+SX52aMJSryo9avulN8tFhiQ7ZTnSAvnB6/Vg9gFFlt/9wmcPxjxj+14/lhhh+TAz/0/h21RMiv+4JsdFhfnRYub29q5+CVJ685Lx89VDf4Xv9DpHrcQ102fj0IPDOO4hmiZq/KIc7d/63jNMTxfo3/tGqVYVOi2dbFZVPZ1t5eFq+lXMW8VZ2aWgOAAAAAAAAAAAAAMD/duX+ca8NXa5qjs4qTOMOk4k42WBgXSJy9Yehc3PdZcg+lUGtBydPMKi2vfcmLZbnsjevMW3twooIiNEDGNW4Rn0AI9Zh7Pcwf73Lir2ug8Nu+PjA6gWx0bfyfUE8X7YgMs7LCM5EJ+VzPa7Rs/plweguC90FHVaeYPDdq4/1mVt350+8t0t++fbo5+1/6C7oskXWn8lyNha/IcT7bK8O6zt2yXXzR36JAAAAAAAAAAAAAAAAt5UOjBFx+2iaGZGrj4q+mT9c3mWQmSX5mJCUWSdve/syMO1nnV709vZll7nXZUdiKjSr1hh+PXtbxfBtQ6byoLvMuczhsK156XoMf90ew+/rdULqOrwF0RTDb5jLuDCGz1xGeIw+2OCpfXIr1l3qMfx7JrdC8xfQlykA2FiLDAAAAABJRU5ErkJggg=="
+          width="376"
+          height="606"
+          alt="pattern"
+        />
+      </picture>
+      <picture>
+        <source
+          srcset="/eatly/assets/food-deskt-1x-146470fa.png 1x, /eatly/assets/food-deskt-2x-1ce6df7a.png 2x"
+          media="(min-width: 1440px)"
+        />
+        <source
+          srcset="/eatly/assets/food-tabl-1x-79422ced.png 1x, /eatly/assets/food-tabl-2x-7a6fe5a5.png 2x"
+          media="(min-width: 1024px)"
+        />
+        <img
+          class="log-wrap-img"
+          src="/eatly/assets/food-deskt-1x-146470fa.png"
+          alt="chicken"
+        />
+      </picture>
+      <h2 class="log-wrap-title">Find Foods With Love</h2>
+      <p class="log-wrap-text">
+        Eatly Is The Food Delivery Dashboard And Having More Than 2K+ Dishes
+        Including Asian, Chinese, Italians And Many More. Our Dashboard Helps
+        You To Manage Orders And Money.
+      </p>
+    </div>
+  </div>
 </section>
 
     </main>
@@ -272,5 +404,8 @@
   </svg>
 </button>
 
+    
+    
+    
   </body>
 </html>
