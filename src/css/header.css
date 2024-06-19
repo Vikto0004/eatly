@@ -230,23 +230,30 @@
   gap: 5px;
 }
 
+.header-user-active.header-menu-user-wrap:focus .header-user-icon,
+.header-user-active.header-menu-user-wrap:active .header-user-icon {
+  background-color: #c8c6d8;
+}
+
 .header-user-text {
   font-size: 16px;
   font-weight: 400;
   text-align: center;
 }
 
-.header-user-icon {
+.header-user-btn {
   width: 60px;
   height: 60px;
   border-radius: 50%;
+  border: none;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #dbd9ee;
+  transition: background-color 0.4s ease;
 }
 
-.header-user-icon svg {
+.header-user-btn svg {
   fill: #6c5fbc;
 }
 
@@ -267,23 +274,25 @@
 .header-user-list {
   display: flex;
   flex-direction: column;
-  gap: 4px;
 }
 
-.header-user-list li {
+.header-user-list-btn {
+  border: none;
+  background-color: transparent;
   font-size: 18px;
+  width: 100%;
   font-weight: 400;
   cursor: pointer;
   border-radius: 5px;
-  padding: 0 5px;
+  padding: 5px 5px;
 }
 
-.header-user-list li:last-child {
+.header-user-list li:last-child button {
   color: #fd292f;
 }
 
-.header-user-list li:focus,
-.header-user-list li:hover {
+.header-user-list-btn:focus,
+.header-user-list-btn:hover {
   background-color: rgba(96, 96, 96, 0.1);
 }
 
@@ -348,26 +357,26 @@
     position: relative;
   }
 
+  .header-user-active.header-user-wrap:focus .header-user-icon,
+  .header-user-active.header-user-wrap:hover .header-user-icon {
+    background-color: #cfcddf;
+  }
+
   .header-user-text {
     font-size: 12px;
     font-weight: 300;
   }
 
-  .header-user-icon {
+  .header-user-btn {
     width: 35px;
     height: 35px;
-  }
-
-  .header-user-icon svg {
-    width: 20px;
-    height: 20px;
   }
 
   .header-user-opt-cont {
     top: 60px;
   }
 
-  .header-user-list li {
+  .header-user-list-btn {
     font-size: 16px;
   }
 }

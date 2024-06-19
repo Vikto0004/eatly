@@ -1,3 +1,133 @@
-<section class="section">
-  <div class="container"></div>
+<section class="section log-account">
+  <div class="container log-account-container">
+    <div class="log-wrap-left">
+      <div class="log-left-container">
+        <h1 class="title-sign-up">Sign In To <span>eatly</span></h1>
+        <form class="login-options">
+          <button class="" type="submit">
+            <svg class="" width="20" height="24">
+              <use
+                class="google-icon"
+                href="./img/login-sprite.svg#icon-google"
+              ></use>
+            </svg>
+          </button>
+          <button class="" type="submit">
+            <svg class="" width="20" height="24">
+              <use
+                class="ios-apple-icon"
+                href="./img/login-sprite.svg#icon-ios-apple"
+              ></use>
+            </svg>
+          </button>
+        </form>
+        <p class="text-or">OR</p>
+        <form
+          class="sign-up-form"
+          id="sign-in-form"
+          autocomplete="on"
+          novalidate="novalidate"
+        >
+          <!-- email -->
+          <div class="input-wrap">
+            <label class="" for="email"></label>
+            <input
+              class="input-sign-up sign-up-email"
+              id="email"
+              type="email"
+              name="email"
+              placeholder="EMAIL"
+            />
+            <svg class="form-icon" width="18" height="14">
+              <use href="./img/login-sprite.svg#icon-email"></use>
+            </svg>
+          </div>
+
+          <!-- password -->
+          <div class="input-wrap">
+            <label class="" for="password"></label>
+            <input
+              class="input-sign-up input-password"
+              id="password"
+              type="password"
+              name="password"
+              placeholder="PASSWORD"
+            />
+            <a href="./forget-password.html" class="sign-in-forget"
+              >Forget Password ?</a
+            >
+            <svg class="form-icon" width="15" height="19">
+              <use href="./img/login-sprite.svg#icon-lock"></use>
+            </svg>
+            <svg class="icon-password" width="17" height="16">
+              <use href="./img/login-sprite.svg#icon-hide-eye"></use>
+            </svg>
+          </div>
+
+          <button class="btn-sign-up" type="submit">SIGN IP</button>
+
+          <p class="form-text">
+            Create A New Account?
+            <a href="./sign-up.html" class="link-log-in">Sign Up?</a>
+          </p>
+        </form>
+      </div>
+      <div class="log-left-wrapper">
+        <a href="./">Privacy Policy</a>
+        <p>Copyright 2022</p>
+      </div>
+    </div>
+    <div class="log-wrap-right">
+      <picture>
+        <source
+          srcset="
+            ./img/login/pattern-desktop-1x.png 1x,
+            ./img/login/pattern-desktop-2x.png 2x
+          "
+          media="(min-width: 1440px)"
+        />
+        <source
+          srcset="
+            ./img/login/pattern-tabl-1x.png 1x,
+            ./img/login/pattern-tabl-2x.png 2x
+          "
+          media="(min-width: 1024px)"
+        />
+        <img
+          class="log-wrap-pattern"
+          src="./img/login/pattern-desktop-1x.png"
+          width="376"
+          height="606"
+          alt="pattern"
+        />
+      </picture>
+      <picture>
+        <source
+          srcset="
+            ./img/hero/food-deskt-1x.png 1x,
+            ./img/hero/food-deskt-2x.png 2x
+          "
+          media="(min-width: 1440px)"
+        />
+        <source
+          srcset="
+            ./img/hero/food-tabl-1x.png 1x,
+            ./img/hero/food-tabl-2x.png 2x
+          "
+          media="(min-width: 1024px)"
+        />
+        <img
+          class="log-wrap-img"
+          src="./img/hero/food-deskt-1x.png"
+          alt="chicken"
+        />
+      </picture>
+      <h2 class="log-wrap-title">Find Foods With Love</h2>
+      <p class="log-wrap-text">
+        Eatly Is The Food Delivery Dashboard And Having More Than 2K+ Dishes
+        Including Asian, Chinese, Italians And Many More. Our Dashboard Helps
+        You To Manage Orders And Money.
+      </p>
+    </div>
+  </div>
 </section>

@@ -1,0 +1,151 @@
+.log-wrap-right {
+  display: none;
+}
+
+.log-left-wrapper {
+  display: none;
+}
+
+.sign-in-forget {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  color: #6c5fbc;
+  opacity: 0.7;
+  display: block;
+  text-align: end;
+  margin-top: 9px;
+  transition: opacity 0.3s ease;
+}
+
+.sign-in-forget:focus,
+.sign-in-forget:hover {
+  opacity: 1;
+}
+
+@media screen and (min-width: 1024px) {
+  .log-account-container {
+    display: flex;
+    padding-right: 0;
+    gap: 35px;
+  }
+
+  .log-wrap-left {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    flex: 1 1 calc(47% - 35px);
+    align-items: center;
+    justify-content: flex-end;
+    gap: 65px;
+  }
+
+  .log-left-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: calc(61.25%);
+    padding-bottom: 34px;
+  }
+
+  .log-left-wrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 11px;
+    line-height: 1.5;
+    letter-spacing: 0.01em;
+    color: #718096;
+  }
+
+  .log-wrap-right {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    flex: 1 1 calc(49.37% - 35px);
+    height: 729px;
+    background-color: #6c5fbc;
+    padding-bottom: 85px;
+    padding-left: 50px;
+    justify-content: flex-end;
+  }
+
+  .log-wrap-pattern {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+
+  .log-wrap-title {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 800;
+    font-size: 28px;
+    line-height: 1.1;
+    text-align: center;
+    color: #fff;
+    margin: 50px 0 14px;
+    max-width: 355px;
+  }
+
+  .log-wrap-text {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 500;
+    font-size: 9px;
+    line-height: 1.5;
+    letter-spacing: 0.01em;
+    text-align: center;
+    color: #fff;
+    opacity: 0.7;
+    max-width: 355px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .log-account-container {
+    gap: 48px;
+  }
+
+  .log-wrap-left {
+    flex: 1 1 calc(47% - 48px);
+    gap: 117px;
+    padding-bottom: 48px;
+  }
+
+  .log-left-wrapper {
+    font-size: 16px;
+  }
+
+  .log-wrap-right {
+    flex: 1 1 calc(49.37% - 48px);
+    height: 1026px;
+    padding: 0 0 120px 70px;
+  }
+
+  .log-wrap-pattern {
+    width: 528px;
+    height: 849px;
+  }
+
+  .log-wrap-img {
+    width: 552px;
+    height: 507px;
+  }
+
+  .log-wrap-title {
+    font-size: 40px;
+    margin: 74px 0 20px;
+    max-width: 500px;
+  }
+
+  .log-wrap-text {
+    max-width: 500px;
+    font-size: 14px;
+  }
+
+  .sign-in-forget {
+    font-size: 15px;
+    margin-top: 12px;
+  }
+}

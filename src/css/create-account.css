@@ -13,7 +13,7 @@
   margin-bottom: 38px;
 }
 
-.title-highlighted {
+.title-sign-up span {
   color: #6c5fbc;
 }
 
@@ -26,7 +26,7 @@
 .login-options > button {
   background: #eee;
   border-radius: 11px;
-  width: 147px;
+  flex: 1 1 calc(50% - 15px);
   height: 51px;
   border: none;
   box-shadow: 0 0 1px rgba(0, 0, 0, 0);
@@ -71,7 +71,7 @@
   font-weight: 500;
   font-size: 13px;
   letter-spacing: 0.02em;
-  text-transform: capitalize;
+  text-transform: lowercase;
   color: #a2a3a6;
 }
 
@@ -155,9 +155,68 @@
   font-size: 15px;
   letter-spacing: 0.01em;
   color: #3e3e3e;
+  font-weight: 400;
 }
 
 .form-text > a {
   font-weight: 700;
   color: #6c5fbc;
+}
+
+@media screen and (min-width: 1440px) {
+  .title-sign-up {
+    font-size: 35px;
+    margin-bottom: 48px;
+  }
+
+  .login-options {
+    gap: 21px;
+  }
+
+  .login-options > button {
+    flex: 1 1 calc(50% - 21px);
+    height: 63px;
+  }
+
+  .text-or {
+    margin: 33px 0 39px;
+    font-size: 20px;
+  }
+
+  .input-wrap {
+    margin-bottom: 24px;
+  }
+
+  .input-sign-up {
+    height: 74px;
+    font-size: 16px;
+    padding-left: 79px;
+  }
+
+  .form-icon {
+    top: 26px;
+    left: 27px;
+    width: 23px;
+    height: 23px;
+  }
+
+  .icon-password {
+    width: 19px;
+    height: 24px;
+    right: 27px;
+  }
+
+  .input-wrap:nth-last-child(3n) {
+    margin-bottom: 55px;
+  }
+
+  .btn-sign-up {
+    height: 74px;
+    font-size: 17px;
+    margin-bottom: 23px;
+  }
+
+  .form-text {
+    font-size: 18px;
+  }
 }

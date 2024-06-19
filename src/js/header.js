@@ -2,6 +2,7 @@ const elHeaderMenuClose = document.querySelector('.js-header-menu-close');
 const elHeaderMenuOpen = document.querySelector('.js-header-menu-open');
 const elHeaderMenuWrap = document.querySelector('.js-header-menu-wrap');
 const elHeaderGuide = document.querySelectorAll('.js-header-guide');
+const elUserExitBtns = document.querySelectorAll('.js-header-user-exit');
 
 let isOpenUserOpt = false;
 let elUserOptCont;
@@ -29,13 +30,20 @@ function hideLoginAndShowUser(userName) {
       elUserOptCont = elCurrent.querySelector('.js-header-user-opt-cont');
 
       elUserOptCont.style.display = 'block';
-      setTimeout(() => (elUserOptCont.style.height = '124px'));
+      setTimeout(() => (elUserOptCont.style.height = '130px'));
       setTimeout(() => (isOpenUserOpt = true), 100);
     });
   });
 }
 const userData = JSON.parse(localStorage.getItem('userData'));
 userData && hideLoginAndShowUser(userData.name);
+
+elUserExitBtns.forEach(el => {
+  el.addEventListener('click', () => {
+    window.location.href = './';
+    localStorage.removeItem('userData');
+  });
+});
 
 // ---- відкриття модалки ---- //
 const handleOpenMenuHeader = () => {
