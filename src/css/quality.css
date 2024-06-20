@@ -23,6 +23,8 @@
   margin-bottom: 35px;
   list-style: disc;
   gap: 16px;
+  flex-wrap: wrap;
+  align-content: center;
 }
 
 .quality-item p {
@@ -56,12 +58,12 @@
 }
 
 .quality-spiral-icon {
-  position: absolute;
+  /* position: absolute;
   bottom: -100px;
-  left: 25px;
-  transform: rotate(125deg);
+  left: 25px; */
   stroke-width: 2;
 }
+
 .quality-spiral-icon use {
   stroke: #6c5fbc;
   stroke-dashoffset: 320;
@@ -82,14 +84,22 @@
 .quality-img {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: center;
   position: relative;
 }
 
+.quality-img picture {
+  flex: 0.7;
+  max-width: 250px;
+}
+
+.quality-img img {
+  width: 100%;
+}
+
 .quality-illustration-icon {
-  position: absolute;
-  top: -15px;
-  right: 40px;
+  display: block;
+  margin-top: -10px;
   stroke: #6c5fbc;
   stroke-width: 2px;
   stroke-dasharray: 100%;
@@ -109,7 +119,7 @@
   .quality-container {
     display: flex;
     flex-direction: row-reverse;
-    justify-content: space-between;
+    justify-content: space-around;
   }
 
   .quality-content {

@@ -163,6 +163,12 @@
   color: #6c5fbc;
 }
 
+@media screen and (min-width: 1024px) {
+  .section-sign-up {
+    padding: 0;
+  }
+}
+
 @media screen and (min-width: 1440px) {
   .title-sign-up {
     font-size: 35px;

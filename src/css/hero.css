@@ -6,9 +6,17 @@
   display: flex;
   flex-direction: column;
   padding-bottom: 75px;
+  gap: 45px;
+}
+
+.hero-wrap {
+  max-width: 500px;
+  margin: 0 auto;
 }
 
 .hero-text {
+  max-width: 260px;
+  margin: 0 auto;
   font-weight: 600;
   font-size: 9px;
   line-height: 120%;
@@ -25,7 +33,7 @@
   height: 0.5px;
   position: absolute;
   top: 3.5px;
-  left: 65px;
+  left: 40px;
 }
 
 .hero-title {
@@ -96,7 +104,6 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  margin-bottom: 45px;
 }
 
 .hero-reviews-prg {
@@ -109,24 +116,31 @@
 
 .hero-images-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: relative;
+  justify-content: center;
+}
+
+.hero-images-picture {
+  flex: 1;
+  max-width: 464px;
+  display: flex;
+}
+
+.hero-images-picture img {
+  flex: 1;
 }
 
 .hero-images-icon-top {
-  position: absolute;
-  top: -15px;
-  right: -5px;
+  display: block;
+  margin-top: -15px;
   stroke-width: 2px;
   stroke-dasharray: 100%;
   animation: draw 2.3s linear infinite;
 }
 
 .hero-images-icon-bottom {
-  position: absolute;
-  bottom: 5px;
-  left: 0;
+  display: block;
+  margin-top: auto;
+  margin-right: -10px;
   stroke-width: 2px;
   stroke-dasharray: 100%;
   animation: draw 1.3s ease-in-out infinite;
@@ -193,6 +207,19 @@
     justify-content: space-between;
   }
 
+  .hero-wrap {
+    flex: 1 1 calc(44% - 26px);
+    max-width: none;
+  }
+
+  .hero-images-container {
+    flex: 1 1 calc(54% - 26px);
+  }
+
+  .hero-images-picture {
+    max-width: none;
+  }
+
   .hero-text {
     text-align: start;
     font-size: 10px;
@@ -212,7 +239,6 @@
   .hero-title {
     text-align: start;
     font-size: 53px;
-    max-width: 400px;
   }
 
   .hero-prg {
@@ -269,6 +295,16 @@
   }
 }
 
+@media screen and (min-width: 1220px) {
+  .hero-title {
+    font-size: 60px;
+  }
+
+  .hero-prg {
+    font-size: 16px;
+  }
+}
+
 @media screen and (min-width: 1440px) {
   .hero-text {
     font-size: 15px;
@@ -276,7 +312,6 @@
 
   .hero-title {
     font-size: 75px;
-    max-width: 570px;
   }
 
   .hero-prg {
