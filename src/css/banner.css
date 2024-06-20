@@ -6,32 +6,54 @@
   border-radius: 15px;
   background: #6c5fbc;
   min-height: 256px;
+  padding: 0 27px;
+  background-image: url(../img/banner-background.png);
+  background-position-x: -50px;
+}
+
+.banner-subtittle-form {
+  margin-bottom: 27px;
 }
 
 .banner-tittle {
   padding: 50px 0 32px 0;
+  line-height: 1;
   font-weight: 800;
   font-size: 41px;
   text-align: center;
   color: #fff;
+  opacity: 0.8;
 }
 
 .banner-form {
   text-align: center;
   position: relative;
   margin-bottom: 28px;
+  max-width: 400px;
+  margin: 0 auto;
+  height: 48px;
 }
 
 .banner-input {
   border-radius: 9px;
-  min-width: 260px;
-  min-height: 48px;
+  width: 100%;
+  height: 100%;
   box-shadow: 0 5px 29px 0 rgba(0, 0, 0, 0.1);
   background: #fff;
-  border: none;
+  border: 1px solid transparent;
   padding-left: 20px;
   font-size: 10px;
+  opacity: 0.8;
+  outline: transparent;
+  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+.banner-input:focus,
+.banner-input:hover {
+  color: #6c5fbc;
+  border-color: #6c5fbc;
+}
+
 .banner-input::placeholder {
   font-weight: 400;
   font-size: 10px;
@@ -47,20 +69,26 @@
   background: #6c5fbc;
   border-radius: 7px;
   position: absolute;
-  right: 35px;
+  right: 7px;
   bottom: 7px;
   border: none;
   justify-content: center;
   align-items: center;
-}
-
-.banner-link {
   font-weight: 500;
   font-size: 9px;
   letter-spacing: 0.03em;
   text-transform: uppercase;
   color: #f7f8fa;
+  transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
+
+.banner-button:active,
+.banner-button:focus,
+.banner-button:hover {
+  opacity: 0.9;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
 .banner-img {
   width: 170px;
   height: 170px;
@@ -69,43 +97,45 @@
   transform: translatex(-50%);
 }
 @media screen and (min-width: 1024px) {
-  .banner {
-    padding: 67px 0 50px;
-  }
   .banner-container {
     min-height: 200px;
     border-radius: 21px;
     min-width: 860px;
-    background-image: url(../img/banner-background.png);
     position: relative;
   }
+
   .banner-tittle {
     padding: 0;
     font-size: 49px;
   }
+
   .banner-form {
-    margin-bottom: 0px;
+    margin: 0;
+    width: 312px;
   }
+
   .banner-input {
     font-size: 11px;
   }
+
   .banner-input::placeholder {
     font-size: 11px;
   }
-  .banner-link {
+
+  .banner-button {
     font-size: 10px;
   }
+
   .banner-subtittle-form {
     display: flex;
     flex-direction: column;
     align-items: start;
-    justify-content: space-around;
+    justify-content: space-between;
     padding: 26px 50px 45px 45px;
     height: 200px;
+    margin: 0;
   }
-  .banner-button {
-    right: 5px;
-  }
+
   .banner-img {
     width: 195px;
     height: 195px;
@@ -116,15 +146,12 @@
   }
 }
 @media screen and (min-width: 1440px) {
-  .banner {
-    padding: 95px 0 67px;
-  }
-
   .banner-container {
     border-radius: 30px;
     min-width: 1214px;
     min-height: 280px;
   }
+
   .banner-subtittle-form {
     padding: 60px 0 60px 66px;
     height: 280px;
@@ -133,24 +160,27 @@
   .banner-tittle {
     font-size: 70px;
   }
-  .banner-input {
-    min-width: 440px;
-    min-height: 68px;
+
+  .banner-form {
+    width: 439px;
+    height: 68px;
   }
+
   .banner-input {
     font-size: 16px;
   }
+
   .banner-input::placeholder {
     font-size: 16px;
   }
+
   .banner-button {
     border-radius: 11px;
     width: 132px;
+    font-size: 14px;
     height: 53px;
   }
-  .banner-link {
-    font-size: 14px;
-  }
+
   .banner-img {
     width: 275px;
     height: 275px;

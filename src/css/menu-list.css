@@ -1,14 +1,18 @@
 .menu-list {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: 40px;
   margin-bottom: 60px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .menu-list-item {
+  flex: 1 1 calc(33.33% - 40px);
+  min-width: 260px;
   border: 1px solid #f4f4f6;
   border-radius: 24px;
-  max-width: 315px;
+  max-width: 395px;
   box-shadow: 5px 57px 28px 0 rgba(229, 229, 229, 0.7);
   background: #fff;
 }
@@ -92,6 +96,11 @@
     margin-bottom: 47px;
   }
 
+  .menu-list-item {
+    flex: 1 1 calc(33.33% - 22px);
+    transition: all 0.3s ease;
+  }
+
   .menu-list-title {
     font-size: 18px;
   }
@@ -115,9 +124,8 @@
   }
 
   .menu-list-item {
-    max-width: 396px;
+    flex: 1 1 calc(33.33% - 30px);
     border-radius: 30px;
-    transition: all 0.3s ease;
   }
 
   .menu-list-item:focus,

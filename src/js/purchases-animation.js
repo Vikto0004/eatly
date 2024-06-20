@@ -1,6 +1,6 @@
 // --- Анімація для секції Purchases --- //
 
-const section = document.querySelector('.your-section-js');
+const section = document.querySelector('.js-purchases');
 const dividerMoney = document.querySelector('.divider-money');
 const dividerWallet = document.querySelector('.divider-wallet');
 
