@@ -9,6 +9,7 @@
   row-gap: 42px;
   margin-bottom: 50px;
   position: relative;
+  justify-content: center;
 }
 
 .result-search-baner-wrap {
