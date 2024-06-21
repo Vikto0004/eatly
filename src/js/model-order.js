@@ -1,3 +1,5 @@
+import { elScrollBtn } from './scroll-up.js';
+
 const backrop = document.querySelector('.backrop');
 const closeBackrop = document.querySelector('#closeBackrop');
 const openBackrop = document.querySelectorAll('#openBackrop');
@@ -96,6 +98,7 @@ const operationsOnProducts = event => {
   setTimeout(function () {
     backrop.style.opacity = '1';
   }, 50);
+  elScrollBtn.classList.remove('is-active-scroll');
 
   closeBackrop.addEventListener('click', closingTheModal);
 
@@ -247,6 +250,7 @@ const clickOpenBasket = event => {
   basketModal.style.display = 'block';
   document.body.style.overflow = 'hidden';
   elBaskLoginList.style.display = 'flex';
+  elScrollBtn.classList.remove('is-active-scroll');
 
   //* Update list products on basket
   basket.innerHTML = '';

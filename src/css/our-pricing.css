@@ -10,6 +10,12 @@
   position: relative;
 }
 
+.our-pricing-wrap div {
+  width: 82px;
+  margin: 0 auto;
+  position: relative;
+}
+
 .our-pricing-text {
   font-family: 'Poppins', sans-serif;
   font-weight: 600;
@@ -22,10 +28,10 @@
 
 .our-pricing-spiral-icon {
   position: absolute;
-  top: 30px;
-  left: 20%;
+  top: 10px;
+  left: -50px;
   transform: rotate(-50deg);
-  stroke-width: 2;
+  stroke-width: 2.5;
 }
 
 .our-pricing-container {
@@ -61,10 +67,14 @@
   animation: draw 1.3s ease-in-out infinite;
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 600px) {
   .our-pricing-wrap {
     padding-top: 31px;
     height: 237px;
+  }
+
+  .our-pricing-wrap div {
+    width: 151px;
   }
 
   .our-pricing-text {
@@ -74,7 +84,7 @@
   .our-pricing-spiral-icon {
     width: 60px;
     height: 55px;
-    left: 33%;
+    left: 65px;
     transform: rotate(-35deg);
     stroke-width: 4px;
   }
@@ -110,6 +120,10 @@
     height: 334px;
   }
 
+  .our-pricing-wrap div {
+    width: 216px;
+  }
+
   .our-pricing-text {
     font-size: 40px;
   }
@@ -117,7 +131,7 @@
   .our-pricing-spiral-icon {
     width: 83px;
     height: 78px;
-    top: 50px;
+    left: -95px;
   }
 
   .our-pricing-container {
