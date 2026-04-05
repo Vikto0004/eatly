@@ -93,7 +93,7 @@ if (
 const elHeader = document.querySelector('.header');
 const elHeaderBox = document.querySelector('.js-header-box');
 
-window.addEventListener('scroll', () => {
+function updateHeaderOnScroll() {
   if (window.scrollY > 40) {
     elHeader.classList.add('js-header');
     elHeaderBox.style.padding = '10px 0';
@@ -101,7 +101,25 @@ window.addEventListener('scroll', () => {
     elHeader.classList.remove('js-header');
     elHeaderBox.style.padding = '40px 0';
   }
-});
+}
+
+updateHeaderOnScroll();
+window.addEventListener('scroll', updateHeaderOnScroll);
+
+export function handleScroll(action) {
+  if (action === 'hide') {
+    const scrollbarWidth =
+      window.innerWidth - document.documentElement.clientWidth;
+
+    document.body.style.overflow = 'hidden';
+    document.body.style.paddingRight = `${scrollbarWidth}px`;
+    elHeader.style.paddingRight = `${scrollbarWidth}px`;
+  } else if (action === 'show') {
+    document.body.style.overflow = 'auto';
+    document.body.style.paddingRight = '';
+    elHeader.style.paddingRight = '';
+  }
+}
 
 //* Double click for mobil off
 document.body.addEventListener('dblclick', event => event.preventDefault());

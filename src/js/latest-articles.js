@@ -3,6 +3,7 @@
 import { latestArticlesItems } from './render-markup.js';
 import { elScrollBtn } from './scroll-up.js';
 import { receivingDataArticles } from './mockapi.js';
+import { handleScroll } from './header.js';
 
 const elLatestArticlesList = document.querySelector('.latest-articles-list-js');
 const elLatestArticlesBtn = document.querySelector('.latest-articles-more-js');
@@ -72,7 +73,7 @@ function openAnswer() {
   elScrollBtn.classList.remove('is-active-scroll');
   elLatestBackdrop.style.display = 'block';
   elLatestAnswer.style.display = 'flex';
-  document.body.style.overflow = 'hidden';
+  handleScroll('hide');
 
   setTimeout(() => {
     elLatestBackdrop.classList.add('latest-backdrop-active');
@@ -87,6 +88,6 @@ function closeAnswer() {
   setTimeout(() => {
     elLatestBackdrop.style.display = 'none';
     elLatestAnswer.style.display = 'none';
-    document.body.style.overflow = 'auto';
+    handleScroll('show');
   }, 300);
 }

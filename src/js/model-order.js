@@ -1,16 +1,10 @@
+import { handleScroll } from './header.js';
 import { elScrollBtn } from './scroll-up.js';
 
 const backrop = document.querySelector('.backrop');
 const closeBackrop = document.querySelector('#closeBackrop');
-const openBackrop = document.querySelectorAll('#openBackrop');
 const elDishesList = document.querySelector('.js-dishes-list');
 const elOrderForm = document.querySelector('.order-form');
-
-const priceProduct = document.querySelector('#priceProduct');
-const product = document.querySelector('#product');
-const numberProduct = document.querySelector('#numberProduct');
-const plusProduct = document.querySelector('#plusProduct');
-const minusProduct = document.querySelector('#minusProduct');
 
 const elImgProdMod = document.querySelector('#imgProduct img');
 const elPriceProdMod = document.querySelector('#priceProduct');
@@ -20,7 +14,6 @@ const elPlusProdMod = document.querySelector('#plusProduct');
 const elMinusProdMod = document.querySelector('#minusProduct');
 const elWrapProdMod = document.querySelector('.model-order-container');
 const elBtnPushOnBask = document.querySelector('.target-btn');
-const elBtnOrderMod = document.querySelector('.button-order');
 const elPriceForOneProd = document.querySelector('#priceForOneProd');
 
 const basketModal = document.querySelector('.basket-modal');
@@ -94,7 +87,8 @@ const operationsOnProducts = event => {
 
   //* Open mobal
   backrop.style.display = 'block';
-  document.body.style.overflow = 'hidden';
+  handleScroll('hide');
+
   setTimeout(function () {
     backrop.style.opacity = '1';
   }, 50);
@@ -113,9 +107,10 @@ elDishesList.addEventListener('click', operationsOnProducts);
 //* Closing the modal
 function closingTheModal() {
   backrop.style.opacity = '0';
+  handleScroll('show');
+
   setTimeout(function () {
     backrop.style.display = 'none';
-    document.body.style.overflow = 'auto';
   }, 500);
 }
 
@@ -246,11 +241,11 @@ const operationsOnProdBask = event => {
 elBasket.addEventListener('click', operationsOnProdBask);
 
 // ------------------------- Open modal window this basket ------------------------ //
-const clickOpenBasket = event => {
+const clickOpenBasket = () => {
   basketModal.style.display = 'block';
-  document.body.style.overflow = 'hidden';
   elBaskLoginList.style.display = 'flex';
   elScrollBtn.classList.remove('is-active-scroll');
+  handleScroll('hide');
 
   //* Update list products on basket
   basket.innerHTML = '';
@@ -267,9 +262,10 @@ openBasket.addEventListener('click', clickOpenBasket);
 // ------------------------ Close modal window this basket -------------------------- //
 const clickCloseBasket = () => {
   basketModal.style.opacity = '0';
+  handleScroll('show');
+
   setTimeout(function () {
     basketModal.style.display = 'none';
-    document.body.style.overflow = 'auto';
   }, 500);
   quantity.textContent = basket.children.length;
 };
@@ -278,7 +274,7 @@ window.onclick = event => {
 };
 closeBasket.addEventListener('click', clickCloseBasket);
 
-// --- калькулятор загальної суми покупки --- //
+// --- Total purchase amount calculator. --- //
 const totalPriceCalculator = () => {
   const priceArray = basket.querySelectorAll('#priceProduct');
   let sum = 0;
@@ -308,7 +304,7 @@ const receivingTheHeart = () => {
 };
 receivingTheHeart();
 
-// -- перефарбування Trending і Supreme
+// --- Recoloring of Trending and Supreme --- //
 const dishesWrapText = document.querySelectorAll('.dishes-wrap-text');
 for (const element of dishesWrapText) {
   if (element.textContent === 'Trending') {
